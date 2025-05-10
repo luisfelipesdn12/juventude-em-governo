@@ -1,0 +1,41 @@
+{
+    "categorias": [
+        {
+            "id": 1,
+            "nome": "Eletrônicos",
+            "cartas": [
+                {
+                    "id": 1,
+                    "metricas": [
+                        {
+                            "id": 1,
+                            "texto": "Quantidade de produtos",
+                            "pontos": 10,
+                            "itens": [
+                                {
+                                    "id": 1,
+                                    "nome": "Quantidade de produtos",
+                                    "pontos": 10,
+                                    "preco": 10
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "cartas_governo_aberto": [
+        {
+            "id": 1,
+            "nome": "Nome",
+            "preco": 10,
+            "recompensa": {
+                "tipo": "pontos|dindins",
+                "quantidade": 10,
+                "categoria": 1,
+                "metrica": 1
+            }
+        }
+    ]
+}
