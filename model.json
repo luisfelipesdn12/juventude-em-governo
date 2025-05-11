@@ -1,26 +1,510 @@
 {
     "categories": [
         {
-            "id": 1,
-            "name": "Eletrônicos",
+            "id": "4efo9wkv",
+            "name": "Infraestrutura",
             "cards": [
                 {
-                    "id": 1,
+                    "id": "1",
                     "metrics": [
                         {
-                            "id": 1,
-                            "text": "Quantidade de produtos",
-                            "points": 10,
-                            "items": [
-                                {
-                                    "id": 1,
-                                    "name": "Quantidade de produtos",
-                                    "points": 10,
-                                    "price": 10
-                                }
-                            ]
+                            "id": "ld6oqx0a",
+                            "text": "A Proporção (%) de resíduos domésticos coletados seletivamente (reciclagem) na região: 5%.",
+                            "points": 85
+                        },
+                        {
+                            "id": "s9jdqzqr",
+                            "text": "20% dos munícipes não possuem saneamento básico em suas moradias.",
+                            "points": 40
+                        },
+                        {
+                            "id": "bx47kl9m",
+                            "text": "O asfalto foi renovado recentemente e se encontra em bom estado.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p5qr2xzv",
+                            "text": "As praças e hortas comunitárias da cidade necessitam de manutenção e limpeza.",
+                            "points": 95
+                        },
+                        {
+                            "id": "rty8n3ds",
+                            "text": "10% dos moradores da cidade têm suas casas alagadas em períodos de chuva.",
+                            "points": 85
                         }
                     ]
+                },
+                {
+                    "id": "2",
+                    "metrics": [
+                        {
+                            "id": "v8k6p4zt",
+                            "text": "A Proporção (%) de resíduos domésticos coletados seletivamente (reciclagem) na região: 20%.",
+                            "points": 90
+                        },
+                        {
+                            "id": "e3c7j5dm",
+                            "text": "50% dos munícipes não possuem saneamento básico em suas moradias.",
+                            "points": 30
+                        },
+                        {
+                            "id": "y9n2r8lx",
+                            "text": "A avenida mais movimentada da região não possui semáforos.",
+                            "points": 92.5
+                        },
+                        {
+                            "id": "h5q1f3gz",
+                            "text": "Alguns moradores não permitem que os agentes que combatem a dengue entrem em suas casas.",
+                            "points": 92.5
+                        },
+                        {
+                            "id": "b7s4d6am",
+                            "text": "Não há postes de iluminação suficientes para a travessia e passagem segura de pedestres pelas vias.",
+                            "points": 90
+                        }
+                    ]
+                },
+                {
+                    "id": "3",
+                    "metrics": [
+                        {
+                            "id": "n2t7w9xk",
+                            "text": "Proporção (%) de resíduos domésticos coletados seletivamente (reciclagem) na região: 50%.",
+                            "points": 80
+                        },
+                        {
+                            "id": "f1g6h9j3",
+                            "text": "10% dos munícipes não possuem saneamento básico em suas moradias.",
+                            "points": 70
+                        },
+                        {
+                            "id": "m3p5r8t2",
+                            "text": "Foram registradas 30 solicitações de tapa-buracos em ruas e avenidas para as regiões periféricas da cidade.",
+                            "points": 70
+                        },
+                        {
+                            "id": "z4c6v8b1",
+                            "text": "As faixas de pedestre e sinalização das vias estão deterioradas e necessitam de reforma.",
+                            "points": 90
+                        },
+                        {
+                            "id": "l5k7j9h3",
+                            "text": "A avenida mais movimentada da cidade não possui iluminação adequada.",
+                            "points": 90
+                        }
+                    ]
+                },
+                {
+                    "id": "4",
+                    "metrics": [
+                        {
+                            "id": "q8w9e6r3",
+                            "text": "Proporção (%) de resíduos domésticos coletados seletivamente (reciclagem) na região: 1,5%.",
+                            "points": 95
+                        },
+                        {
+                            "id": "s2d4f6g8",
+                            "text": "70% dos munícipes não possuem saneamento básico em suas moradias.",
+                            "points": 20
+                        },
+                        {
+                            "id": "u7i9o1p3",
+                            "text": "A cidade está repleta de fios soltos pelas ruas, que podem ocasionar acidentes graves.",
+                            "points": 90
+                        },
+                        {
+                            "id": "x2z4c6v8",
+                            "text": "As praças se encontram em bom estado de conservação pois a comunidade tem o costume de cuidar desses espaços.",
+                            "points": 100
+                        },
+                        {
+                            "id": "a3s5d7f9",
+                            "text": "A população deixa entulho nos córregos.",
+                            "points": 95
+                        }
+                    ]
+                },
+                {
+                    "id": "5",
+                    "metrics": [
+                        {
+                            "id": "g4h6j8k0",
+                            "text": "Proporção (%) de resíduos domésticos coletados seletivamente (reciclagem) na região: 10%.",
+                            "points": 95
+                        },
+                        {
+                            "id": "l2m4n6p8",
+                            "text": "60% dos munícipes não possuem saneamento básico em suas moradias.",
+                            "points": 30
+                        },
+                        {
+                            "id": "r1t3y5u7",
+                            "text": "Foram registradas 50 solicitações de tapa-buracos em ruas e avenidas para as regiões periféricas da cidade.",
+                            "points": 95
+                        },
+                        {
+                            "id": "i9o2p4a6",
+                            "text": "Está havendo um surto de dengue e muitos córregos são foco do mosquito.",
+                            "points": 90
+                        },
+                        {
+                            "id": "b1n3m5q7",
+                            "text": "Há 100 árvores reportadas com risco de queda e o período de chuvas está se aproximando.",
+                            "points": 90
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "items": [
+        {
+            "id": "uzueivhf",
+            "name": "Equipe para Coleta Seletiva de resíduos urbanos",
+            "price": 8000,
+            "category_id": "4efo9wkv",
+            "metrics": [
+                {
+                    "id": "ld6oqx0a",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "s9jdqzqr",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p5qr2xzv",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "rty8n3ds",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "v8k6p4zt",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "e3c7j5dm",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "n2t7w9xk",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "f1g6h9j3",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "q8w9e6r3",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "s2d4f6g8",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "a3s5d7f9",
+                    "points_percentage_increase": 5
+                },
+                {
+                    "id": "g4h6j8k0",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "l2m4n6p8",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "i9o2p4a6",
+                    "points_percentage_increase": 5
+                }
+            ]
+        },
+        {
+            "id": "fawxv7w6",
+            "name": "Expansão de sistema de coleta e esgoto",
+            "price": 22000,
+            "category_id": "4efo9wkv",
+            "metrics": [
+                {
+                    "id": "ld6oqx0a",
+                    "points_percentage_increase": 35
+                },
+                {
+                    "id": "s9jdqzqr",
+                    "points_percentage_increase": 35
+                },
+                {
+                    "id": "rty8n3ds",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "v8k6p4zt",
+                    "points_percentage_increase": 35
+                },
+                {
+                    "id": "e3c7j5dm",
+                    "points_percentage_increase": 35
+                },
+                {
+                    "id": "n2t7w9xk",
+                    "points_percentage_increase": 35
+                },
+                {
+                    "id": "f1g6h9j3",
+                    "points_percentage_increase": 35
+                },
+                {
+                    "id": "q8w9e6r3",
+                    "points_percentage_increase": 35
+                },
+                {
+                    "id": "s2d4f6g8",
+                    "points_percentage_increase": 35
+                },
+                {
+                    "id": "a3s5d7f9",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "g4h6j8k0",
+                    "points_percentage_increase": 35
+                },
+                {
+                    "id": "l2m4n6p8",
+                    "points_percentage_increase": 35
+                },
+                {
+                    "id": "i9o2p4a6",
+                    "points_percentage_increase": 30
+                }
+            ]
+        },
+        {
+            "id": "cu6zfu7a",
+            "name": "Revitalização de sistema de coleta e esgoto",
+            "price": 15000,
+            "category_id": "4efo9wkv",
+            "metrics": [
+                {
+                    "id": "ld6oqx0a",
+                    "points_percentage_increase": 25
+                },
+                {
+                    "id": "s9jdqzqr",
+                    "points_percentage_increase": 35
+                },
+                {
+                    "id": "v8k6p4zt",
+                    "points_percentage_increase": 25
+                },
+                {
+                    "id": "e3c7j5dm",
+                    "points_percentage_increase": 35
+                },
+                {
+                    "id": "n2t7w9xk",
+                    "points_percentage_increase": 25
+                },
+                {
+                    "id": "f1g6h9j3",
+                    "points_percentage_increase": 35
+                },
+                {
+                    "id": "q8w9e6r3",
+                    "points_percentage_increase": 25
+                },
+                {
+                    "id": "s2d4f6g8",
+                    "points_percentage_increase": 35
+                },
+                {
+                    "id": "a3s5d7f9",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "g4h6j8k0",
+                    "points_percentage_increase": 25
+                },
+                {
+                    "id": "l2m4n6p8",
+                    "points_percentage_increase": 35
+                },
+                {
+                    "id": "i9o2p4a6",
+                    "points_percentage_increase": 50
+                }
+            ]
+        },
+        {
+            "id": "jk8h2lp9",
+            "name": "Desobstrução de bueiros",
+            "price": 6000,
+            "category_id": "4efo9wkv",
+            "metrics": [
+                {
+                    "id": "s9jdqzqr",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "rty8n3ds",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "e3c7j5dm",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "f1g6h9j3",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "s2d4f6g8",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "a3s5d7f9",
+                    "points_percentage_increase": 15
+                },
+                {
+                    "id": "l2m4n6p8",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "i9o2p4a6",
+                    "points_percentage_increase": 15
+                }
+            ]
+        },
+        {
+            "id": "q7wx3jl5",
+            "name": "Construção de piscinão",
+            "price": 40000,
+            "category_id": "4efo9wkv",
+            "metrics": [
+                {
+                    "id": "rty8n3ds",
+                    "points_percentage_increase": 70
+                }
+            ]
+        },
+        {
+            "id": "t2v9op4f",
+            "name": "Manutenção de hortas e praças",
+            "price": 4000,
+            "category_id": "4efo9wkv",
+            "metrics": [
+                {
+                    "id": "p5qr2xzv",
+                    "points_percentage_increase": 70
+                }
+            ]
+        },
+        {
+            "id": "k3z8mn6h",
+            "name": "Instalação de novos semáforos",
+            "price": 8000,
+            "category_id": "4efo9wkv",
+            "metrics": [
+                {
+                    "id": "y9n2r8lx",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "g4c7vb2s",
+            "name": "Instalação de postes de iluminação",
+            "price": 10000,
+            "category_id": "4efo9wkv",
+            "metrics": [
+                {
+                    "id": "b7s4d6am",
+                    "points_percentage_increase": 100
+                },
+                {
+                    "id": "l5k7j9h3",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "x5d9rt1y",
+            "name": "Instalação de semáforos inteligentes",
+            "price": 12000,
+            "category_id": "4efo9wkv",
+            "metrics": []
+        },
+        {
+            "id": "w7r3ft8e",
+            "name": "Melhorias na fiação elétrica",
+            "price": 17000,
+            "category_id": "4efo9wkv",
+            "metrics": [
+                {
+                    "id": "u7i9o1p3",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "a6e2gh9i",
+            "name": "Pintura das faixas de trânsito",
+            "price": 3000,
+            "category_id": "4efo9wkv",
+            "metrics": [
+                {
+                    "id": "z4c6v8b1",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "j0n4lp2q",
+            "name": "Recapeamento e tapa buracos",
+            "price": 14000,
+            "category_id": "4efo9wkv",
+            "metrics": [
+                {
+                    "id": "m3p5r8t2",
+                    "points_percentage_increase": 100
+                },
+                {
+                    "id": "r1t3y5u7",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "u8m6br3z",
+            "name": "Podas de árvores",
+            "price": 5000,
+            "category_id": "4efo9wkv",
+            "metrics": [
+                {
+                    "id": "b1n3m5q7",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "h1s7kd9l",
+            "name": "Aumento da frota de Hilux para assessores da Prefeitura",
+            "price": 80000,
+            "category_id": "4efo9wkv",
+            "metrics": []
+        },
+        {
+            "id": "e5f7g9h1",
+            "name": "Campanha de combate à dengue",
+            "price": 5000,
+            "category_id": "4efo9wkv",
+            "metrics": [
+                {
+                    "id": "h5q1f3gz",
+                    "points_percentage_increase": 100
                 }
             ]
         }
@@ -35,6 +519,32 @@
                 "quantity": 10,
                 "category_id": 1,
                 "metric_id": 1
+            }
+        }
+    ],
+    "rooms": [
+        {
+            "id": "ey15hn",
+            "city": {
+                "name": "São Paulo"
+            },
+            "initial_budget": 1000,
+            "budget": 1000,
+            "initial_cards": [
+                {
+                    "id": 1,
+                    "category_id": 1
+                }
+            ],
+            "players": [
+                {
+                    "id": 1,
+                    "name": "João"
+                }
+            ],
+            "settings": {
+                "time": 10,
+                "max_players": 4
             }
         }
     ]
