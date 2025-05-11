@@ -2,7 +2,8 @@ import Image from "next/image";
 import InstallButton from "@/components/InstallButton";
 import manifest from "./manifest";
 import { Button } from "@/components/ui/button";
-import { PlayIcon, PlaySquareIcon, MenuIcon } from "lucide-react";
+import { PlayIcon, PlaySquareIcon, MenuIcon, EyeIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,8 +23,14 @@ export default function Home() {
             <MenuIcon />
             Menu
           </Button>
+          <Link href="/preview">
+            <Button variant="option">
+              <EyeIcon />
+              Preview
+            </Button>
+          </Link>
         </div>
-          <InstallButton />
+        <InstallButton />
       </div>
     </div>
   );
