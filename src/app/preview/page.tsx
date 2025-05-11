@@ -16,6 +16,11 @@ export default function PreviewPage() {
             Loja
           </Button>
         </Link>
+        <Link href="/">
+          <Button size="lg" className="text-lg px-8 py-6">
+            Voltar
+          </Button>
+        </Link>
       </div>
     </div>
   );
