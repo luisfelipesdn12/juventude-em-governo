@@ -1,22 +1,22 @@
 {
-    "categorias": [
+    "categories": [
         {
             "id": 1,
-            "nome": "Eletrônicos",
-            "cartas": [
+            "name": "Eletrônicos",
+            "cards": [
                 {
                     "id": 1,
-                    "metricas": [
+                    "metrics": [
                         {
                             "id": 1,
-                            "texto": "Quantidade de produtos",
-                            "pontos": 10,
-                            "itens": [
+                            "text": "Quantidade de produtos",
+                            "points": 10,
+                            "items": [
                                 {
                                     "id": 1,
-                                    "nome": "Quantidade de produtos",
-                                    "pontos": 10,
-                                    "preco": 10
+                                    "name": "Quantidade de produtos",
+                                    "points": 10,
+                                    "price": 10
                                 }
                             ]
                         }
@@ -25,16 +25,16 @@
             ]
         }
     ],
-    "cartas_governo_aberto": [
+    "open_government_cards": [
         {
             "id": 1,
-            "nome": "Nome",
-            "preco": 10,
-            "recompensa": {
-                "tipo": "pontos|dindins",
-                "quantidade": 10,
-                "categoria": 1,
-                "metrica": 1
+            "name": "Nome",
+            "price": 10,
+            "reward": {
+                "type": "points|dindins",
+                "quantity": 10,
+                "category_id": 1,
+                "metric_id": 1
             }
         }
     ]

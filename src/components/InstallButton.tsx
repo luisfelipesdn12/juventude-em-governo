@@ -43,7 +43,7 @@ const InstallButton = () => {
   return (
     <>
       {isInstallable && (
-        <Button onClick={handleInstallClick}>
+        <Button onClick={handleInstallClick} className="w-full">
           Instalar <DownloadIcon />
         </Button>
       )}
