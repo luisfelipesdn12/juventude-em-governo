@@ -155,6 +155,942 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": "e7gh2kp9",
+            "name": "Educação",
+            "cards": [
+                {
+                    "id": "e1",
+                    "metrics": [
+                        {
+                            "id": "ed1mt1",
+                            "text": "Tempo de atendimento para vaga em creche: 90 dias.",
+                            "points": 60
+                        },
+                        {
+                            "id": "ed1mt2",
+                            "text": "50% dos alunos estão sem vagas nas escolas de ensino fundamental da cidade.",
+                            "points": 70
+                        },
+                        {
+                            "id": "ed1mt3",
+                            "text": "A taxa de evasão escolar se encontra em 35%.",
+                            "points": 75
+                        },
+                        {
+                            "id": "ed1mt4",
+                            "text": "23 obras escolares estão inacabadas.",
+                            "points": 90
+                        },
+                        {
+                            "id": "ed1mt5",
+                            "text": "Os livros didáticos estão ultrapassados e devem ser substituídos.",
+                            "points": 95
+                        }
+                    ]
+                },
+                {
+                    "id": "e2",
+                    "metrics": [
+                        {
+                            "id": "ed2mt1",
+                            "text": "Tempo de atendimento para vaga em creche: 20 dias.",
+                            "points": 70
+                        },
+                        {
+                            "id": "ed2mt2",
+                            "text": "20% dos alunos estão sem vagas nas escolas de ensino fundamental da cidade.",
+                            "points": 70
+                        },
+                        {
+                            "id": "ed2mt3",
+                            "text": "Houve uma baixa no número de professores, cerca de 8% da grade migrou para outras áreas.",
+                            "points": 80
+                        },
+                        {
+                            "id": "ed2mt4",
+                            "text": "As cozinhas das escolas estão com problemas, o que está impedindo que os alunos recebam alimentação adequada.",
+                            "points": 80
+                        },
+                        {
+                            "id": "ed2mt5",
+                            "text": "O Governo Federal através do Ministério da Educação disponibilizou novos materiais didáticos.",
+                            "points": 100
+                        }
+                    ]
+                },
+                {
+                    "id": "e3",
+                    "metrics": [
+                        {
+                            "id": "ed3mt1",
+                            "text": "Tempo de atendimento para vaga em creche: 02 dias.",
+                            "points": 90
+                        },
+                        {
+                            "id": "ed3mt2",
+                            "text": "40% dos alunos estão sem vagas nas escolas de ensino fundamental da cidade.",
+                            "points": 60
+                        },
+                        {
+                            "id": "ed3mt3",
+                            "text": "A taxa de evasão escolar se encontra em 5%.",
+                            "points": 90
+                        },
+                        {
+                            "id": "ed3mt4",
+                            "text": "As salas de aula de 85% das escolas estão com equipamentos danificados.",
+                            "points": 40
+                        },
+                        {
+                            "id": "ed3mt5",
+                            "text": "Sua cidade possui apenas 1 escola para a formação de adultos.",
+                            "points": 60
+                        }
+                    ]
+                },
+                {
+                    "id": "e4",
+                    "metrics": [
+                        {
+                            "id": "ed4mt1",
+                            "text": "Tempo de atendimento para vaga em creche: 30 dias.",
+                            "points": 65
+                        },
+                        {
+                            "id": "ed4mt2",
+                            "text": "60% dos alunos estão sem vagas nas escolas de ensino médio da cidade.",
+                            "points": 40
+                        },
+                        {
+                            "id": "ed4mt3",
+                            "text": "A rede Municipal de Educação está com um déficit de 40% de servidores.",
+                            "points": 60
+                        },
+                        {
+                            "id": "ed4mt4",
+                            "text": "As unidades escolares estão com problemas em seus laboratórios de informática, e a maioria deles está sem acesso a internet.",
+                            "points": 50
+                        },
+                        {
+                            "id": "ed4mt5",
+                            "text": "Alunos estão relatando problemas com o transporte para chegar em suas escolas.",
+                            "points": 60
+                        }
+                    ]
+                },
+                {
+                    "id": "e5",
+                    "metrics": [
+                        {
+                            "id": "ed5mt1",
+                            "text": "Tempo de atendimento para vaga em creche: 10 dias.",
+                            "points": 80
+                        },
+                        {
+                            "id": "ed5mt2",
+                            "text": "60% dos alunos estão sem vagas nas escolas de ensino fundamental da cidade.",
+                            "points": 40
+                        },
+                        {
+                            "id": "ed5mt3",
+                            "text": "A rede Municipal de Educação está com um déficit de 10% de servidores.",
+                            "points": 80
+                        },
+                        {
+                            "id": "ed5mt4",
+                            "text": "Os computadores do laboratório de informática de 60% das escolas públicas da cidade não possuem acesso à internet.",
+                            "points": 50
+                        },
+                        {
+                            "id": "ed5mt5",
+                            "text": "A merenda servida para as crianças não supre a necessidade adequada de fibras e nutrientes.",
+                            "points": 60
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "scl74k3b",
+            "name": "Esporte, Cultura e Lazer",
+            "cards": [
+                {
+                    "id": "scl1",
+                    "metrics": [
+                        {
+                            "id": "scl1mt1",
+                            "text": "Número de centros culturais, bibliotecas públicas, casas de cultura e/ou equipamentos públicos de cultura (municipais) na região: 1.",
+                            "points": 60
+                        },
+                        {
+                            "id": "scl1mt2",
+                            "text": "Número de equipamentos públicos municipais de esporte na região: 3.",
+                            "points": 60
+                        },
+                        {
+                            "id": "scl1mt3",
+                            "text": "Sua cidade recebeu 3 peças de teatro através da Lei Federal de Incentivo à Cultura.",
+                            "points": 100
+                        },
+                        {
+                            "id": "scl1mt4",
+                            "text": "A quadra da cidade foi reformada.",
+                            "points": 100
+                        },
+                        {
+                            "id": "scl1mt5",
+                            "text": "O único equipamento público de cultura da região necessita de uma revitalização (reformas e melhorias).",
+                            "points": 80
+                        }
+                    ]
+                },
+                {
+                    "id": "scl2",
+                    "metrics": [
+                        {
+                            "id": "scl2mt1",
+                            "text": "Número de centros culturais, bibliotecas públicas, casas de cultura e/ou equipamentos públicos de cultura (municipais) na região: 5.",
+                            "points": 80
+                        },
+                        {
+                            "id": "scl2mt2",
+                            "text": "Número de equipamentos públicos municipais de esporte na região: 7.",
+                            "points": 80
+                        },
+                        {
+                            "id": "scl2mt3",
+                            "text": "Sua cidade recebeu 2 teatros através da Lei Federal de Incentivo à Cultura.",
+                            "points": 100
+                        },
+                        {
+                            "id": "scl2mt4",
+                            "text": "A região possui um forte movimento cultural que busca recursos para se desenvolver.",
+                            "points": 100
+                        },
+                        {
+                            "id": "scl2mt5",
+                            "text": "O parque principal está sucateado.",
+                            "points": 40
+                        }
+                    ]
+                },
+                {
+                    "id": "scl3",
+                    "metrics": [
+                        {
+                            "id": "scl3mt1",
+                            "text": "Número de centros culturais, bibliotecas públicas, casas de cultura e/ou equipamentos públicos de cultura (municipais) na região: 8.",
+                            "points": 75
+                        },
+                        {
+                            "id": "scl3mt2",
+                            "text": "Número de equipamentos públicos municipais de esporte na região: 5.",
+                            "points": 75
+                        },
+                        {
+                            "id": "scl3mt3",
+                            "text": "Sua cidade recebeu 5 peças de teatro através da Lei Federal de Incentivo à Cultura.",
+                            "points": 100
+                        },
+                        {
+                            "id": "scl3mt4",
+                            "text": "A região possui um forte movimento esportivo que busca recursos para se desenvolver.",
+                            "points": 100
+                        },
+                        {
+                            "id": "scl3mt5",
+                            "text": "A praça principal está sem iluminação e foi transformada em ponto de tráfico.",
+                            "points": 30
+                        }
+                    ]
+                },
+                {
+                    "id": "scl4",
+                    "metrics": [
+                        {
+                            "id": "scl4mt1",
+                            "text": "Número de centros culturais, bibliotecas públicas, casas de cultura e/ou equipamentos públicos de cultura (municipais) na região: 3.",
+                            "points": 65
+                        },
+                        {
+                            "id": "scl4mt2",
+                            "text": "Número de equipamentos públicos municipais de esporte na região: 1.",
+                            "points": 65
+                        },
+                        {
+                            "id": "scl4mt3",
+                            "text": "Sua cidade recebeu 4 quadras e novos equipamentos esportivos através da Lei Federal de Incentivo ao Esporte.",
+                            "points": 100
+                        },
+                        {
+                            "id": "scl4mt4",
+                            "text": "A cidade recebeu 3 peças de teatro através da Lei Federal de Incentivo à Cultura.",
+                            "points": 100
+                        },
+                        {
+                            "id": "scl4mt5",
+                            "text": "Por conta das fortes chuvas, o ginásio da cidade foi interditado.",
+                            "points": 70
+                        }
+                    ]
+                },
+                {
+                    "id": "scl5",
+                    "metrics": [
+                        {
+                            "id": "scl5mt1",
+                            "text": "Número de centros culturais, bibliotecas públicas, casas de cultura e/ou equipamentos públicos de cultura (municipais) na região: 6.",
+                            "points": 65
+                        },
+                        {
+                            "id": "scl5mt2",
+                            "text": "Número de equipamentos públicos municipais de esporte na região: 4.",
+                            "points": 65
+                        },
+                        {
+                            "id": "scl5mt3",
+                            "text": "Uma Biblioteca Estadual está sendo reformada.",
+                            "points": 100
+                        },
+                        {
+                            "id": "scl5mt4",
+                            "text": "Através da Lei Federal de Incentivo à Cultura, a cidade recebeu 2.000 novos livros para o acervo dessa biblioteca.",
+                            "points": 100
+                        },
+                        {
+                            "id": "scl5mt5",
+                            "text": "Todas as verbas federais de bolsa atleta foram cortadas.",
+                            "points": 60
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "mr92a6lp",
+            "name": "Moradia",
+            "cards": [
+                {
+                    "id": "m1",
+                    "metrics": [
+                        {
+                            "id": "m1mt1",
+                            "text": "Porcentagem (%) de moradias em áreas de risco: 25%.",
+                            "points": 50
+                        },
+                        {
+                            "id": "m1mt2",
+                            "text": "Cerca de 70% da população vive de aluguel.",
+                            "points": 40
+                        },
+                        {
+                            "id": "m1mt3",
+                            "text": "O Governo Federal inaugurou 8 mil novas habitações através do Programa Minha Casa Minha Vida.",
+                            "points": 100
+                        },
+                        {
+                            "id": "m1mt4",
+                            "text": "Nos últimos 6 meses, ocorreram 4 deslizamentos de terra em áreas de risco.",
+                            "points": 30
+                        },
+                        {
+                            "id": "m1mt5",
+                            "text": "Há muitas enchentes e alagamentos em períodos chuvosos na região.",
+                            "points": 40
+                        }
+                    ]
+                },
+                {
+                    "id": "m2",
+                    "metrics": [
+                        {
+                            "id": "m2mt1",
+                            "text": "Porcentagem (%) de moradias em áreas de risco: 10%.",
+                            "points": 70
+                        },
+                        {
+                            "id": "m2mt2",
+                            "text": "Cerca de 20% da população vive de aluguel.",
+                            "points": 80
+                        },
+                        {
+                            "id": "m2mt3",
+                            "text": "O Governo Federal inaugurou 10 mil novas habitações através do Programa Minha Casa Minha Vida.",
+                            "points": 100
+                        },
+                        {
+                            "id": "m2mt4",
+                            "text": "Famílias em situação de vulnerabilidade e sem condições de pagar aluguel estão construindo ocupações em locais inadequados.",
+                            "points": 40
+                        },
+                        {
+                            "id": "m2mt5",
+                            "text": "A maior favela da cidade pegou fogo e centenas de famílias se encontram desabrigadas.",
+                            "points": 20
+                        }
+                    ]
+                },
+                {
+                    "id": "m3",
+                    "metrics": [
+                        {
+                            "id": "m3mt1",
+                            "text": "Porcentagem (%) de moradias em áreas de risco: 30%.",
+                            "points": 40
+                        },
+                        {
+                            "id": "m3mt2",
+                            "text": "Cerca de 20% da população vive de aluguel.",
+                            "points": 80
+                        },
+                        {
+                            "id": "m3mt3",
+                            "text": "O Governo Federal inaugurou 5 mil novas habitações através do Programa Minha Casa Minha Vida.",
+                            "points": 100
+                        },
+                        {
+                            "id": "m3mt4",
+                            "text": "20% da população mora há mais de uma hora do trabalho.",
+                            "points": 60
+                        },
+                        {
+                            "id": "m3mt5",
+                            "text": "Alguns prédios antigos do centro da cidade estão sendo ocupados por famílias sem teto.",
+                            "points": 50
+                        }
+                    ]
+                },
+                {
+                    "id": "m4",
+                    "metrics": [
+                        {
+                            "id": "m4mt1",
+                            "text": "Porcentagem (%) de moradias em áreas de risco: 15%.",
+                            "points": 60
+                        },
+                        {
+                            "id": "m4mt2",
+                            "text": "Cerca de 50% da população vive de aluguel.",
+                            "points": 50
+                        },
+                        {
+                            "id": "m4mt3",
+                            "text": "O Governo Federal inaugurou 2 mil novas habitações através do Programa Minha Casa Minha Vida.",
+                            "points": 100
+                        },
+                        {
+                            "id": "m4mt4",
+                            "text": "80% da população mora há mais de uma hora do trabalho.",
+                            "points": 30
+                        },
+                        {
+                            "id": "m4mt5",
+                            "text": "O número de pessoas em situação de rua vem aumentando após a pandemia.",
+                            "points": 40
+                        }
+                    ]
+                },
+                {
+                    "id": "m5",
+                    "metrics": [
+                        {
+                            "id": "m5mt1",
+                            "text": "Porcentagem (%) de moradias em áreas de risco: 10%.",
+                            "points": 70
+                        },
+                        {
+                            "id": "m5mt2",
+                            "text": "Cerca de 80% da população vive de aluguel.",
+                            "points": 30
+                        },
+                        {
+                            "id": "m5mt3",
+                            "text": "O Governo Federal inaugurou 20 mil novas habitações através do Programa Minha Casa Minha Vida.",
+                            "points": 100
+                        },
+                        {
+                            "id": "m5mt4",
+                            "text": "70% da população mora há mais de uma hora do trabalho.",
+                            "points": 40
+                        },
+                        {
+                            "id": "m5mt5",
+                            "text": "Novos residenciais estão sendo construídos no centro da cidade, porém os valores são distantes da realidade da maior parte da população.",
+                            "points": 50
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "pop78s3d",
+            "name": "População",
+            "cards": [
+                {
+                    "id": "p1",
+                    "metrics": [
+                        {
+                            "id": "p1mt1",
+                            "text": "População total: 10.000 pessoas.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p1mt2",
+                            "text": "Proporção (%) da população preta e parda: 51%.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p1mt3",
+                            "text": "Proporção (%) de população infantil (de 0 a 12 anos): 15%.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p1mt4",
+                            "text": "A Remuneração média mensal da população é insuficiente para cobrir os custos básicos de vida. Desta forma, muitas famílias se encontram em situação de pobreza.",
+                            "points": 30
+                        },
+                        {
+                            "id": "p1mt5",
+                            "text": "Proporção média de habitantes desempregados: 8%.",
+                            "points": 70
+                        }
+                    ]
+                },
+                {
+                    "id": "p2",
+                    "metrics": [
+                        {
+                            "id": "p2mt1",
+                            "text": "População total: 20.000 pessoas.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p2mt2",
+                            "text": "Proporção (%) da população preta e parda: 20%.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p2mt3",
+                            "text": "Proporção (%) de população infantil (de 0 a 12 anos): 5%.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p2mt4",
+                            "text": "70% da população recebe até um salário mínimo.",
+                            "points": 30
+                        },
+                        {
+                            "id": "p2mt5",
+                            "text": "Proporção média de habitantes desempregados: 15%.",
+                            "points": 70
+                        }
+                    ]
+                },
+                {
+                    "id": "p3",
+                    "metrics": [
+                        {
+                            "id": "p3mt1",
+                            "text": "População total: 50.000 pessoas.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p3mt2",
+                            "text": "Proporção (%) da população preta e parda: 40%.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p3mt3",
+                            "text": "Proporção (%) de população infantil (de 0 a 12 anos): 30%.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p3mt4",
+                            "text": "Apenas 45% da população da cidade tem remuneração mensal suficiente para cobrir despesas básicas.",
+                            "points": 20
+                        },
+                        {
+                            "id": "p3mt5",
+                            "text": "Proporção média de habitantes desempregados: 5%. O índice é o menor registrado nos últimos 10 anos.",
+                            "points": 80
+                        }
+                    ]
+                },
+                {
+                    "id": "p4",
+                    "metrics": [
+                        {
+                            "id": "p4mt1",
+                            "text": "População total: 70.000 pessoas.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p4mt2",
+                            "text": "Proporção (%) da população preta e parda: 70%.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p4mt3",
+                            "text": "Proporção (%) de população infantil (de 0 a 12 anos): 20%.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p4mt4",
+                            "text": "50% da população da cidade recebe até um salário mínimo.",
+                            "points": 50
+                        },
+                        {
+                            "id": "p4mt5",
+                            "text": "Proporção média de habitantes desempregados: 15%. Muitos jovens não têm conseguido se colocar no mercado de trabalho.",
+                            "points": 50
+                        }
+                    ]
+                },
+                {
+                    "id": "p5",
+                    "metrics": [
+                        {
+                            "id": "p5mt1",
+                            "text": "População total: 50.000 pessoas.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p5mt2",
+                            "text": "Proporção (%) da população preta e parda: 30%.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p5mt3",
+                            "text": "Proporção (%) de população infantil (de 0 a 12 anos): 10%.",
+                            "points": 100
+                        },
+                        {
+                            "id": "p5mt4",
+                            "text": "Remuneração média mensal da população D$ 100 (Cem Dindins), valor bastante superior ao observado nas cidades do entorno.",
+                            "points": 60
+                        },
+                        {
+                            "id": "p5mt5",
+                            "text": "Proporção média de habitantes desempregados: 10%.",
+                            "points": 40
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "s63b9t1m",
+            "name": "Saúde",
+            "cards": [
+                {
+                    "id": "s1",
+                    "metrics": [
+                        {
+                            "id": "s1mt1",
+                            "text": "Tempo médio (em dias) de espera para consultas na atenção primária (clínica médica; pediatria; ginecologia; obstetrícia e médico da Estratégia de Saúde da Família ESF.) no território: 40 dias.",
+                            "points": 60
+                        },
+                        {
+                            "id": "s1mt2",
+                            "text": "A insegurança alimentar atinge 5% da população da cidade.",
+                            "points": 90
+                        },
+                        {
+                            "id": "s1mt3",
+                            "text": "A cidade possui um alto índice de gravidez na adolescência.",
+                            "points": 75
+                        },
+                        {
+                            "id": "s1mt4",
+                            "text": "O índice de vacinação infantil está abaixo da média nacional desejada.",
+                            "points": 75
+                        },
+                        {
+                            "id": "s1mt5",
+                            "text": "Foram inauguradas 10 novas Unidades Básicas de Saúde (UBS) na cidade.",
+                            "points": 100
+                        }
+                    ]
+                },
+                {
+                    "id": "s2",
+                    "metrics": [
+                        {
+                            "id": "s2mt1",
+                            "text": "Tempo médio (em dias) de espera para consultas na atenção primária (clínica médica; pediatria; ginecologia; obstetrícia e médico da Estratégia de Saúde da Família ESF.) no território: 60 dias.",
+                            "points": 80
+                        },
+                        {
+                            "id": "s2mt2",
+                            "text": "A insegurança alimentar atinge 50% da população da cidade.",
+                            "points": 80
+                        },
+                        {
+                            "id": "s2mt3",
+                            "text": "A sua cidade tem poucos dentistas nos postos de saúde, e a fila para o atendimento de saúde bucal está cada vez maior.",
+                            "points": 80
+                        },
+                        {
+                            "id": "s2mt4",
+                            "text": "Há 10 postos de saúde com obras inacabadas.",
+                            "points": 80
+                        },
+                        {
+                            "id": "s2mt5",
+                            "text": "A obesidade atinge 50% dos habitantes da cidade.",
+                            "points": 80
+                        }
+                    ]
+                },
+                {
+                    "id": "s3",
+                    "metrics": [
+                        {
+                            "id": "s3mt1",
+                            "text": "Tempo médio (em dias) de espera para consultas na atenção primária (clínica médica; pediatria; ginecologia; obstetrícia e médico da Estratégia de Saúde da Família ESF.) no território: 80 dias.",
+                            "points": 60
+                        },
+                        {
+                            "id": "s3mt2",
+                            "text": "A insegurança alimentar atinge 20% da população da cidade.",
+                            "points": 80
+                        },
+                        {
+                            "id": "s3mt3",
+                            "text": "O banco de sangue da cidade se encontra em escassez.",
+                            "points": 80
+                        },
+                        {
+                            "id": "s3mt4",
+                            "text": "O novo hospital que seria inaugurado esse ano está com as obras paradas.",
+                            "points": 80
+                        },
+                        {
+                            "id": "s3mt5",
+                            "text": "Foram inauguradas 10 Unidades Básicas de Saúde (UBS) no último ano.",
+                            "points": 100
+                        }
+                    ]
+                },
+                {
+                    "id": "s4",
+                    "metrics": [
+                        {
+                            "id": "s4mt1",
+                            "text": "Tempo médio (em dias) de espera para consultas na atenção primária (clínica médica; pediatria; ginecologia; obstetrícia e médico da Estratégia de Saúde da Família ESF.) no território: 90 dias.",
+                            "points": 30
+                        },
+                        {
+                            "id": "s4mt2",
+                            "text": "A insegurança alimentar atinge 32% da população da cidade.",
+                            "points": 70
+                        },
+                        {
+                            "id": "s4mt3",
+                            "text": "Todas as UBS (Unidade Básica de Saúde) da cidade possuem grupos que promovem saúde e bem estar aos idosos.",
+                            "points": 100
+                        },
+                        {
+                            "id": "s4mt4",
+                            "text": "Houve alta no número de doação de órgãos nas últimas semanas.",
+                            "points": 100
+                        },
+                        {
+                            "id": "s4mt5",
+                            "text": "O Governo Estadual inaugurou 2 novos hospitais na cidade.",
+                            "points": 100
+                        }
+                    ]
+                },
+                {
+                    "id": "s5",
+                    "metrics": [
+                        {
+                            "id": "s5mt1",
+                            "text": "Tempo médio (em dias) de espera para consultas na atenção primária (clínica médica; pediatria; ginecologia; obstetrícia e médico da Estratégia de Saúde da Família ESF.) no território: 100 dias.",
+                            "points": 30
+                        },
+                        {
+                            "id": "s5mt2",
+                            "text": "A insegurança alimentar atinge 40% da população da cidade.",
+                            "points": 80
+                        },
+                        {
+                            "id": "s5mt3",
+                            "text": "A cidade está sofrendo com um surto de dengue.",
+                            "points": 90
+                        },
+                        {
+                            "id": "s5mt4",
+                            "text": "90% da população se encontra devidamente vacinada contra o vírus COVID-19.",
+                            "points": 100
+                        },
+                        {
+                            "id": "s5mt5",
+                            "text": "O Governo Federal inaugurou 1 novo hospital na cidade.",
+                            "points": 100
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "tr45n7q2",
+            "name": "Transporte",
+            "cards": [
+                {
+                    "id": "t1",
+                    "metrics": [
+                        {
+                            "id": "t1mt1",
+                            "text": "30% da população mora perto de transporte público estadual de alta capacidade (trem, metrô e monotrilho).",
+                            "points": 40
+                        },
+                        {
+                            "id": "t1mt2",
+                            "text": "A frota de ônibus é antiga e não tem ar condicionado, causando desconforto entre os usuários.",
+                            "points": 60
+                        },
+                        {
+                            "id": "t1mt3",
+                            "text": "A cidade possui corredores de ônibus que agilizam o trânsito em horários de pico.",
+                            "points": 100
+                        },
+                        {
+                            "id": "t1mt4",
+                            "text": "O Metrô Estadual tem 4 linhas espalhadas pela cidade. Quando somadas, totalizam 50 km.",
+                            "points": 100
+                        },
+                        {
+                            "id": "t1mt5",
+                            "text": "A prefeitura está implementando a opção de transporte hidroviário, que atenderá 10% da população.",
+                            "points": 100
+                        }
+                    ]
+                },
+                {
+                    "id": "t2",
+                    "metrics": [
+                        {
+                            "id": "t2mt1",
+                            "text": "15% da população mora perto de transporte público estadual de alta capacidade (trem, metrô e monotrilho).",
+                            "points": 80
+                        },
+                        {
+                            "id": "t2mt2",
+                            "text": "A frota de ônibus foi recentemente ampliada com novos ônibus elétricos.",
+                            "points": 0
+                        },
+                        {
+                            "id": "t2mt3",
+                            "text": "A cidade não possui faixas exclusivas para ônibus.",
+                            "points": 95
+                        },
+                        {
+                            "id": "t2mt4",
+                            "text": "O trânsito da cidade tem se tornado cada vez mais intenso.",
+                            "points": 30
+                        },
+                        {
+                            "id": "t2mt5",
+                            "text": "Não há ciclofaixa na cidade.",
+                            "points": 95
+                        }
+                    ]
+                },
+                {
+                    "id": "t3",
+                    "metrics": [
+                        {
+                            "id": "t3mt1",
+                            "text": "80% da população mora perto de transporte público estadual de alta capacidade (trem, metrô e monotrilho).",
+                            "points": 40
+                        },
+                        {
+                            "id": "t3mt2",
+                            "text": "A frota de ônibus foi renovada, mas ainda é insuficiente.",
+                            "points": 90
+                        },
+                        {
+                            "id": "t3mt3",
+                            "text": "A cidade não possui faixas exclusivas para ônibus.",
+                            "points": 95
+                        },
+                        {
+                            "id": "t3mt4",
+                            "text": "A ciclovia está com muitos buracos e necessita ser reformada.",
+                            "points": 95
+                        },
+                        {
+                            "id": "t3mt5",
+                            "text": "Acidentes frequentes ocorrem em uma linha recém inaugurada e muito utilizada na periferia.",
+                            "points": 80
+                        }
+                    ]
+                },
+                {
+                    "id": "t4",
+                    "metrics": [
+                        {
+                            "id": "t4mt1",
+                            "text": "50% da população mora perto de transporte público estadual de alta capacidade (trem, metrô e monotrilho).",
+                            "points": 30
+                        },
+                        {
+                            "id": "t4mt2",
+                            "text": "A frota de ônibus é insuficiente para a demanda da população.",
+                            "points": 70
+                        },
+                        {
+                            "id": "t4mt3",
+                            "text": "A cidade possui muitas faixas exclusivas para ônibus.",
+                            "points": 100
+                        },
+                        {
+                            "id": "t4mt4",
+                            "text": "Recentemente foram inaugurados 500 km de ciclofaixas que estão espalhadas em toda a cidade.",
+                            "points": 100
+                        },
+                        {
+                            "id": "t4mt5",
+                            "text": "6 novas estações de metrô serão inauguradas em breve pelo Governo do Estado.",
+                            "points": 100
+                        }
+                    ]
+                },
+                {
+                    "id": "t5",
+                    "metrics": [
+                        {
+                            "id": "t5mt1",
+                            "text": "1% da população mora perto de transporte público estadual de alta capacidade (trem, metrô e monotrilho).",
+                            "points": 90
+                        },
+                        {
+                            "id": "t5mt2",
+                            "text": "A frota de ônibus está concentrada no centro da cidade, dificultando o acesso da população afastada do centro.",
+                            "points": 10
+                        },
+                        {
+                            "id": "t5mt3",
+                            "text": "A cidade possui corredores de ônibus que auxiliam a velocidade dos trajetos.",
+                            "points": 100
+                        },
+                        {
+                            "id": "t5mt4",
+                            "text": "O Governo Federal está investindo em uma linha de trem que atravessará a cidade.",
+                            "points": 100
+                        },
+                        {
+                            "id": "t5mt5",
+                            "text": "As ciclofaixas da cidade totalizam 100 km.",
+                            "points": 100
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "items": [
@@ -505,6 +1441,1510 @@
                 {
                     "id": "h5q1f3gz",
                     "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "ed1item",
+            "name": "Auxílio permanência escolar",
+            "price": 13000,
+            "category_id": "e7gh2kp9",
+            "metrics": [
+                {
+                    "id": "ed1mt3",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "ed3mt3",
+                    "points_percentage_increase": 20
+                }
+            ]
+        },
+        {
+            "id": "ed2item",
+            "name": "Compra de computadores para as escolas",
+            "price": 10000,
+            "category_id": "e7gh2kp9",
+            "metrics": [
+                {
+                    "id": "ed1mt1",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "ed1mt3",
+                    "points_percentage_increase": 5
+                },
+                {
+                    "id": "ed1mt5",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "ed3mt1",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "ed3mt3",
+                    "points_percentage_increase": 5
+                },
+                {
+                    "id": "ed3mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "ed4mt1",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "ed4mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "ed5mt1",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "ed5mt4",
+                    "points_percentage_increase": 30
+                }
+            ]
+        },
+        {
+            "id": "ed3item",
+            "name": "Compra de ingredientes nutritivos para merenda",
+            "price": 7000,
+            "category_id": "e7gh2kp9",
+            "metrics": [
+                {
+                    "id": "ed2mt4",
+                    "points_percentage_increase": 70
+                },
+                {
+                    "id": "ed5mt5",
+                    "points_percentage_increase": 70
+                }
+            ]
+        },
+        {
+            "id": "ed4item",
+            "name": "Compra de material didático",
+            "price": 9000,
+            "category_id": "e7gh2kp9",
+            "metrics": [
+                {
+                    "id": "ed1mt5",
+                    "points_percentage_increase": 80
+                },
+                {
+                    "id": "ed3mt4",
+                    "points_percentage_increase": 30
+                }
+            ]
+        },
+        {
+            "id": "ed5item",
+            "name": "Construção de creche",
+            "price": 30000,
+            "category_id": "e7gh2kp9",
+            "metrics": [
+                {
+                    "id": "ed1mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "ed1mt4",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "ed2mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "ed3mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "ed4mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "ed4mt5",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "ed5mt1",
+                    "points_percentage_increase": 20
+                }
+            ]
+        },
+        {
+            "id": "ed6item",
+            "name": "Construção de escolas de Ensino Fundamental",
+            "price": 40000,
+            "category_id": "e7gh2kp9",
+            "metrics": [
+                {
+                    "id": "ed1mt2",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "ed1mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "ed2mt2",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "ed3mt2",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "ed4mt5",
+                    "points_percentage_increase": 15
+                },
+                {
+                    "id": "ed5mt2",
+                    "points_percentage_increase": 30
+                }
+            ]
+        },
+        {
+            "id": "ed7item",
+            "name": "Construção de um centro educacional p/ jovens e adultos",
+            "price": 20000,
+            "category_id": "e7gh2kp9",
+            "metrics": [
+                {
+                    "id": "ed1mt3",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "ed1mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "ed3mt3",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "ed3mt5",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "ed4mt5",
+                    "points_percentage_increase": 15
+                }
+            ]
+        },
+        {
+            "id": "ed8item",
+            "name": "Contratação de professores",
+            "price": 9000,
+            "category_id": "e7gh2kp9",
+            "metrics": [
+                {
+                    "id": "ed1mt2",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "ed2mt2",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "ed2mt3",
+                    "points_percentage_increase": 100
+                },
+                {
+                    "id": "ed3mt2",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "ed4mt3",
+                    "points_percentage_increase": 100
+                },
+                {
+                    "id": "ed5mt2",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "ed5mt3",
+                    "points_percentage_increase": 60
+                }
+            ]
+        },
+        {
+            "id": "ed9item",
+            "name": "Instalação de Internet nas escolas",
+            "price": 12000,
+            "category_id": "e7gh2kp9",
+            "metrics": [
+                {
+                    "id": "ed1mt1",
+                    "points_percentage_increase": 5
+                },
+                {
+                    "id": "ed2mt1",
+                    "points_percentage_increase": 5
+                },
+                {
+                    "id": "ed3mt1",
+                    "points_percentage_increase": 5
+                },
+                {
+                    "id": "ed4mt1",
+                    "points_percentage_increase": 5
+                },
+                {
+                    "id": "ed4mt4",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "ed5mt1",
+                    "points_percentage_increase": 5
+                },
+                {
+                    "id": "ed5mt4",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "ed10item",
+            "name": "Melhorias na cozinha escolar",
+            "price": 6000,
+            "category_id": "e7gh2kp9",
+            "metrics": [
+                {
+                    "id": "ed1mt3",
+                    "points_percentage_increase": 5
+                },
+                {
+                    "id": "ed2mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "ed3mt3",
+                    "points_percentage_increase": 5
+                },
+                {
+                    "id": "ed5mt5",
+                    "points_percentage_increase": 30
+                }
+            ]
+        },
+        {
+            "id": "ed11item",
+            "name": "Ampliação da oferta de cursos profissionalizantes gratuitos",
+            "price": 6000,
+            "category_id": "e7gh2kp9",
+            "metrics": [
+                {
+                    "id": "ed1mt3",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "ed3mt3",
+                    "points_percentage_increase": 30
+                }
+            ]
+        },
+        {
+            "id": "ed12item",
+            "name": "Construção de novos centros estudantis de ensino médio",
+            "price": 40000,
+            "category_id": "e7gh2kp9",
+            "metrics": [
+                {
+                    "id": "ed1mt3",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "ed1mt4",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "ed3mt3",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "ed4mt2",
+                    "points_percentage_increase": 100
+                },
+                {
+                    "id": "ed4mt5",
+                    "points_percentage_increase": 10
+                }
+            ]
+        },
+        {
+            "id": "ed13item",
+            "name": "Construção de pontos de ônibus próximos às escolas",
+            "price": 4000,
+            "category_id": "e7gh2kp9",
+            "metrics": [
+                {
+                    "id": "ed4mt5",
+                    "points_percentage_increase": 25
+                }
+            ]
+        },
+        {
+            "id": "ed14item",
+            "name": "Estudo de planejamento de transportes",
+            "price": 7000,
+            "category_id": "e7gh2kp9",
+            "metrics": [
+                {
+                    "id": "ed4mt5",
+                    "points_percentage_increase": 25
+                }
+            ]
+        },
+        {
+            "id": "ed15item",
+            "name": "Reforma dos equipamentos escolares",
+            "price": 8000,
+            "category_id": "e7gh2kp9",
+            "metrics": [
+                {
+                    "id": "ed3mt4",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "ed4mt4",
+                    "points_percentage_increase": 20
+                }
+            ]
+        },
+        {
+            "id": "scl1item",
+            "name": "Academia ao ar livre",
+            "price": 4000,
+            "category_id": "scl74k3b",
+            "metrics": [
+                {
+                    "id": "scl1mt2",
+                    "points_percentage_increase": 15
+                },
+                {
+                    "id": "scl2mt2",
+                    "points_percentage_increase": 15
+                },
+                {
+                    "id": "scl3mt2",
+                    "points_percentage_increase": 15
+                },
+                {
+                    "id": "scl4mt2",
+                    "points_percentage_increase": 15
+                },
+                {
+                    "id": "scl5mt2",
+                    "points_percentage_increase": 15
+                }
+            ]
+        },
+        {
+            "id": "scl2item",
+            "name": "Bolsa para atletas",
+            "price": 6000,
+            "category_id": "scl74k3b",
+            "metrics": [
+                {
+                    "id": "scl5mt5",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "scl3item",
+            "name": "Bolsa para jovens artistas da região",
+            "price": 4000,
+            "category_id": "scl74k3b",
+            "metrics": []
+        },
+        {
+            "id": "scl4item",
+            "name": "Construção de campo de futebol",
+            "price": 8000,
+            "category_id": "scl74k3b",
+            "metrics": [
+                {
+                    "id": "scl1mt2",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "scl2mt2",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "scl3mt2",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "scl4mt2",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "scl5mt2",
+                    "points_percentage_increase": 30
+                }
+            ]
+        },
+        {
+            "id": "scl5item",
+            "name": "Construção de quadra poliesportiva",
+            "price": 6000,
+            "category_id": "scl74k3b",
+            "metrics": [
+                {
+                    "id": "scl1mt2",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "scl2mt2",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "scl3mt2",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "scl4mt2",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "scl5mt2",
+                    "points_percentage_increase": 40
+                }
+            ]
+        },
+        {
+            "id": "scl6item",
+            "name": "Construção de teatro",
+            "price": 10000,
+            "category_id": "scl74k3b",
+            "metrics": [
+                {
+                    "id": "scl1mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "scl2mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "scl3mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "scl4mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "scl5mt1",
+                    "points_percentage_increase": 20
+                }
+            ]
+        },
+        {
+            "id": "scl7item",
+            "name": "Custeio de peças de teatro",
+            "price": 3000,
+            "category_id": "scl74k3b",
+            "metrics": []
+        },
+        {
+            "id": "scl8item",
+            "name": "Manutenção de teatro",
+            "price": 4000,
+            "category_id": "scl74k3b",
+            "metrics": []
+        },
+        {
+            "id": "scl9item",
+            "name": "Reforma de parque",
+            "price": 8000,
+            "category_id": "scl74k3b",
+            "metrics": [
+                {
+                    "id": "scl1mt5",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "scl2mt5",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "scl10item",
+            "name": "Reforma de quadra poliesportiva",
+            "price": 3000,
+            "category_id": "scl74k3b",
+            "metrics": [
+                {
+                    "id": "scl1mt5",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "scl4mt5",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "scl11item",
+            "name": "Construção de ciclofaixas",
+            "price": 8000,
+            "category_id": "scl74k3b",
+            "metrics": [
+                {
+                    "id": "scl1mt2",
+                    "points_percentage_increase": 15
+                },
+                {
+                    "id": "scl2mt2",
+                    "points_percentage_increase": 15
+                },
+                {
+                    "id": "scl3mt2",
+                    "points_percentage_increase": 15
+                },
+                {
+                    "id": "scl4mt2",
+                    "points_percentage_increase": 15
+                },
+                {
+                    "id": "scl5mt2",
+                    "points_percentage_increase": 15
+                }
+            ]
+        },
+        {
+            "id": "m1item",
+            "name": "Construção de moradia popular",
+            "price": 40000,
+            "category_id": "mr92a6lp",
+            "metrics": [
+                {
+                    "id": "m1mt1",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "m2mt1",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "m3mt1",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "m4mt1",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "m5mt1",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "m2mt4",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "m2mt5",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "m3mt4",
+                    "points_percentage_increase": 25
+                },
+                {
+                    "id": "m3mt5",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "m4mt4",
+                    "points_percentage_increase": 25
+                },
+                {
+                    "id": "m4mt5",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "m5mt4",
+                    "points_percentage_increase": 25
+                },
+                {
+                    "id": "m5mt5",
+                    "points_percentage_increase": 50
+                }
+            ]
+        },
+        {
+            "id": "m2item",
+            "name": "Elaboração de programa de habitação social",
+            "price": 25000,
+            "category_id": "mr92a6lp",
+            "metrics": [
+                {
+                    "id": "m1mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m2mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m3mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m4mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m5mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m1mt2",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "m2mt2",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "m3mt2",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "m4mt2",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "m5mt2",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "m2mt4",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "m2mt5",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "m3mt4",
+                    "points_percentage_increase": 25
+                },
+                {
+                    "id": "m3mt5",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "m4mt4",
+                    "points_percentage_increase": 25
+                },
+                {
+                    "id": "m4mt5",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "m5mt4",
+                    "points_percentage_increase": 25
+                },
+                {
+                    "id": "m5mt5",
+                    "points_percentage_increase": 50
+                }
+            ]
+        },
+        {
+            "id": "m3item",
+            "name": "Compra de itens básicos para abrigos",
+            "price": 5000,
+            "category_id": "mr92a6lp",
+            "metrics": [
+                {
+                    "id": "m1mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m2mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m3mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m4mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m5mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m2mt4",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "m2mt5",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "m3mt5",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m4mt5",
+                    "points_percentage_increase": 20
+                }
+            ]
+        },
+        {
+            "id": "m4item",
+            "name": "Plantação de árvores em áreas de risco",
+            "price": 5000,
+            "category_id": "mr92a6lp",
+            "metrics": [
+                {
+                    "id": "m1mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m2mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m3mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m4mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m5mt1",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m1mt4",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "m5item",
+            "name": "Construção de piscinão",
+            "price": 40000,
+            "category_id": "mr92a6lp",
+            "metrics": [
+                {
+                    "id": "m1mt5",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "m6item",
+            "name": "Aumento da frota e linhas de ônibus",
+            "price": 50000,
+            "category_id": "mr92a6lp",
+            "metrics": [
+                {
+                    "id": "m3mt4",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m4mt4",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "m5mt4",
+                    "points_percentage_increase": 20
+                }
+            ]
+        },
+        {
+            "id": "m7item",
+            "name": "Mutirão de emprego",
+            "price": 5000,
+            "category_id": "mr92a6lp",
+            "metrics": [
+                {
+                    "id": "m3mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "m4mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "m5mt4",
+                    "points_percentage_increase": 30
+                }
+            ]
+        },
+        {
+            "id": "m8item",
+            "name": "Construção de casas de acolhimento para pessoas em situação de rua",
+            "price": 40000,
+            "category_id": "mr92a6lp",
+            "metrics": [
+                {
+                    "id": "m4mt5",
+                    "points_percentage_increase": 50
+                }
+            ]
+        },
+        {
+            "id": "p1item",
+            "name": "Distribuição de cestas básicas",
+            "price": 10000,
+            "category_id": "pop78s3d",
+            "metrics": [
+                {
+                    "id": "p1mt4",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p1mt5",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p2mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "p2mt5",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p3mt4",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p4mt4",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p5mt4",
+                    "points_percentage_increase": 20
+                }
+            ]
+        },
+        {
+            "id": "p2item",
+            "name": "Plantação de árvores em áreas de risco",
+            "price": 5000,
+            "category_id": "pop78s3d",
+            "metrics": []
+        },
+        {
+            "id": "p3item",
+            "name": "Frentes de Trabalho para limpeza urbana",
+            "price": 8000,
+            "category_id": "pop78s3d",
+            "metrics": [
+                {
+                    "id": "p1mt4",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "p1mt5",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "p2mt5",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "p3mt5",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p4mt5",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p5mt4",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p5mt5",
+                    "points_percentage_increase": 20
+                }
+            ]
+        },
+        {
+            "id": "p4item",
+            "name": "Mutirão de emprego",
+            "price": 5000,
+            "category_id": "pop78s3d",
+            "metrics": [
+                {
+                    "id": "p1mt4",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "p1mt5",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "p2mt5",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "p3mt5",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "p4mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "p4mt5",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "p5mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "p5mt5",
+                    "points_percentage_increase": 30
+                }
+            ]
+        },
+        {
+            "id": "p5item",
+            "name": "Mutirão do cadastro único",
+            "price": 4000,
+            "category_id": "pop78s3d",
+            "metrics": [
+                {
+                    "id": "p1mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "p1mt5",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p2mt4",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p2mt5",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p3mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "p3mt5",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p4mt4",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p4mt5",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p5mt4",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "p5mt5",
+                    "points_percentage_increase": 20
+                }
+            ]
+        },
+        {
+            "id": "p6item",
+            "name": "Programa de Transferência de Renda Municipal",
+            "price": 20000,
+            "category_id": "pop78s3d",
+            "metrics": [
+                {
+                    "id": "p1mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "p1mt5",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "p2mt4",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "p2mt5",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "p3mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "p3mt5",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "p4mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "p4mt5",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "p5mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "p5mt5",
+                    "points_percentage_increase": 30
+                }
+            ]
+        },
+        {
+            "id": "s1item",
+            "name": "Campanha de combate à dengue",
+            "price": 4000,
+            "category_id": "s63b9t1m",
+            "metrics": [
+                {
+                    "id": "s5mt3",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "s2item",
+            "name": "Campanha de vacinação",
+            "price": 20000,
+            "category_id": "s63b9t1m",
+            "metrics": [
+                {
+                    "id": "s1mt4",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "s3item",
+            "name": "Construção de hospital",
+            "price": 50000,
+            "category_id": "s63b9t1m",
+            "metrics": [
+                {
+                    "id": "s1mt1",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "s2mt1",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "s3mt1",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "s3mt4",
+                    "points_percentage_increase": 100
+                },
+                {
+                    "id": "s4mt1",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "s5mt1",
+                    "points_percentage_increase": 30
+                }
+            ]
+        },
+        {
+            "id": "s4item",
+            "name": "Construção de UBS",
+            "price": 30000,
+            "category_id": "s63b9t1m",
+            "metrics": [
+                {
+                    "id": "s1mt1",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "s2mt1",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "s2mt4",
+                    "points_percentage_increase": 100
+                },
+                {
+                    "id": "s3mt1",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "s4mt1",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "s5mt1",
+                    "points_percentage_increase": 30
+                }
+            ]
+        },
+        {
+            "id": "s5item",
+            "name": "Contratação de profissionais de saúde",
+            "price": 18000,
+            "category_id": "s63b9t1m",
+            "metrics": [
+                {
+                    "id": "s1mt1",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "s2mt1",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "s2mt3",
+                    "points_percentage_increase": 100
+                },
+                {
+                    "id": "s3mt1",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "s4mt1",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "s5mt1",
+                    "points_percentage_increase": 30
+                }
+            ]
+        },
+        {
+            "id": "s6item",
+            "name": "Distribuição de contraceptivos",
+            "price": 3000,
+            "category_id": "s63b9t1m",
+            "metrics": [
+                {
+                    "id": "s1mt3",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "s7item",
+            "name": "Reforma hospitalar",
+            "price": 20000,
+            "category_id": "s63b9t1m",
+            "metrics": [
+                {
+                    "id": "s1mt1",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "s2mt1",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "s3mt1",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "s4mt1",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "s5mt1",
+                    "points_percentage_increase": 10
+                }
+            ]
+        },
+        {
+            "id": "s8item",
+            "name": "Reforma no hospital veterinário",
+            "price": 9000,
+            "category_id": "s63b9t1m",
+            "metrics": []
+        },
+        {
+            "id": "s9item",
+            "name": "Construção de hospital veterinário",
+            "price": 27000,
+            "category_id": "s63b9t1m",
+            "metrics": []
+        },
+        {
+            "id": "s10item",
+            "name": "Contratação de psicólogos para UBS",
+            "price": 15000,
+            "category_id": "s63b9t1m",
+            "metrics": []
+        },
+        {
+            "id": "s11item",
+            "name": "Construção de CAPS (Centro de Atenção Psicossocial)",
+            "price": 20000,
+            "category_id": "s63b9t1m",
+            "metrics": []
+        },
+        {
+            "id": "s12item",
+            "name": "Campanha de doação de sangue",
+            "price": 10000,
+            "category_id": "s63b9t1m",
+            "metrics": [
+                {
+                    "id": "s3mt3",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "s13item",
+            "name": "Compra de ingredientes nutritivos para merenda",
+            "price": 7000,
+            "category_id": "s63b9t1m",
+            "metrics": [
+                {
+                    "id": "s1mt2",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "s2mt2",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "s2mt5",
+                    "points_percentage_increase": 100
+                },
+                {
+                    "id": "s3mt2",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "s4mt2",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "s5mt2",
+                    "points_percentage_increase": 10
+                }
+            ]
+        },
+        {
+            "id": "s14item",
+            "name": "Distribuição de cestas básicas",
+            "price": 10000,
+            "category_id": "s63b9t1m",
+            "metrics": [
+                {
+                    "id": "s1mt2",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "s2mt2",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "s3mt2",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "s4mt2",
+                    "points_percentage_increase": 50
+                },
+                {
+                    "id": "s5mt2",
+                    "points_percentage_increase": 50
+                }
+            ]
+        },
+        {
+            "id": "s15item",
+            "name": "Melhorias na cozinha escolar",
+            "price": 6000,
+            "category_id": "s63b9t1m",
+            "metrics": [
+                {
+                    "id": "s1mt2",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "s2mt2",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "s3mt2",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "s4mt2",
+                    "points_percentage_increase": 40
+                },
+                {
+                    "id": "s5mt2",
+                    "points_percentage_increase": 40
+                }
+            ]
+        },
+        {
+            "id": "t1item",
+            "name": "Aumento da frota e linhas de ônibus",
+            "price": 50000,
+            "category_id": "tr45n7q2",
+            "metrics": [
+                {
+                    "id": "t2mt4",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "t5mt2",
+                    "points_percentage_increase": 40
+                }
+            ]
+        },
+        {
+            "id": "t2item",
+            "name": "Aumento na frota de ônibus",
+            "price": 32000,
+            "category_id": "tr45n7q2",
+            "metrics": [
+                {
+                    "id": "t1mt2",
+                    "points_percentage_increase": 70
+                },
+                {
+                    "id": "t2mt4",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "t3mt2",
+                    "points_percentage_increase": 100
+                },
+                {
+                    "id": "t4mt2",
+                    "points_percentage_increase": 100
+                },
+                {
+                    "id": "t5mt2",
+                    "points_percentage_increase": 20
+                }
+            ]
+        },
+        {
+            "id": "t3item",
+            "name": "Construção de ciclofaixas",
+            "price": 8000,
+            "category_id": "tr45n7q2",
+            "metrics": [
+                {
+                    "id": "t2mt4",
+                    "points_percentage_increase": 10
+                },
+                {
+                    "id": "t2mt5",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "t4item",
+            "name": "Construção de faixa exclusiva para ônibus",
+            "price": 8000,
+            "category_id": "tr45n7q2",
+            "metrics": [
+                {
+                    "id": "t2mt3",
+                    "points_percentage_increase": 100
+                },
+                {
+                    "id": "t2mt4",
+                    "points_percentage_increase": 5
+                },
+                {
+                    "id": "t3mt3",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "t5item",
+            "name": "Construção de terminal rodoviário",
+            "price": 23000,
+            "category_id": "tr45n7q2",
+            "metrics": [
+                {
+                    "id": "t2mt4",
+                    "points_percentage_increase": 20
+                },
+                {
+                    "id": "t5mt2",
+                    "points_percentage_increase": 40
+                }
+            ]
+        },
+        {
+            "id": "t6item",
+            "name": "Manutenção da ciclofaixa",
+            "price": 1000,
+            "category_id": "tr45n7q2",
+            "metrics": [
+                {
+                    "id": "t2mt4",
+                    "points_percentage_increase": 2.5
+                },
+                {
+                    "id": "t3mt4",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "t7item",
+            "name": "Serviço de manutenção de ônibus",
+            "price": 10000,
+            "category_id": "tr45n7q2",
+            "metrics": [
+                {
+                    "id": "t1mt2",
+                    "points_percentage_increase": 30
+                },
+                {
+                    "id": "t2mt4",
+                    "points_percentage_increase": 2.5
+                },
+                {
+                    "id": "t3mt5",
+                    "points_percentage_increase": 100
+                }
+            ]
+        },
+        {
+            "id": "t8item",
+            "name": "Pontos de empréstimo de bicicletas",
+            "price": 4000,
+            "category_id": "tr45n7q2",
+            "metrics": [
+                {
+                    "id": "t2mt4",
+                    "points_percentage_increase": 10
                 }
             ]
         }

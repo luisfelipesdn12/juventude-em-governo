@@ -5,13 +5,14 @@ import { Card, CardHeader, CardContent, CardFooter, CardTitle } from '@/componen
 import { getCategory, calculateCardAverage } from '@/lib/data';
 
 interface CategoryPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function CategoryPage({ params }: CategoryPageProps) {
-  const category = getCategory(params.id);
+export default async function CategoryPage({ params }: CategoryPageProps) {
+  const { id } = await params;
+  const category = getCategory(id);
 
   if (!category) {
     return notFound();
