@@ -32,7 +32,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 <CardTitle>Carta {card.id}</CardTitle>
               </CardHeader>
               <CardContent className="flex-grow">
-                <ul className="space-y-2">
+                <ul className="space-y-2 list-disc">
                   {card.metrics.map((metric) => (
                     <li key={metric.id} className="text-sm">
                       {metric.text} ({metric.points}%)
