@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import InstallButton from "@/components/InstallButton";
 import manifest from "./manifest";
@@ -8,33 +10,57 @@ import PlayIcon from "@/lib/icons/play";
 import MenuIcon from '@/lib/icons/menu';
 import VideoIcon from '@/lib/icons/video';
 // import VoltarIcon from '@/lib/icons/voltar';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center h-screen gap-4">
-      <div className="flex flex-col items-center justify-center gap-4">
-        <Image src="/assets/Logo Amarelo- Juventude em Governo.svg" alt={manifest().name ?? "Logo"} width={308} height={129} />
-        <div className="flex flex-col items-start gap-2 w-full">
-          <Button variant="option">
-            <PlayIcon />
-            Jogar
-          </Button>
-          <Button variant="option">
-            <VideoIcon />
-            Vídeos de formação
-          </Button>
-          <Button variant="option">
-            <MenuIcon />
-            Menu
-          </Button>
-          <Link href="/preview">
-            <Button variant="option">
-              <EyeIcon />
-              Preview
-            </Button>
-          </Link>
+      <div className="flex flex-col items-center justify-center gap-4 w-full">
+        <Image
+          className="w-full min-w-[281px] max-w-[844px] p-4 md:p-12"
+          src="/assets/Logo Amarelo- Juventude em Governo.svg" alt={manifest().name ?? "Logo"} width={308} height={129} />
+        <div style={{
+          width: "100vw",
+          height: "100%",
+          position: "absolute",
+          zIndex: -10,
+          top: 0,
+          left: 0,
+          overflow: "hidden",
+        }}>
+          <DotLottieReact
+            src="/assets/animation.json"
+            loop
+            autoplay
+            style={{
+              width: "max-content",
+              height: "100%",
+            }}
+          />
         </div>
-        <InstallButton />
+        <div className="flex flex-col items-center justify-center gap-4 w-fit">
+          <div className="flex flex-col items-start gap-2 w-full">
+            <Button variant="option">
+              <PlayIcon />
+              Jogar
+            </Button>
+            <Button variant="option">
+              <VideoIcon />
+              Vídeos de formação
+            </Button>
+            <Button variant="option">
+              <MenuIcon />
+              Menu
+            </Button>
+            <Link href="/preview">
+              <Button variant="option">
+                <EyeIcon />
+                Preview
+              </Button>
+            </Link>
+          </div>
+          <InstallButton />
+        </div>
       </div>
     </div>
   );
