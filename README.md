@@ -1,6 +1,6 @@
 # Juventude em Governo
 
-Aplicação web para o jogo "Juventude em Governo" com integração Firebase.
+Aplicação web para o jogo "Juventude em Governo" com integração Firebase e atualizações em tempo real.
 
 ## Configuração
 
@@ -68,6 +68,23 @@ A aplicação utiliza a seguinte estrutura no Firestore:
 - **collection/items**: Itens da loja
 - **collection/rooms**: Salas de jogo criadas
 - **collection/open_government_cards**: Cartas de governo aberto
+
+## Gerenciamento de Estado e Atualizações em Tempo Real
+
+A aplicação utiliza Zustand para gerenciamento de estado global e Firebase Firestore para atualizações em tempo real:
+
+- **src/lib/store.ts**: Definição do store global com Zustand
+- Cada página cliente utiliza hooks do store para:
+  1. Carregar dados iniciais
+  2. Configurar listeners para atualizações em tempo real usando `onSnapshot`
+  3. Limpar os listeners quando o componente é desmontado
+
+Principais recursos:
+
+- Atualizações instantâneas quando os dados são modificados no Firestore
+- Centralização de lógica de acesso aos dados
+- Estado global compartilhado entre componentes
+- Gestão automática de carregamento/estados de erro
 
 ## Construção para Produção
 

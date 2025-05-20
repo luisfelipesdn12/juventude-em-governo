@@ -1,8 +1,12 @@
+'use client';
+
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
-import { getCategory, calculateCardAverage } from '@/lib/data';
+import { calculateCardAverage } from '@/lib/data';
+import { useAppStore } from '@/lib/store';
 
 interface CategoryPageProps {
   params: {
@@ -10,20 +14,41 @@ interface CategoryPageProps {
   };
 }
 
-export default async function CategoryPage({ params }: CategoryPageProps) {
+export default function CategoryPage({ params }: CategoryPageProps) {
   const { id } = params;
-  const category = await getCategory(id);
+  const { activeCategory, fetchCategory, subscribeToCategory, loadingCategory } = useAppStore();
+  
+  useEffect(() => {
+    // Fetch initial data
+    fetchCategory(id);
+    
+    // Set up realtime subscription
+    const unsubscribe = subscribeToCategory(id);
+    
+    // Clean up subscription when component unmounts
+    return () => unsubscribe();
+  }, [id, fetchCategory, subscribeToCategory]);
 
-  if (!category) {
+  // If loading, show loading state
+  if (loadingCategory && !activeCategory) {
+    return (
+      <div className="container mx-auto py-8">
+        <h1 className="text-3xl font-bold mb-8">Carregando...</h1>
+      </div>
+    );
+  }
+
+  // If category not found, show 404
+  if (!activeCategory) {
     return notFound();
   }
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-8">{category.name}</h1>
+      <h1 className="text-3xl font-bold mb-8">{activeCategory.name}</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {category.cards?.map((card) => {
+        {activeCategory.cards?.map((card) => {
           const avgPoints = calculateCardAverage(card.metrics);
           
           return (
