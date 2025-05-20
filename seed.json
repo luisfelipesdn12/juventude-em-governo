@@ -2965,26 +2965,22 @@
     "rooms": [
         {
             "id": "ey15hn",
-            "city": {
-                "name": "São Paulo"
-            },
-            "initial_budget": 1000,
-            "budget": 1000,
-            "initial_cards": [
+            "cities": [
                 {
                     "id": 1,
-                    "category_id": 1
-                }
-            ],
-            "players": [
-                {
-                    "id": 1,
-                    "name": "João"
+                    "name": "São Paulo",
+                    "initial_budget": 1000,
+                    "budget": 1000,
+                    "initial_cards": [
+                        {
+                            "id": 1,
+                            "category_id": 1
+                        }
+                    ]
                 }
             ],
             "settings": {
-                "time": 10,
-                "max_players": 4
+                "time": 10
             }
         }
     ]
