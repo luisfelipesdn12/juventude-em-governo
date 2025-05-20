@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import manifest from "./manifest";
-
+import VoltarIcon from "@/lib/icons/voltar";
+import MenuIcon from "@/lib/icons/menu";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 export const metadata: Metadata = {
   title: manifest().name,
   description: manifest().description,
@@ -19,8 +22,18 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`antialiased bg-[#360575] font-['tt-commons-pro']`}
+        className={`antialiased font-['tt-commons-pro']`}
       >
+        <div className="flex items-center justify-between p-6 absolute top-0 left-0 w-full">
+          <Link href="/">
+            <Button variant="option">
+              <VoltarIcon className="w-12 h-12" />
+            </Button>
+          </Link>
+          <Button variant="option">
+            <MenuIcon className="w-12 h-12" />
+          </Button>
+        </div>
         {children}
       </body>
     </html>

@@ -1,13 +1,15 @@
 import * as React from "react";
+import { SVGProps } from "react";
+import { cn } from "../utils";
 
-const VideoIcon = () => (
+const VideoIcon = ({ className }: SVGProps<SVGSVGElement>) => (
     <div className="group/icon">
         <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Camada_2"
             data-name="Camada 2"
             viewBox="0 0 24.16 23.7"
-            className="group-hover/icon:hidden"
+            className={cn("group-hover/icon:hidden", className)}
         >
             <path
                 className="fill-white"
@@ -27,7 +29,7 @@ const VideoIcon = () => (
             id="Camada_2"
             data-name="Camada 2"
             viewBox="0 0 24.95 24.2"
-            className="group-hover/icon:block hidden"
+            className={cn("group-hover/icon:block hidden", className)}
         >
             <path
                 className="fill-accent"

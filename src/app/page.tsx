@@ -40,10 +40,12 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-center justify-center gap-4 w-fit">
           <div className="flex flex-col items-start gap-2 w-full">
-            <Button variant="option">
-              <PlayIcon />
-              Jogar
-            </Button>
+            <Link href="/play">
+              <Button variant="option">
+                <PlayIcon />
+                Jogar
+              </Button>
+            </Link>
             <Button variant="option">
               <VideoIcon />
               Vídeos de formação

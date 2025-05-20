@@ -10,6 +10,7 @@
     "upload-data": "tsx scripts/uploadData.ts"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.0.1",
     "@lottiefiles/dotlottie-react": "^0.13.5",
     "@radix-ui/react-slot": "^1.2.2",
     "class-variance-authority": "^0.7.1",
@@ -20,7 +21,9 @@
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.2.0"
+    "react-hook-form": "^7.56.4",
+    "tailwind-merge": "^3.2.0",
+    "zod": "^3.25.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

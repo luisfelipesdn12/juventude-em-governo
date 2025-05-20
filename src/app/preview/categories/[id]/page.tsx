@@ -5,14 +5,14 @@ import { Card, CardHeader, CardContent, CardFooter, CardTitle } from '@/componen
 import { getCategory, calculateCardAverage } from '@/lib/data';
 
 interface CategoryPageProps {
-  params: Promise<{
+  params: {
     id: string;
-  }>;
+  };
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
-  const { id } = await params;
-  const category = getCategory(id);
+  const { id } = params;
+  const category = await getCategory(id);
 
   if (!category) {
     return notFound();
@@ -23,7 +23,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       <h1 className="text-3xl font-bold mb-8">{category.name}</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {category.cards.map((card) => {
+        {category.cards?.map((card) => {
           const avgPoints = calculateCardAverage(card.metrics);
           
           return (

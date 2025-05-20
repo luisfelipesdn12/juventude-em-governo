@@ -1,4 +1,5 @@
-import modelData from '../../model.json';
+import { db } from './firebase';
+import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
 
 export interface Metric {
   id: string;
@@ -14,7 +15,7 @@ export interface Card {
 export interface Category {
   id: string;
   name: string;
-  cards: Card[];
+  cards?: Card[];
 }
 
 export interface ItemMetric {
@@ -30,25 +31,93 @@ export interface Item {
   metrics: ItemMetric[];
 }
 
-export const getCategories = (): Category[] => {
-  return modelData.categories;
+export const getCategories = async (): Promise<Category[]> => {
+  try {
+    const categoriesRef = collection(db, 'categories');
+    const categoriesSnapshot = await getDocs(categoriesRef);
+    return categoriesSnapshot.docs.map(doc => ({
+      id: doc.id,
+      name: doc.data().name,
+    }));
+  } catch (error) {
+    console.error('Error getting categories:', error);
+    return [];
+  }
 };
 
-export const getCategory = (id: string): Category | undefined => {
-  return getCategories().find(category => category.id === id);
+export const getCategory = async (id: string): Promise<Category | undefined> => {
+  try {
+    const categoryRef = doc(db, 'categories', id);
+    const categoryDoc = await getDoc(categoryRef);
+    
+    if (!categoryDoc.exists()) {
+      return undefined;
+    }
+    
+    const category: Category = {
+      id: categoryDoc.id,
+      name: categoryDoc.data().name,
+    };
+    
+    // Get cards for this category
+    const cardsRef = collection(db, `categories/${id}/cards`);
+    const cardsSnapshot = await getDocs(cardsRef);
+    
+    category.cards = cardsSnapshot.docs.map(doc => ({
+      id: doc.id,
+      metrics: doc.data().metrics,
+    }));
+    
+    return category;
+  } catch (error) {
+    console.error('Error getting category:', error);
+    return undefined;
+  }
 };
 
-export const getItems = (): Item[] => {
-  return modelData.items;
+export const getItems = async (): Promise<Item[]> => {
+  try {
+    const itemsRef = collection(db, 'items');
+    const itemsSnapshot = await getDocs(itemsRef);
+    return itemsSnapshot.docs.map(doc => ({
+      id: doc.id,
+      name: doc.data().name,
+      price: doc.data().price,
+      category_id: doc.data().category_id,
+      metrics: doc.data().metrics,
+    }));
+  } catch (error) {
+    console.error('Error getting items:', error);
+    return [];
+  }
 };
 
-export const getItemsByCategory = (categoryId: string): Item[] => {
-  return getItems().filter(item => item.category_id === categoryId);
+export const getItemsByCategory = async (categoryId: string): Promise<Item[]> => {
+  try {
+    const itemsRef = collection(db, 'items');
+    const q = query(itemsRef, where('category_id', '==', categoryId));
+    const itemsSnapshot = await getDocs(q);
+    return itemsSnapshot.docs.map(doc => ({
+      id: doc.id,
+      name: doc.data().name,
+      price: doc.data().price,
+      category_id: doc.data().category_id,
+      metrics: doc.data().metrics,
+    }));
+  } catch (error) {
+    console.error('Error getting items by category:', error);
+    return [];
+  }
 };
 
-export const getCategoryNameById = (categoryId: string): string => {
-  const category = getCategory(categoryId);
-  return category ? category.name : 'Unknown Category';
+export const getCategoryNameById = async (categoryId: string): Promise<string> => {
+  try {
+    const category = await getCategory(categoryId);
+    return category ? category.name : 'Unknown Category';
+  } catch (error) {
+    console.error('Error getting category name:', error);
+    return 'Unknown Category';
+  }
 };
 
 // Calculate average points for a card
