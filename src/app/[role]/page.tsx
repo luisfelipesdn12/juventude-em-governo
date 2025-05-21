@@ -13,7 +13,7 @@ import LayeredAnimation from "@/components/LayeredAnimation";
 
 interface HomeProps {
   params: Promise<{
-    role: "admin" | "player" | "teacher";
+    role: "admin" | "player" | "applyer";
   }>;
 }
 
@@ -36,8 +36,8 @@ export default async function Home({ params }: HomeProps) {
   );
 }
 
-function HomeMenu({ role = "player" }: { role?: "admin" | "player" | "teacher" }) {
-  const options: Record<"admin" | "player" | "teacher", {
+function HomeMenu({ role = "player" }: { role?: "admin" | "player" | "applyer" }) {
+  const options: Record<"admin" | "player" | "applyer", {
       label: string;
       href: string;
       icon: React.ReactNode;
@@ -66,7 +66,17 @@ function HomeMenu({ role = "player" }: { role?: "admin" | "player" | "teacher" }
         icon: <EyeIcon />
       }
     ],
-    teacher: [
+    applyer: [
+      {
+        label: "Criar sala",
+        href: "/applyer/create-room",
+        icon: <PlayIcon />
+      },
+      {
+        label: "Continuar",
+        href: "/applyer/continue-room",
+        icon: <PlayIcon />
+      },
     ]
   }
 
