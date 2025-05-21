@@ -1,16 +1,16 @@
-// Server Component - handles initial data fetching
+"use server";
 import { notFound } from 'next/navigation';
 import { getCategory } from '@/lib/data';
 import { CategoryClient } from './client';
 
 interface CategoryPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
-  const { id } = params;
+  const { id } = await params;
   
   // Server-side fetch for initial data
   const initialCategory = await getCategory(id);
