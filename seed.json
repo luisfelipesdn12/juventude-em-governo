@@ -2951,18 +2951,175 @@
     ],
     "open_government_cards": [
         {
-            "id": 1,
-            "text": "Nome",
-            "category_id": "Participação Social",
+            "id": "integ1",
+            "category": "Integridade",
+            "text": "O controle efetivo dos gastos da cidade permitiu coibir (restringir) a corrupção local. Com isso, o orçamento da cidade ganhou.",
             "price": 5000,
             "reward": {
-                "type": "points|dindins",
-                "quantity": 10,
-                "category_id": 1,
-                "metric_id": 1
+                "type": "dindins",
+                "quantity": 20000
+            }
+        },
+        {
+            "id": "integ2",
+            "category": "Integridade",
+            "text": "Sua prefeitura contratou uma equipe de servidores para reformar e alimentar os dados dos portais de prestação de contas da cidade. Com isso, a cidade recebeu um investimento do Governo Federal para comprar mais uma Carta de Governo Aberto.",
+            "price": 6000,
+            "reward": {
+                "type": "points",
+                "quantity": 0.5
+            }
+        },
+        {
+            "id": "integ3",
+            "category": "Integridade",
+            "text": "Sua prefeitura estabeleceu um Programa de Prestação de Contas regional, fazendo com que a população soubesse como estavam sendo administrados os gastos públicos de cada região. Isso gerou um retorno de D$ 20.000 ao seu orçamento.",
+            "price": 10000,
+            "reward": {
+                "type": "dindins",
+                "quantity": 20000
+            }
+        },
+        {
+            "id": "integ4",
+            "category": "Integridade",
+            "text": "Sua cidade criou um órgão de fiscalização interna da Prefeitura, diminuindo casos de corrupção e má conduta. Com isso, a cidade garantiu D$ 30.000,00 de volta ao seu orçamento.",
+            "price": 15000,
+            "reward": {
+                "type": "dindins",
+                "quantity": 30000
+            }
+        },
+        {
+            "id": "parti1",
+            "category": "Participação Social",
+            "text": "Após uma rodada de consultas públicas, com grande participação dos cidadãos, sua prefeitura conseguiu alocar os recursos públicos de forma mais eficiente, de acordo com as demandas da população, resultando em um retorno de D$ 30.000 ao caixa.",
+            "price": 5000,
+            "reward": {
+                "type": "dindins",
+                "quantity": 30000
+            }
+        },
+        {
+            "id": "parti2",
+            "category": "Participação Social",
+            "text": "Após escolha em audiência pública junto à população, a cidade terá dez de suas praças reformadas, com espaços de lazer para crianças e idosos.",
+            "price": 6000,
+            "reward": {
+                "type": "points",
+                "quantity": 0.25,
+                "category_id": "scl74k3b"
+            }
+        },
+        {
+            "id": "parti3",
+            "category": "Participação Social",
+            "text": "Sua cidade promoveu um processo de escuta ativa com a população, permitindo com que a área de infraestrutura e os munícipes colaborassem para a construção de um novo plano de saneamento básico, que envolveu a despoluição dos rios e córregos.",
+            "price": 10000,
+            "reward": {
+                "type": "points",
+                "quantity": 0.25,
+                "category_id": "4efo9wkv"
+            }
+        },
+        {
+            "id": "parti4",
+            "category": "Participação Social",
+            "text": "Sua cidade investiu no fortalecimento dos grêmios estudantis, o que incentivou um grupo de alunos a construírem um melhor plano alimentar para as escolas. A iniciativa foi premiada por uma Organização Internacional, fazendo com que a cidade recebesse D$ 20.000 para investimento exclusivo na educação.",
+            "price": 15000,
+            "reward": {
+                "type": "dindins",
+                "quantity": 20000,
+                "category_id": "e7gh2kp9"
+            }
+        },
+        {
+            "id": "intec1",
+            "category": "Inovação e Tecnologia",
+            "text": "Uma nova plataforma digital foi inaugurada pela prefeitura, possibilitando uma maior comunicação, e trazendo aproximação entre a administração municipal e os cidadãos, graças a ela você pode adquirir um Item/Serviço de graça.",
+            "price": 5000,
+            "reward": {
+                "type": "points",
+                "quantity": 0.5
+            }
+        },
+        {
+            "id": "intec2",
+            "category": "Inovação e Tecnologia",
+            "text": "A prefeitura criou uma plataforma digital para o agendamentos de consultas e exames, permitindo que os cidadãos marquem e desmarquem seus atendimentos de forma rápida e acessível. Com a iniciativa, o atendimento de saúde se tornou mais eficiente e a fila de espera foi reduzida.",
+            "price": 6000,
+            "reward": {
+                "type": "points",
+                "quantity": 0.25,
+                "category_id": "s63b9t1m"
+            }
+        },
+
+        {
+            "id": "intec3",
+            "category": "Inovação e Tecnologia",
+            "text": "Sua cidade criou uma inovadora iniciativa de Orçamento Participativo Cultural, fazendo com que fossem liberados mais D$20.000,00 em recursos para iniciativas de Esporte, Cultura e Lazer.",
+            "price": 10000,
+            "reward": {
+                "type": "dindins",
+                "quantity": 20000,
+                "category_id": "scl74k3b"
+            }
+        },
+        {
+            "id": "intec4",
+            "category": "Inovação e Tecnologia",
+            "text": "Sua cidade criou uma plataforma de indicadores de educação, que permitiu com que a prefeitura conseguisse identificar escolas com pior desempenho e priorizar investimentos, melhorando a qualidade do ensino.",
+            "price": 15000,
+            "reward": {
+                "type": "points",
+                "quantity": 0.25,
+                "category_id": "e7gh2kp9"
+            }
+        },
+        {
+            "id": "trans1",
+            "category": "Transparência",
+            "text": "Sua cidade resolveu abrir os dados de gastos em todas as áreas técnicas, isto acarretou em uma economia do orçamento, que lhe deu mais D$10.000,00  para utilizar!",
+            "price": 5000,
+            "reward": {
+                "type": "dindins",
+                "quantity": 10000
+            }
+        },
+        {
+            "id": "trans2",
+            "category": "Transparência",
+            "text": "Sua cidade promoveu um processo de escuta ativa com a população, permitindo com que a área de infraestrutura e os munícipes colaborassem para a construção de um novo plano de saneamento básico, que envolveu a despoluição dos rios e córregos!",
+            "price": 6000,
+            "reward": {
+                "type": "points",
+                "quantity": 0.25,
+                "category_id": "4efo9wkv"
+            }
+        },
+        {
+            "id": "trans3",
+            "category": "Transparência",
+            "text": "Sua cidade investiu no fortalecimento dos grêmios estudantis, o que incentivou um grupo de alunos a construírem um melhor plano alimentar para as escolas. A iniciativa foi premiada por uma Organização Internacional, fazendo com que a cidade recebesse D$ 20.000 para investimento exclusivo na educação.",
+            "price": 10000,
+            "reward": {
+                "type": "dindins",
+                "quantity": 20000,
+                "category_id": "e7gh2kp9"
+            }
+        },
+        {
+            "id": "trans4",
+            "category": "Transparência",
+            "text": "Após uma rodada de consultas públicas, com grande participação dos cidadãos, sua prefeitura conseguiu alocar os recursos públicos de forma mais eficiente, de acordo com as demandas da população, resultando em um retorno de D$ 30.000 ao caixa.",
+            "price": 15000,
+            "reward": {
+                "type": "dindins",
+                "quantity": 30000
             }
         }
-    ],
+    ],  
     "rooms": [
         {
             "id": "ey15hn",
