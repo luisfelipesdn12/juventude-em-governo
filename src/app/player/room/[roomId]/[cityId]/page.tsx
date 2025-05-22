@@ -51,12 +51,12 @@ export default function PlayerRoom() {
     }
   }, [player?.id, subscribeToPlayer]);
 
-  // If there's no player in state, navigate back to play page
-  useEffect(() => {
-    if (!playerLoading && !player) {
-      router.push('/play');
-    }
-  }, [player, playerLoading, router]);
+  // // If there's no player in state, navigate back to play page
+  // useEffect(() => {
+  //   if (!playerLoading && !player) {
+  //     router.push('/play');
+  //   }
+  // }, [player, playerLoading, router]);
 
   if ((roomLoading && !room) || (playerLoading && !player)) {
     return (
@@ -165,11 +165,19 @@ export default function PlayerRoom() {
         </h2>
 
         <Button onClick={() => {
-          setDindins(Math.floor(Math.random() * 1000000));
-        }} disabled={dindins !== undefined}>
+          // 1. de 40 mil a 400 mil
+          // 2. tem que ser múltiplo de 100
+          const min = 40000;
+          const max = 400000;
+          const random = Math.floor(Math.random() * (max - min + 1)) + min;
+          const multipleOf100 = Math.floor(random / 100) * 100;
+          setDindins(multipleOf100);
+        }}
+        disabled={dindins !== undefined}
+        >
           Sortear
         </Button>
       </div>
     </div>
   );
-} 
+}

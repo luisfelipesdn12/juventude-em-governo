@@ -21,7 +21,7 @@ export default async function Home({ params }: HomeProps) {
   const { role } = await params;
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen gap-4">
+    <div className="flex flex-col items-center justify-center h-[calc(100vh-60px)] gap-4">
       <div className="flex flex-col items-center justify-center gap-4 w-full">
         <Image
           className="w-full min-w-[281px] max-w-[844px] p-4 md:p-12"

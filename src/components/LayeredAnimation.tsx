@@ -6,8 +6,8 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 const LayeredAnimation = () => {
     return (
         <div style={{
-            width: "100vw",
-            height: "100vh",
+            width: "100%",
+            height: "100%",
             position: "absolute",
             zIndex: -10,
             top: 0,
