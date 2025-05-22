@@ -21,14 +21,7 @@ const LayeredAnimation = () => {
                 loop
                 autoplay
                 useFrameInterpolation={false}
-                style={{
-                    width: "max-content",
-                    height: "100%",
-                    scale: "1.15",
-                }}
-                renderConfig={{
-                    autoResize: true,
-                }}
+                className="home-animation-container"
             />
         </div>
 

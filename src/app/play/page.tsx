@@ -4,10 +4,14 @@ import { Minus, Plus } from "lucide-react"
 import { z } from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useSearchParams, useRouter } from "next/navigation"
+import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { usePlayerStore } from "@/lib/store/player-store"
+import { useRoomStore } from "@/lib/store/room-store"
 
 // Define validation schema
 const formSchema = z.object({
@@ -20,6 +24,13 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>
 
 export default function Home() {
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const { roomExists, joinRoom, error } = usePlayerStore()
+  const { getRoom } = useRoomStore()
+  const [formError, setFormError] = useState<string | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  
   // Initialize form with default values and validation
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -34,6 +45,14 @@ export default function Home() {
   const { watch, setValue } = form
   const players = watch("players")
 
+  // Check for room parameter when component mounts
+  React.useEffect(() => {
+    const roomCode = searchParams.get("room")
+    if (roomCode) {
+      setValue("code", roomCode, { shouldValidate: true })
+    }
+  }, [searchParams, setValue])
+
   // Handle player count changes
   const incrementPlayers = () => {
     const newValue = Math.min(players + 1, 4)
@@ -46,10 +65,49 @@ export default function Home() {
   }
 
   // Handle form submission
-  function onSubmit(data: FormValues) {
-    console.log("Form submitted with:", data)
-    // Here you can proceed with your game setup using the data
-    alert(`Iniciando jogo com ${data.players} jogadores na cidade ${data.cityName} com código ${data.code}!`)
+  async function onSubmit(data: FormValues) {
+    setIsSubmitting(true)
+    setFormError(null)
+    
+    try {
+      // First check if the room exists
+      const exists = await roomExists(data.code)
+      
+      if (!exists) {
+        setFormError(`Sala com código ${data.code} não encontrada`)
+        setIsSubmitting(false)
+        return
+      }
+      
+      // Join the room
+      const player = await joinRoom(data.code, data.cityName, data.players)
+      
+      if (player) {
+        // Get the room to get the city ID
+        const room = await getRoom(data.code)
+        
+        if (room) {
+          // Find the player's city in the room
+          const city = room.cities.find(c => c.name === data.cityName)
+          
+          if (city) {
+            // Redirect to the player room page
+            router.push(`/player/room/${data.code}/${city.id}`)
+          } else {
+            setFormError("Erro ao adicionar cidade à sala")
+          }
+        } else {
+          setFormError("Erro ao obter informações da sala")
+        }
+      } else {
+        setFormError(error || "Erro ao entrar na sala")
+      }
+    } catch (err) {
+      console.error("Error joining room:", err)
+      setFormError("Erro ao processar solicitação")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -57,6 +115,12 @@ export default function Home() {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="w-full max-w-sm">
           <div className="flex flex-col items-center justify-center gap-4 w-full">
+            {formError && (
+              <div className="text-red-500 bg-red-50 p-3 rounded-md w-full text-center">
+                {formError}
+              </div>
+            )}
+            
             <FormField
               control={form.control}
               name="players"
@@ -132,8 +196,12 @@ export default function Home() {
               )}
             />
 
-            <Button type="submit" className="mt-4 w-full">
-              Iniciar Jogo
+            <Button 
+              type="submit" 
+              className="mt-4 w-full"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Entrando..." : "Entrar na sala"}
             </Button>
           </div>
         </form>

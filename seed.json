@@ -2965,6 +2965,9 @@
     "rooms": [
         {
             "id": "ey15hn",
+            "name": "Sala de teste",
+            "institution": "Instituto Federal de São Paulo",
+            "class": "2024.1",
             "cities": [
                 {
                     "id": 1,
