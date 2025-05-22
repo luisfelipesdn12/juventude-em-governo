@@ -15,8 +15,8 @@ import { useRoomStore } from "@/lib/store/room-store"
 
 // Define validation schema
 const formSchema = z.object({
-  players: z.number().min(1, "Mínimo de 1 jogador").max(4, "Máximo de 4 jogadores"),
-  cityName: z.string().min(2, "Nome da cidade deve ter pelo menos 2 caracteres").max(50, "Nome da cidade não pode exceder 50 caracteres"),
+  players: z.number().min(1, "Mínimo de 1 jogador").max(10, "Máximo de 10 jogadores"),
+  cityName: z.string().min(2, "Nome da cidade deve ter pelo menos 2 caracteres").max(14, "Nome da cidade não pode exceder 14 caracteres"),
   code: z.string().min(4, "Código deve ter pelo menos 4 caracteres").max(10, "Código não pode exceder 10 caracteres"),
 })
 
@@ -166,7 +166,7 @@ export default function Home() {
                 <FormItem className="w-full">
                   <FormLabel>Nome da Cidade</FormLabel>
                   <FormControl>
-                    <Input placeholder="Digite o nome da cidade" {...field} />
+                    <Input placeholder="Digite o nome da cidade" maxLength={14} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

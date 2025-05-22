@@ -4,19 +4,22 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useRoomStore, Room } from "@/lib/store/room-store";
 import { usePlayerStore } from "@/lib/store/player-store";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
+import { NumberTicker } from "@/components/magicui/number-ticker";
 
 export default function PlayerRoom() {
   const params = useParams();
   const router = useRouter();
   const roomId = params.roomId as string;
   const cityId = parseInt(params.cityId as string);
-  
+
+  const [dindins, setDindins] = useState<number | undefined>(undefined);
+
   const { loading: roomLoading, error: roomError, subscribeToRoom } = useRoomStore();
   const { player, loading: playerLoading, error: playerError, subscribeToPlayer } = usePlayerStore();
-  
+
   const [room, setRoom] = useState<Room | undefined>(undefined);
   const [cityData, setCityData] = useState<Room['cities'][0] | undefined>(undefined);
 
@@ -25,7 +28,7 @@ export default function PlayerRoom() {
     // Subscribe to room updates
     const unsubscribe = subscribeToRoom(roomId, (updatedRoom) => {
       setRoom(updatedRoom);
-      
+
       // Find the player's city in the room
       if (updatedRoom) {
         const city = updatedRoom.cities.find(c => c.id === cityId);
@@ -43,7 +46,7 @@ export default function PlayerRoom() {
       const unsubscribe = subscribeToPlayer(player.id, () => {
         // We're already updating the player state in the store
       });
-      
+
       return () => unsubscribe();
     }
   }, [player?.id, subscribeToPlayer]);
@@ -127,48 +130,46 @@ export default function PlayerRoom() {
   }
 
   return (
-    <div className="container mx-auto py-8 px-6 gap-6 flex flex-col">
+    <div className="container mx-auto py-8 px-8 gap-6 flex flex-col">
       <h1 className="text-2xl font-semibold text-center">Sala #{room.id}</h1>
 
-      <Card className="max-w-3xl mx-auto">
-        <CardHeader>
-          <div className="flex justify-between items-center">
-            <div className="flex gap-2 w-full justify-between">
-              <CardTitle className="text-2xl">{room.name}</CardTitle>
-            </div>
-          </div>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Detalhes da Sala</h3>
-              <div className="space-y-2">
-                <p><strong>Instituição:</strong> {room.institution}</p>
-                <p><strong>Classe/Série:</strong> {room.class}</p>
-                <p><strong>Tempo de Jogo:</strong> {room.settings.time} minutos</p>
-                {room.createdAt && (
-                  <p className="text-sm">
-                    <strong>Criada em:</strong> {room.createdAt.toDate().toLocaleString()}
-                  </p>
-                )}
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+      <div className="flex flex-col gap-4 w-full justify-start items-start">
+        <h2 className="text-xl font-semibold text-center">Cartas situação</h2>
 
-      <h2 className="text-2xl font-semibold text-center">Sua Cidade</h2>
+        <p>Cartas aqui...</p>
+      </div>
 
-      <Card className="max-w-3xl mx-auto">
-        <CardHeader>
-          <CardTitle>{cityData.name}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-2xl font-bold">
-            <strong>Orçamento:</strong> {cityData.budget} Dindins
-          </p>
-        </CardContent>
-      </Card>
+      <div className="flex flex-col gap-4 w-full justify-start items-start">
+        <h2 className="text-xl font-semibold text-center">Cartas situação</h2>
+
+        <p>Cartas aqui...</p>
+      </div>
+
+      <div className="flex gap-4 w-full justify-between items-center">
+        <h2 className="text-xl font-semibold">
+          Dindins
+          <br />
+          {dindins ? (
+            <>
+              D$ <NumberTicker
+                value={dindins ?? 0}
+                decimalPlaces={2}
+                className="whitespace-pre-wrap font-medium tracking-tighter text-black dark:text-white"
+              />
+            </>
+          ) : (
+            <>
+              D$ ??????
+            </>
+          )}
+        </h2>
+
+        <Button onClick={() => {
+          setDindins(Math.floor(Math.random() * 1000000));
+        }} disabled={dindins !== undefined}>
+          Sortear
+        </Button>
+      </div>
     </div>
   );
 } 
