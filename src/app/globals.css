@@ -134,3 +134,51 @@
     scale: 1.2;
   }
 }
+
+@media (max-width: 600px) {
+  .card {
+    h1 {
+      font-size: 160%;
+    }
+
+    li {
+      font-size: 95%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    h1 {
+      font-size: 140%;
+    }
+
+    li {
+      font-size: 80%;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .card {
+    h1 {
+      font-size: 120%;
+    }
+
+    li {
+      font-size: 75%;
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .card {
+    h1 {
+      font-size: 90%;
+    }
+
+    li {
+      font-size: 60%;
+    }
+  }
+}
