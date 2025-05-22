@@ -2952,8 +2952,9 @@
     "open_government_cards": [
         {
             "id": 1,
-            "name": "Nome",
-            "price": 10,
+            "text": "Nome",
+            "category_id": "Participação Social",
+            "price": 5000,
             "reward": {
                 "type": "points|dindins",
                 "quantity": 10,
