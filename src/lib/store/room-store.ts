@@ -74,8 +74,8 @@ export const useRoomStore = create<RoomState>((set) => ({
       };
 
       // Add the document to Firestore
-      await addDoc(collection(db, `rooms/${id}`), newRoom);
-      
+      await addDoc(collection(db, `rooms`), newRoom);
+
       // Update the local state
       set((state) => ({ 
         rooms: [...state.rooms, newRoom],

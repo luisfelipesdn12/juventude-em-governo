@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { useRoomStore, Room } from "@/lib/store/room-store";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Share2, Copy, Loader2 } from "lucide-react";
+import { Share2, Loader2 } from "lucide-react";
 
 export default function RoomDetail() {
   const params = useParams();
@@ -13,7 +13,7 @@ export default function RoomDetail() {
   const roomId = params.roomId as string;
   const { loading, error, subscribeToRoom } = useRoomStore();
   const [room, setRoom] = useState<Room | undefined>(undefined);
-  const [copied, setCopied] = useState(false);
+  const [, setCopied] = useState(false);
 
   // This useEffect sets up a real-time listener to Firestore for the specific room
   useEffect(() => {
@@ -84,38 +84,28 @@ export default function RoomDetail() {
   };
 
   return (
-    <div className="container mx-auto py-8">
-      <Button 
-        variant="outline" 
-        className="mb-6" 
-        onClick={() => router.push("/applyer/continue-room")}
-      >
-        <ArrowLeft className="h-4 w-4 mr-2" /> Voltar para Salas
-      </Button>
+    <div className="container mx-auto py-8 px-6 gap-6 flex flex-col">
+      <h1 className="text-2xl font-semibold text-center">Sala #{room.id}</h1>
 
       <Card className="max-w-3xl mx-auto">
         <CardHeader>
           <div className="flex justify-between items-center">
-            <div>
+            <div className="flex gap-2 w-full justify-between">
               <CardTitle className="text-2xl">{room.name}</CardTitle>
-              <CardDescription>ID: {room.id}</CardDescription>
+              <Button
+                variant="outline"
+                onClick={() => navigator.share({
+                  title: `Sala: ${room.name}`,
+                  text: `Junte-se à sala "${room.name}" com o código: ${room.id}`,
+                  url: window.location.origin + `/play?room=${room.id}`
+                }).catch(() => {
+                  // Fallback para navegadores que não suportam a API Web Share
+                  handleCopyRoomId();
+                })}
+              >
+                <Share2 className="h-4 w-4 mr-2" /> Compartilhar Sala
+              </Button>
             </div>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              onClick={handleCopyRoomId}
-              className="flex items-center gap-2"
-            >
-              {copied ? (
-                <>
-                  <Copy className="h-4 w-4" /> Copiado!
-                </>
-              ) : (
-                <>
-                  <Share2 className="h-4 w-4" /> Copiar ID
-                </>
-              )}
-            </Button>
           </div>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -127,27 +117,15 @@ export default function RoomDetail() {
                 <p><strong>Classe/Série:</strong> {room.class}</p>
                 <p><strong>Tempo de Jogo:</strong> {room.settings.time} minutos</p>
                 {room.createdAt && (
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm">
                     <strong>Criada em:</strong> {room.createdAt.toDate().toLocaleString()}
                   </p>
                 )}
                 {room.updatedAt && (
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm">
                     <strong>Última atualização:</strong> {room.updatedAt.toDate().toLocaleString()}
                   </p>
                 )}
-              </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Detalhes da Cidade</h3>
-              <div className="space-y-2">
-                {room.cities.map((city) => (
-                  <div key={city.id} className="p-4 border rounded-md">
-                    <p><strong>Nome:</strong> {city.name}</p>
-                    <p><strong>Orçamento Inicial:</strong> {city.initial_budget} Dindins</p>
-                    <p><strong>Orçamento Atual:</strong> {city.budget} Dindins</p>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
@@ -160,29 +138,31 @@ export default function RoomDetail() {
             </p>
           </div>
         </CardContent>
-        <CardFooter className="flex flex-col sm:flex-row gap-4">
-          <Button 
-            className="w-full sm:w-auto" 
-            onClick={() => window.location.href = `/play?room=${room.id}`}
-          >
-            Visualizar como Jogador
-          </Button>
-          <Button 
-            variant="outline" 
-            className="w-full sm:w-auto"
-            onClick={() => navigator.share({
-              title: `Sala: ${room.name}`,
-              text: `Junte-se à sala "${room.name}" com o código: ${room.id}`,
-              url: window.location.origin + `/play?room=${room.id}`
-            }).catch(() => {
-              // Fallback para navegadores que não suportam a API Web Share
-              handleCopyRoomId();
-            })}
-          >
-            <Share2 className="h-4 w-4 mr-2" /> Compartilhar Sala
-          </Button>
-        </CardFooter>
       </Card>
+
+      <h2 className="text-2xl font-semibold text-center">Cidades</h2>
+
+      <div className="grid grid-cols-2 gap-6">
+        {room.cities.map((city) => (
+          <Card key={city.id} className="p-2 border rounded-md">
+            <CardHeader>
+              <CardTitle>{city.name}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p><strong>Orçamento Atual:</strong> {city.budget} Dindins</p>
+            </CardContent>
+          </Card>
+        ))}
+        {room.cities.length % 2 === 1 && (
+          <Card className="p-2 border rounded-md bg-transparent border-dashed">
+            <CardHeader>
+            </CardHeader>
+          </Card>
+        )}
+        {room.cities.length === 0 && (
+          <p className="text-center">Nenhuma cidade disponível...</p>
+        )}
+      </div>
     </div>
   );
-} 
+}

@@ -51,21 +51,8 @@ export default function CreateRoom() {
         settings: {
           time: data.time,
         },
-        cities: [
-          {
-            id: 1,
-            name: "São Paulo",
-            initial_budget: 1000,
-            budget: 1000,
-            initial_cards: [
-              {
-                id: 1,
-                category_id: 1
-              }
-            ]
-          }
-        ]
-      };
+        cities: []
+      }; 
 
       // Add the room to the store
       const room = await addRoom(newRoom);

@@ -108,7 +108,7 @@ export default function ContinueRoom() {
               <p className="text-sm mb-1"><strong>Classe:</strong> {room.class}</p>
               <p className="text-sm"><strong>Tempo:</strong> {room.settings.time} minutos</p>
               {room.createdAt && (
-                <p className="text-xs text-gray-500 mt-2">
+                <p className="text-xs mt-2">
                   Criada em: {room.createdAt.toDate().toLocaleString()}
                 </p>
               )}
