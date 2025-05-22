@@ -10,27 +10,27 @@
                         {
                             "id": "ld6oqx0a",
                             "text": "A Proporção (%) de resíduos domésticos coletados seletivamente (reciclagem) na região: 5%.",
-                            "points": 85
+                            "points": 4
                         },
                         {
                             "id": "s9jdqzqr",
                             "text": "20% dos munícipes não possuem saneamento básico em suas moradias.",
-                            "points": 40
+                            "points": 2
                         },
                         {
                             "id": "bx47kl9m",
                             "text": "O asfalto foi renovado recentemente e se encontra em bom estado.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p5qr2xzv",
                             "text": "As praças e hortas comunitárias da cidade necessitam de manutenção e limpeza.",
-                            "points": 95
+                            "points": 5
                         },
                         {
                             "id": "rty8n3ds",
                             "text": "10% dos moradores da cidade têm suas casas alagadas em períodos de chuva.",
-                            "points": 85
+                            "points": 4
                         }
                     ]
                 },
@@ -40,27 +40,27 @@
                         {
                             "id": "v8k6p4zt",
                             "text": "A Proporção (%) de resíduos domésticos coletados seletivamente (reciclagem) na região: 20%.",
-                            "points": 90
+                            "points": 4
                         },
                         {
                             "id": "e3c7j5dm",
                             "text": "50% dos munícipes não possuem saneamento básico em suas moradias.",
-                            "points": 30
+                            "points": 3
                         },
                         {
                             "id": "y9n2r8lx",
                             "text": "A avenida mais movimentada da região não possui semáforos.",
-                            "points": 92.5
+                            "points": 5
                         },
                         {
                             "id": "h5q1f3gz",
                             "text": "Alguns moradores não permitem que os agentes que combatem a dengue entrem em suas casas.",
-                            "points": 92.5
+                            "points": 5
                         },
                         {
                             "id": "b7s4d6am",
                             "text": "Não há postes de iluminação suficientes para a travessia e passagem segura de pedestres pelas vias.",
-                            "points": 90
+                            "points": 4
                         }
                     ]
                 },
@@ -70,27 +70,27 @@
                         {
                             "id": "n2t7w9xk",
                             "text": "Proporção (%) de resíduos domésticos coletados seletivamente (reciclagem) na região: 50%.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "f1g6h9j3",
                             "text": "10% dos munícipes não possuem saneamento básico em suas moradias.",
-                            "points": 70
+                            "points": 3
                         },
                         {
                             "id": "m3p5r8t2",
                             "text": "Foram registradas 30 solicitações de tapa-buracos em ruas e avenidas para as regiões periféricas da cidade.",
-                            "points": 70
+                            "points": 3
                         },
                         {
                             "id": "z4c6v8b1",
                             "text": "As faixas de pedestre e sinalização das vias estão deterioradas e necessitam de reforma.",
-                            "points": 90
+                            "points": 4
                         },
                         {
                             "id": "l5k7j9h3",
                             "text": "A avenida mais movimentada da cidade não possui iluminação adequada.",
-                            "points": 90
+                            "points": 5
                         }
                     ]
                 },
@@ -100,27 +100,27 @@
                         {
                             "id": "q8w9e6r3",
                             "text": "Proporção (%) de resíduos domésticos coletados seletivamente (reciclagem) na região: 1,5%.",
-                            "points": 95
+                            "points": 5
                         },
                         {
                             "id": "s2d4f6g8",
                             "text": "70% dos munícipes não possuem saneamento básico em suas moradias.",
-                            "points": 20
+                            "points": 2
                         },
                         {
                             "id": "u7i9o1p3",
                             "text": "A cidade está repleta de fios soltos pelas ruas, que podem ocasionar acidentes graves.",
-                            "points": 90
+                            "points": 4
                         },
                         {
                             "id": "x2z4c6v8",
                             "text": "As praças se encontram em bom estado de conservação pois a comunidade tem o costume de cuidar desses espaços.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "a3s5d7f9",
                             "text": "A população deixa entulho nos córregos.",
-                            "points": 95
+                            "points": 5
                         }
                     ]
                 },
@@ -130,27 +130,27 @@
                         {
                             "id": "g4h6j8k0",
                             "text": "Proporção (%) de resíduos domésticos coletados seletivamente (reciclagem) na região: 10%.",
-                            "points": 95
+                            "points": 5
                         },
                         {
                             "id": "l2m4n6p8",
                             "text": "60% dos munícipes não possuem saneamento básico em suas moradias.",
-                            "points": 30
+                            "points": 2
                         },
                         {
                             "id": "r1t3y5u7",
                             "text": "Foram registradas 50 solicitações de tapa-buracos em ruas e avenidas para as regiões periféricas da cidade.",
-                            "points": 95
+                            "points": 5
                         },
                         {
                             "id": "i9o2p4a6",
                             "text": "Está havendo um surto de dengue e muitos córregos são foco do mosquito.",
-                            "points": 90
+                            "points": 5
                         },
                         {
                             "id": "b1n3m5q7",
                             "text": "Há 100 árvores reportadas com risco de queda e o período de chuvas está se aproximando.",
-                            "points": 90
+                            "points": 5
                         }
                     ]
                 }
@@ -166,27 +166,27 @@
                         {
                             "id": "ed1mt1",
                             "text": "Tempo de atendimento para vaga em creche: 90 dias.",
-                            "points": 60
+                            "points": 3
                         },
                         {
                             "id": "ed1mt2",
                             "text": "50% dos alunos estão sem vagas nas escolas de ensino fundamental da cidade.",
-                            "points": 70
+                            "points": 4
                         },
                         {
                             "id": "ed1mt3",
                             "text": "A taxa de evasão escolar se encontra em 35%.",
-                            "points": 75
+                            "points": 4
                         },
                         {
                             "id": "ed1mt4",
                             "text": "23 obras escolares estão inacabadas.",
-                            "points": 90
+                            "points": 5
                         },
                         {
                             "id": "ed1mt5",
                             "text": "Os livros didáticos estão ultrapassados e devem ser substituídos.",
-                            "points": 95
+                            "points": 5
                         }
                     ]
                 },
@@ -196,27 +196,27 @@
                         {
                             "id": "ed2mt1",
                             "text": "Tempo de atendimento para vaga em creche: 20 dias.",
-                            "points": 70
+                            "points": 4
                         },
                         {
                             "id": "ed2mt2",
                             "text": "20% dos alunos estão sem vagas nas escolas de ensino fundamental da cidade.",
-                            "points": 70
+                            "points": 4
                         },
                         {
                             "id": "ed2mt3",
                             "text": "Houve uma baixa no número de professores, cerca de 8% da grade migrou para outras áreas.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "ed2mt4",
                             "text": "As cozinhas das escolas estão com problemas, o que está impedindo que os alunos recebam alimentação adequada.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "ed2mt5",
                             "text": "O Governo Federal através do Ministério da Educação disponibilizou novos materiais didáticos.",
-                            "points": 100
+                            "points": 5
                         }
                     ]
                 },
@@ -226,27 +226,27 @@
                         {
                             "id": "ed3mt1",
                             "text": "Tempo de atendimento para vaga em creche: 02 dias.",
-                            "points": 90
+                            "points": 5
                         },
                         {
                             "id": "ed3mt2",
                             "text": "40% dos alunos estão sem vagas nas escolas de ensino fundamental da cidade.",
-                            "points": 60
+                            "points": 3
                         },
                         {
                             "id": "ed3mt3",
                             "text": "A taxa de evasão escolar se encontra em 5%.",
-                            "points": 90
+                            "points": 5
                         },
                         {
                             "id": "ed3mt4",
                             "text": "As salas de aula de 85% das escolas estão com equipamentos danificados.",
-                            "points": 40
+                            "points": 2
                         },
                         {
                             "id": "ed3mt5",
                             "text": "Sua cidade possui apenas 1 escola para a formação de adultos.",
-                            "points": 60
+                            "points": 3
                         }
                     ]
                 },
@@ -256,27 +256,27 @@
                         {
                             "id": "ed4mt1",
                             "text": "Tempo de atendimento para vaga em creche: 30 dias.",
-                            "points": 65
+                            "points": 3
                         },
                         {
                             "id": "ed4mt2",
                             "text": "60% dos alunos estão sem vagas nas escolas de ensino médio da cidade.",
-                            "points": 40
+                            "points": 2
                         },
                         {
                             "id": "ed4mt3",
                             "text": "A rede Municipal de Educação está com um déficit de 40% de servidores.",
-                            "points": 60
+                            "points": 3
                         },
                         {
                             "id": "ed4mt4",
                             "text": "As unidades escolares estão com problemas em seus laboratórios de informática, e a maioria deles está sem acesso a internet.",
-                            "points": 50
+                            "points": 3
                         },
                         {
                             "id": "ed4mt5",
                             "text": "Alunos estão relatando problemas com o transporte para chegar em suas escolas.",
-                            "points": 60
+                            "points": 3
                         }
                     ]
                 },
@@ -286,27 +286,27 @@
                         {
                             "id": "ed5mt1",
                             "text": "Tempo de atendimento para vaga em creche: 10 dias.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "ed5mt2",
                             "text": "60% dos alunos estão sem vagas nas escolas de ensino fundamental da cidade.",
-                            "points": 40
+                            "points": 2
                         },
                         {
                             "id": "ed5mt3",
                             "text": "A rede Municipal de Educação está com um déficit de 10% de servidores.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "ed5mt4",
                             "text": "Os computadores do laboratório de informática de 60% das escolas públicas da cidade não possuem acesso à internet.",
-                            "points": 50
+                            "points": 3
                         },
                         {
                             "id": "ed5mt5",
                             "text": "A merenda servida para as crianças não supre a necessidade adequada de fibras e nutrientes.",
-                            "points": 60
+                            "points": 3
                         }
                     ]
                 }
@@ -322,27 +322,27 @@
                         {
                             "id": "scl1mt1",
                             "text": "Número de centros culturais, bibliotecas públicas, casas de cultura e/ou equipamentos públicos de cultura (municipais) na região: 1.",
-                            "points": 60
+                            "points": 3
                         },
                         {
                             "id": "scl1mt2",
                             "text": "Número de equipamentos públicos municipais de esporte na região: 3.",
-                            "points": 60
+                            "points": 3
                         },
                         {
                             "id": "scl1mt3",
                             "text": "Sua cidade recebeu 3 peças de teatro através da Lei Federal de Incentivo à Cultura.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "scl1mt4",
                             "text": "A quadra da cidade foi reformada.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "scl1mt5",
                             "text": "O único equipamento público de cultura da região necessita de uma revitalização (reformas e melhorias).",
-                            "points": 80
+                            "points": 4
                         }
                     ]
                 },
@@ -352,27 +352,27 @@
                         {
                             "id": "scl2mt1",
                             "text": "Número de centros culturais, bibliotecas públicas, casas de cultura e/ou equipamentos públicos de cultura (municipais) na região: 5.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "scl2mt2",
                             "text": "Número de equipamentos públicos municipais de esporte na região: 7.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "scl2mt3",
                             "text": "Sua cidade recebeu 2 teatros através da Lei Federal de Incentivo à Cultura.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "scl2mt4",
                             "text": "A região possui um forte movimento cultural que busca recursos para se desenvolver.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "scl2mt5",
                             "text": "O parque principal está sucateado.",
-                            "points": 40
+                            "points": 2
                         }
                     ]
                 },
@@ -382,27 +382,27 @@
                         {
                             "id": "scl3mt1",
                             "text": "Número de centros culturais, bibliotecas públicas, casas de cultura e/ou equipamentos públicos de cultura (municipais) na região: 8.",
-                            "points": 75
+                            "points": 4
                         },
                         {
                             "id": "scl3mt2",
                             "text": "Número de equipamentos públicos municipais de esporte na região: 5.",
-                            "points": 75
+                            "points": 4
                         },
                         {
                             "id": "scl3mt3",
                             "text": "Sua cidade recebeu 5 peças de teatro através da Lei Federal de Incentivo à Cultura.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "scl3mt4",
                             "text": "A região possui um forte movimento esportivo que busca recursos para se desenvolver.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "scl3mt5",
                             "text": "A praça principal está sem iluminação e foi transformada em ponto de tráfico.",
-                            "points": 30
+                            "points": 2
                         }
                     ]
                 },
@@ -412,27 +412,27 @@
                         {
                             "id": "scl4mt1",
                             "text": "Número de centros culturais, bibliotecas públicas, casas de cultura e/ou equipamentos públicos de cultura (municipais) na região: 3.",
-                            "points": 65
+                            "points": 3
                         },
                         {
                             "id": "scl4mt2",
                             "text": "Número de equipamentos públicos municipais de esporte na região: 1.",
-                            "points": 65
+                            "points": 3
                         },
                         {
                             "id": "scl4mt3",
                             "text": "Sua cidade recebeu 4 quadras e novos equipamentos esportivos através da Lei Federal de Incentivo ao Esporte.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "scl4mt4",
                             "text": "A cidade recebeu 3 peças de teatro através da Lei Federal de Incentivo à Cultura.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "scl4mt5",
                             "text": "Por conta das fortes chuvas, o ginásio da cidade foi interditado.",
-                            "points": 70
+                            "points": 4
                         }
                     ]
                 },
@@ -442,27 +442,27 @@
                         {
                             "id": "scl5mt1",
                             "text": "Número de centros culturais, bibliotecas públicas, casas de cultura e/ou equipamentos públicos de cultura (municipais) na região: 6.",
-                            "points": 65
+                            "points": 3
                         },
                         {
                             "id": "scl5mt2",
                             "text": "Número de equipamentos públicos municipais de esporte na região: 4.",
-                            "points": 65
+                            "points": 3
                         },
                         {
                             "id": "scl5mt3",
                             "text": "Uma Biblioteca Estadual está sendo reformada.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "scl5mt4",
                             "text": "Através da Lei Federal de Incentivo à Cultura, a cidade recebeu 2.000 novos livros para o acervo dessa biblioteca.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "scl5mt5",
                             "text": "Todas as verbas federais de bolsa atleta foram cortadas.",
-                            "points": 60
+                            "points": 3
                         }
                     ]
                 }
@@ -478,27 +478,27 @@
                         {
                             "id": "m1mt1",
                             "text": "Porcentagem (%) de moradias em áreas de risco: 25%.",
-                            "points": 50
+                            "points": 3
                         },
                         {
                             "id": "m1mt2",
                             "text": "Cerca de 70% da população vive de aluguel.",
-                            "points": 40
+                            "points": 2
                         },
                         {
                             "id": "m1mt3",
                             "text": "O Governo Federal inaugurou 8 mil novas habitações através do Programa Minha Casa Minha Vida.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "m1mt4",
                             "text": "Nos últimos 6 meses, ocorreram 4 deslizamentos de terra em áreas de risco.",
-                            "points": 30
+                            "points": 2
                         },
                         {
                             "id": "m1mt5",
                             "text": "Há muitas enchentes e alagamentos em períodos chuvosos na região.",
-                            "points": 40
+                            "points": 2
                         }
                     ]
                 },
@@ -508,27 +508,27 @@
                         {
                             "id": "m2mt1",
                             "text": "Porcentagem (%) de moradias em áreas de risco: 10%.",
-                            "points": 70
+                            "points": 4
                         },
                         {
                             "id": "m2mt2",
                             "text": "Cerca de 20% da população vive de aluguel.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "m2mt3",
                             "text": "O Governo Federal inaugurou 10 mil novas habitações através do Programa Minha Casa Minha Vida.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "m2mt4",
                             "text": "Famílias em situação de vulnerabilidade e sem condições de pagar aluguel estão construindo ocupações em locais inadequados.",
-                            "points": 40
+                            "points": 2
                         },
                         {
                             "id": "m2mt5",
                             "text": "A maior favela da cidade pegou fogo e centenas de famílias se encontram desabrigadas.",
-                            "points": 20
+                            "points": 2
                         }
                     ]
                 },
@@ -538,27 +538,27 @@
                         {
                             "id": "m3mt1",
                             "text": "Porcentagem (%) de moradias em áreas de risco: 30%.",
-                            "points": 40
+                            "points": 2
                         },
                         {
                             "id": "m3mt2",
                             "text": "Cerca de 20% da população vive de aluguel.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "m3mt3",
                             "text": "O Governo Federal inaugurou 5 mil novas habitações através do Programa Minha Casa Minha Vida.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "m3mt4",
                             "text": "20% da população mora há mais de uma hora do trabalho.",
-                            "points": 60
+                            "points": 3
                         },
                         {
                             "id": "m3mt5",
                             "text": "Alguns prédios antigos do centro da cidade estão sendo ocupados por famílias sem teto.",
-                            "points": 50
+                            "points": 3
                         }
                     ]
                 },
@@ -568,27 +568,27 @@
                         {
                             "id": "m4mt1",
                             "text": "Porcentagem (%) de moradias em áreas de risco: 15%.",
-                            "points": 60
+                            "points": 3
                         },
                         {
                             "id": "m4mt2",
                             "text": "Cerca de 50% da população vive de aluguel.",
-                            "points": 50
+                            "points": 3
                         },
                         {
                             "id": "m4mt3",
                             "text": "O Governo Federal inaugurou 2 mil novas habitações através do Programa Minha Casa Minha Vida.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "m4mt4",
                             "text": "80% da população mora há mais de uma hora do trabalho.",
-                            "points": 30
+                            "points": 2
                         },
                         {
                             "id": "m4mt5",
                             "text": "O número de pessoas em situação de rua vem aumentando após a pandemia.",
-                            "points": 40
+                            "points": 2
                         }
                     ]
                 },
@@ -598,27 +598,27 @@
                         {
                             "id": "m5mt1",
                             "text": "Porcentagem (%) de moradias em áreas de risco: 10%.",
-                            "points": 70
+                            "points": 4
                         },
                         {
                             "id": "m5mt2",
                             "text": "Cerca de 80% da população vive de aluguel.",
-                            "points": 30
+                            "points": 2
                         },
                         {
                             "id": "m5mt3",
                             "text": "O Governo Federal inaugurou 20 mil novas habitações através do Programa Minha Casa Minha Vida.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "m5mt4",
                             "text": "70% da população mora há mais de uma hora do trabalho.",
-                            "points": 40
+                            "points": 2
                         },
                         {
                             "id": "m5mt5",
                             "text": "Novos residenciais estão sendo construídos no centro da cidade, porém os valores são distantes da realidade da maior parte da população.",
-                            "points": 50
+                            "points": 3
                         }
                     ]
                 }
@@ -634,27 +634,27 @@
                         {
                             "id": "p1mt1",
                             "text": "População total: 10.000 pessoas.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p1mt2",
                             "text": "Proporção (%) da população preta e parda: 51%.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p1mt3",
                             "text": "Proporção (%) de população infantil (de 0 a 12 anos): 15%.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p1mt4",
                             "text": "A Remuneração média mensal da população é insuficiente para cobrir os custos básicos de vida. Desta forma, muitas famílias se encontram em situação de pobreza.",
-                            "points": 30
+                            "points": 2
                         },
                         {
                             "id": "p1mt5",
                             "text": "Proporção média de habitantes desempregados: 8%.",
-                            "points": 70
+                            "points": 4
                         }
                     ]
                 },
@@ -664,27 +664,27 @@
                         {
                             "id": "p2mt1",
                             "text": "População total: 20.000 pessoas.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p2mt2",
                             "text": "Proporção (%) da população preta e parda: 20%.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p2mt3",
                             "text": "Proporção (%) de população infantil (de 0 a 12 anos): 5%.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p2mt4",
                             "text": "70% da população recebe até um salário mínimo.",
-                            "points": 30
+                            "points": 2
                         },
                         {
                             "id": "p2mt5",
                             "text": "Proporção média de habitantes desempregados: 15%.",
-                            "points": 70
+                            "points": 4
                         }
                     ]
                 },
@@ -694,27 +694,27 @@
                         {
                             "id": "p3mt1",
                             "text": "População total: 50.000 pessoas.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p3mt2",
                             "text": "Proporção (%) da população preta e parda: 40%.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p3mt3",
                             "text": "Proporção (%) de população infantil (de 0 a 12 anos): 30%.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p3mt4",
                             "text": "Apenas 45% da população da cidade tem remuneração mensal suficiente para cobrir despesas básicas.",
-                            "points": 20
+                            "points": 2
                         },
                         {
                             "id": "p3mt5",
                             "text": "Proporção média de habitantes desempregados: 5%. O índice é o menor registrado nos últimos 10 anos.",
-                            "points": 80
+                            "points": 4
                         }
                     ]
                 },
@@ -724,27 +724,27 @@
                         {
                             "id": "p4mt1",
                             "text": "População total: 70.000 pessoas.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p4mt2",
                             "text": "Proporção (%) da população preta e parda: 70%.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p4mt3",
                             "text": "Proporção (%) de população infantil (de 0 a 12 anos): 20%.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p4mt4",
                             "text": "50% da população da cidade recebe até um salário mínimo.",
-                            "points": 50
+                            "points": 3
                         },
                         {
                             "id": "p4mt5",
                             "text": "Proporção média de habitantes desempregados: 15%. Muitos jovens não têm conseguido se colocar no mercado de trabalho.",
-                            "points": 50
+                            "points": 3
                         }
                     ]
                 },
@@ -754,27 +754,27 @@
                         {
                             "id": "p5mt1",
                             "text": "População total: 50.000 pessoas.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p5mt2",
                             "text": "Proporção (%) da população preta e parda: 30%.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p5mt3",
                             "text": "Proporção (%) de população infantil (de 0 a 12 anos): 10%.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "p5mt4",
                             "text": "Remuneração média mensal da população D$ 100 (Cem Dindins), valor bastante superior ao observado nas cidades do entorno.",
-                            "points": 60
+                            "points": 3
                         },
                         {
                             "id": "p5mt5",
                             "text": "Proporção média de habitantes desempregados: 10%.",
-                            "points": 40
+                            "points": 2
                         }
                     ]
                 }
@@ -790,27 +790,27 @@
                         {
                             "id": "s1mt1",
                             "text": "Tempo médio (em dias) de espera para consultas na atenção primária (clínica médica; pediatria; ginecologia; obstetrícia e médico da Estratégia de Saúde da Família ESF.) no território: 40 dias.",
-                            "points": 60
+                            "points": 3
                         },
                         {
                             "id": "s1mt2",
                             "text": "A insegurança alimentar atinge 5% da população da cidade.",
-                            "points": 90
+                            "points": 5
                         },
                         {
                             "id": "s1mt3",
                             "text": "A cidade possui um alto índice de gravidez na adolescência.",
-                            "points": 75
+                            "points": 4
                         },
                         {
                             "id": "s1mt4",
                             "text": "O índice de vacinação infantil está abaixo da média nacional desejada.",
-                            "points": 75
+                            "points": 4
                         },
                         {
                             "id": "s1mt5",
                             "text": "Foram inauguradas 10 novas Unidades Básicas de Saúde (UBS) na cidade.",
-                            "points": 100
+                            "points": 5
                         }
                     ]
                 },
@@ -820,27 +820,27 @@
                         {
                             "id": "s2mt1",
                             "text": "Tempo médio (em dias) de espera para consultas na atenção primária (clínica médica; pediatria; ginecologia; obstetrícia e médico da Estratégia de Saúde da Família ESF.) no território: 60 dias.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "s2mt2",
                             "text": "A insegurança alimentar atinge 50% da população da cidade.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "s2mt3",
                             "text": "A sua cidade tem poucos dentistas nos postos de saúde, e a fila para o atendimento de saúde bucal está cada vez maior.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "s2mt4",
                             "text": "Há 10 postos de saúde com obras inacabadas.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "s2mt5",
                             "text": "A obesidade atinge 50% dos habitantes da cidade.",
-                            "points": 80
+                            "points": 4
                         }
                     ]
                 },
@@ -850,27 +850,27 @@
                         {
                             "id": "s3mt1",
                             "text": "Tempo médio (em dias) de espera para consultas na atenção primária (clínica médica; pediatria; ginecologia; obstetrícia e médico da Estratégia de Saúde da Família ESF.) no território: 80 dias.",
-                            "points": 60
+                            "points": 3
                         },
                         {
                             "id": "s3mt2",
                             "text": "A insegurança alimentar atinge 20% da população da cidade.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "s3mt3",
                             "text": "O banco de sangue da cidade se encontra em escassez.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "s3mt4",
                             "text": "O novo hospital que seria inaugurado esse ano está com as obras paradas.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "s3mt5",
                             "text": "Foram inauguradas 10 Unidades Básicas de Saúde (UBS) no último ano.",
-                            "points": 100
+                            "points": 5
                         }
                     ]
                 },
@@ -880,27 +880,27 @@
                         {
                             "id": "s4mt1",
                             "text": "Tempo médio (em dias) de espera para consultas na atenção primária (clínica médica; pediatria; ginecologia; obstetrícia e médico da Estratégia de Saúde da Família ESF.) no território: 90 dias.",
-                            "points": 30
+                            "points": 2
                         },
                         {
                             "id": "s4mt2",
                             "text": "A insegurança alimentar atinge 32% da população da cidade.",
-                            "points": 70
+                            "points": 4
                         },
                         {
                             "id": "s4mt3",
                             "text": "Todas as UBS (Unidade Básica de Saúde) da cidade possuem grupos que promovem saúde e bem estar aos idosos.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "s4mt4",
                             "text": "Houve alta no número de doação de órgãos nas últimas semanas.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "s4mt5",
                             "text": "O Governo Estadual inaugurou 2 novos hospitais na cidade.",
-                            "points": 100
+                            "points": 5
                         }
                     ]
                 },
@@ -910,27 +910,27 @@
                         {
                             "id": "s5mt1",
                             "text": "Tempo médio (em dias) de espera para consultas na atenção primária (clínica médica; pediatria; ginecologia; obstetrícia e médico da Estratégia de Saúde da Família ESF.) no território: 100 dias.",
-                            "points": 30
+                            "points": 2
                         },
                         {
                             "id": "s5mt2",
                             "text": "A insegurança alimentar atinge 40% da população da cidade.",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "s5mt3",
                             "text": "A cidade está sofrendo com um surto de dengue.",
-                            "points": 90
+                            "points": 5
                         },
                         {
                             "id": "s5mt4",
                             "text": "90% da população se encontra devidamente vacinada contra o vírus COVID-19.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "s5mt5",
                             "text": "O Governo Federal inaugurou 1 novo hospital na cidade.",
-                            "points": 100
+                            "points": 5
                         }
                     ]
                 }
@@ -946,27 +946,27 @@
                         {
                             "id": "t1mt1",
                             "text": "30% da população mora perto de transporte público estadual de alta capacidade (trem, metrô e monotrilho).",
-                            "points": 40
+                            "points": 2
                         },
                         {
                             "id": "t1mt2",
                             "text": "A frota de ônibus é antiga e não tem ar condicionado, causando desconforto entre os usuários.",
-                            "points": 60
+                            "points": 3
                         },
                         {
                             "id": "t1mt3",
                             "text": "A cidade possui corredores de ônibus que agilizam o trânsito em horários de pico.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "t1mt4",
                             "text": "O Metrô Estadual tem 4 linhas espalhadas pela cidade. Quando somadas, totalizam 50 km.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "t1mt5",
                             "text": "A prefeitura está implementando a opção de transporte hidroviário, que atenderá 10% da população.",
-                            "points": 100
+                            "points": 5
                         }
                     ]
                 },
@@ -976,7 +976,7 @@
                         {
                             "id": "t2mt1",
                             "text": "15% da população mora perto de transporte público estadual de alta capacidade (trem, metrô e monotrilho).",
-                            "points": 80
+                            "points": 4
                         },
                         {
                             "id": "t2mt2",
@@ -986,17 +986,17 @@
                         {
                             "id": "t2mt3",
                             "text": "A cidade não possui faixas exclusivas para ônibus.",
-                            "points": 95
+                            "points": 5
                         },
                         {
                             "id": "t2mt4",
                             "text": "O trânsito da cidade tem se tornado cada vez mais intenso.",
-                            "points": 30
+                            "points": 2
                         },
                         {
                             "id": "t2mt5",
                             "text": "Não há ciclofaixa na cidade.",
-                            "points": 95
+                            "points": 5
                         }
                     ]
                 },
@@ -1006,27 +1006,27 @@
                         {
                             "id": "t3mt1",
                             "text": "80% da população mora perto de transporte público estadual de alta capacidade (trem, metrô e monotrilho).",
-                            "points": 40
+                            "points": 2
                         },
                         {
                             "id": "t3mt2",
                             "text": "A frota de ônibus foi renovada, mas ainda é insuficiente.",
-                            "points": 90
+                            "points": 5
                         },
                         {
                             "id": "t3mt3",
                             "text": "A cidade não possui faixas exclusivas para ônibus.",
-                            "points": 95
+                            "points": 5
                         },
                         {
                             "id": "t3mt4",
                             "text": "A ciclovia está com muitos buracos e necessita ser reformada.",
-                            "points": 95
+                            "points": 5
                         },
                         {
                             "id": "t3mt5",
                             "text": "Acidentes frequentes ocorrem em uma linha recém inaugurada e muito utilizada na periferia.",
-                            "points": 80
+                            "points": 4
                         }
                     ]
                 },
@@ -1036,27 +1036,27 @@
                         {
                             "id": "t4mt1",
                             "text": "50% da população mora perto de transporte público estadual de alta capacidade (trem, metrô e monotrilho).",
-                            "points": 30
+                            "points": 2
                         },
                         {
                             "id": "t4mt2",
                             "text": "A frota de ônibus é insuficiente para a demanda da população.",
-                            "points": 70
+                            "points": 4
                         },
                         {
                             "id": "t4mt3",
                             "text": "A cidade possui muitas faixas exclusivas para ônibus.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "t4mt4",
                             "text": "Recentemente foram inaugurados 500 km de ciclofaixas que estão espalhadas em toda a cidade.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "t4mt5",
                             "text": "6 novas estações de metrô serão inauguradas em breve pelo Governo do Estado.",
-                            "points": 100
+                            "points": 5
                         }
                     ]
                 },
@@ -1066,27 +1066,27 @@
                         {
                             "id": "t5mt1",
                             "text": "1% da população mora perto de transporte público estadual de alta capacidade (trem, metrô e monotrilho).",
-                            "points": 90
+                            "points": 5
                         },
                         {
                             "id": "t5mt2",
                             "text": "A frota de ônibus está concentrada no centro da cidade, dificultando o acesso da população afastada do centro.",
-                            "points": 10
+                            "points": 1
                         },
                         {
                             "id": "t5mt3",
                             "text": "A cidade possui corredores de ônibus que auxiliam a velocidade dos trajetos.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "t5mt4",
                             "text": "O Governo Federal está investindo em uma linha de trem que atravessará a cidade.",
-                            "points": 100
+                            "points": 5
                         },
                         {
                             "id": "t5mt5",
                             "text": "As ciclofaixas da cidade totalizam 100 km.",
-                            "points": 100
+                            "points": 5
                         }
                     ]
                 }
@@ -1102,59 +1102,59 @@
             "metrics": [
                 {
                     "id": "ld6oqx0a",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "s9jdqzqr",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p5qr2xzv",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "rty8n3ds",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "v8k6p4zt",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "e3c7j5dm",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "n2t7w9xk",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "f1g6h9j3",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "q8w9e6r3",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "s2d4f6g8",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "a3s5d7f9",
-                    "points_percentage_increase": 5
+                    "points_increase": 0.25
                 },
                 {
                     "id": "g4h6j8k0",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "l2m4n6p8",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "i9o2p4a6",
-                    "points_percentage_increase": 5
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1166,55 +1166,55 @@
             "metrics": [
                 {
                     "id": "ld6oqx0a",
-                    "points_percentage_increase": 35
+                    "points_increase": 0.5
                 },
                 {
                     "id": "s9jdqzqr",
-                    "points_percentage_increase": 35
+                    "points_increase": 0.5
                 },
                 {
                     "id": "rty8n3ds",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "v8k6p4zt",
-                    "points_percentage_increase": 35
+                    "points_increase": 0.5
                 },
                 {
                     "id": "e3c7j5dm",
-                    "points_percentage_increase": 35
+                    "points_increase": 0.5
                 },
                 {
                     "id": "n2t7w9xk",
-                    "points_percentage_increase": 35
+                    "points_increase": 0.5
                 },
                 {
                     "id": "f1g6h9j3",
-                    "points_percentage_increase": 35
+                    "points_increase": 0.5
                 },
                 {
                     "id": "q8w9e6r3",
-                    "points_percentage_increase": 35
+                    "points_increase": 0.5
                 },
                 {
                     "id": "s2d4f6g8",
-                    "points_percentage_increase": 35
+                    "points_increase": 0.5
                 },
                 {
                     "id": "a3s5d7f9",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "g4h6j8k0",
-                    "points_percentage_increase": 35
+                    "points_increase": 0.5
                 },
                 {
                     "id": "l2m4n6p8",
-                    "points_percentage_increase": 35
+                    "points_increase": 0.5
                 },
                 {
                     "id": "i9o2p4a6",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1226,51 +1226,51 @@
             "metrics": [
                 {
                     "id": "ld6oqx0a",
-                    "points_percentage_increase": 25
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s9jdqzqr",
-                    "points_percentage_increase": 35
+                    "points_increase": 0.5
                 },
                 {
                     "id": "v8k6p4zt",
-                    "points_percentage_increase": 25
+                    "points_increase": 0.25
                 },
                 {
                     "id": "e3c7j5dm",
-                    "points_percentage_increase": 35
+                    "points_increase": 0.5
                 },
                 {
                     "id": "n2t7w9xk",
-                    "points_percentage_increase": 25
+                    "points_increase": 0.25
                 },
                 {
                     "id": "f1g6h9j3",
-                    "points_percentage_increase": 35
+                    "points_increase": 0.5
                 },
                 {
                     "id": "q8w9e6r3",
-                    "points_percentage_increase": 25
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s2d4f6g8",
-                    "points_percentage_increase": 35
+                    "points_increase": 0.5
                 },
                 {
                     "id": "a3s5d7f9",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "g4h6j8k0",
-                    "points_percentage_increase": 25
+                    "points_increase": 0.25
                 },
                 {
                     "id": "l2m4n6p8",
-                    "points_percentage_increase": 35
+                    "points_increase": 0.5
                 },
                 {
                     "id": "i9o2p4a6",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 }
             ]
         },
@@ -1282,35 +1282,35 @@
             "metrics": [
                 {
                     "id": "s9jdqzqr",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "rty8n3ds",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "e3c7j5dm",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "f1g6h9j3",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s2d4f6g8",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "a3s5d7f9",
-                    "points_percentage_increase": 15
+                    "points_increase": 0.25
                 },
                 {
                     "id": "l2m4n6p8",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "i9o2p4a6",
-                    "points_percentage_increase": 15
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1322,7 +1322,7 @@
             "metrics": [
                 {
                     "id": "rty8n3ds",
-                    "points_percentage_increase": 70
+                    "points_increase": 0.75
                 }
             ]
         },
@@ -1334,7 +1334,7 @@
             "metrics": [
                 {
                     "id": "p5qr2xzv",
-                    "points_percentage_increase": 70
+                    "points_increase": 0.75
                 }
             ]
         },
@@ -1346,7 +1346,7 @@
             "metrics": [
                 {
                     "id": "y9n2r8lx",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -1358,11 +1358,11 @@
             "metrics": [
                 {
                     "id": "b7s4d6am",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 },
                 {
                     "id": "l5k7j9h3",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -1381,7 +1381,7 @@
             "metrics": [
                 {
                     "id": "u7i9o1p3",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -1393,7 +1393,7 @@
             "metrics": [
                 {
                     "id": "z4c6v8b1",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -1405,11 +1405,11 @@
             "metrics": [
                 {
                     "id": "m3p5r8t2",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 },
                 {
                     "id": "r1t3y5u7",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -1421,7 +1421,7 @@
             "metrics": [
                 {
                     "id": "b1n3m5q7",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -1440,7 +1440,7 @@
             "metrics": [
                 {
                     "id": "h5q1f3gz",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -1452,11 +1452,11 @@
             "metrics": [
                 {
                     "id": "ed1mt3",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed3mt3",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1468,43 +1468,43 @@
             "metrics": [
                 {
                     "id": "ed1mt1",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed1mt3",
-                    "points_percentage_increase": 5
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed1mt5",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed3mt1",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed3mt3",
-                    "points_percentage_increase": 5
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed3mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed4mt1",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed4mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed5mt1",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed5mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1516,11 +1516,11 @@
             "metrics": [
                 {
                     "id": "ed2mt4",
-                    "points_percentage_increase": 70
+                    "points_increase": 0.75
                 },
                 {
                     "id": "ed5mt5",
-                    "points_percentage_increase": 70
+                    "points_increase": 0.75
                 }
             ]
         },
@@ -1532,11 +1532,11 @@
             "metrics": [
                 {
                     "id": "ed1mt5",
-                    "points_percentage_increase": 80
+                    "points_increase": 1
                 },
                 {
                     "id": "ed3mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1548,31 +1548,31 @@
             "metrics": [
                 {
                     "id": "ed1mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed1mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed2mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed3mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed4mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed4mt5",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed5mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1584,27 +1584,27 @@
             "metrics": [
                 {
                     "id": "ed1mt2",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed1mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed2mt2",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed3mt2",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed4mt5",
-                    "points_percentage_increase": 15
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed5mt2",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1616,23 +1616,23 @@
             "metrics": [
                 {
                     "id": "ed1mt3",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed1mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed3mt3",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed3mt5",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed4mt5",
-                    "points_percentage_increase": 15
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1644,31 +1644,31 @@
             "metrics": [
                 {
                     "id": "ed1mt2",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed2mt2",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed2mt3",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 },
                 {
                     "id": "ed3mt2",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed4mt3",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 },
                 {
                     "id": "ed5mt2",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed5mt3",
-                    "points_percentage_increase": 60
+                    "points_increase": 60
                 }
             ]
         },
@@ -1680,31 +1680,31 @@
             "metrics": [
                 {
                     "id": "ed1mt1",
-                    "points_percentage_increase": 5
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed2mt1",
-                    "points_percentage_increase": 5
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed3mt1",
-                    "points_percentage_increase": 5
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed4mt1",
-                    "points_percentage_increase": 5
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed4mt4",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "ed5mt1",
-                    "points_percentage_increase": 5
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed5mt4",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -1716,19 +1716,19 @@
             "metrics": [
                 {
                     "id": "ed1mt3",
-                    "points_percentage_increase": 5
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed2mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed3mt3",
-                    "points_percentage_increase": 5
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed5mt5",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1740,11 +1740,11 @@
             "metrics": [
                 {
                     "id": "ed1mt3",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed3mt3",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1756,23 +1756,23 @@
             "metrics": [
                 {
                     "id": "ed1mt3",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed1mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed3mt3",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "ed4mt2",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 },
                 {
                     "id": "ed4mt5",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1784,7 +1784,7 @@
             "metrics": [
                 {
                     "id": "ed4mt5",
-                    "points_percentage_increase": 25
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1796,7 +1796,7 @@
             "metrics": [
                 {
                     "id": "ed4mt5",
-                    "points_percentage_increase": 25
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1808,11 +1808,11 @@
             "metrics": [
                 {
                     "id": "ed3mt4",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "ed4mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1824,23 +1824,23 @@
             "metrics": [
                 {
                     "id": "scl1mt2",
-                    "points_percentage_increase": 15
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl2mt2",
-                    "points_percentage_increase": 15
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl3mt2",
-                    "points_percentage_increase": 15
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl4mt2",
-                    "points_percentage_increase": 15
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl5mt2",
-                    "points_percentage_increase": 15
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1852,7 +1852,7 @@
             "metrics": [
                 {
                     "id": "scl5mt5",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -1871,23 +1871,23 @@
             "metrics": [
                 {
                     "id": "scl1mt2",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl2mt2",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl3mt2",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl4mt2",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl5mt2",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1899,23 +1899,23 @@
             "metrics": [
                 {
                     "id": "scl1mt2",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "scl2mt2",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "scl3mt2",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "scl4mt2",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "scl5mt2",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 }
             ]
         },
@@ -1927,23 +1927,23 @@
             "metrics": [
                 {
                     "id": "scl1mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl2mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl3mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl4mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl5mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -1969,11 +1969,11 @@
             "metrics": [
                 {
                     "id": "scl1mt5",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "scl2mt5",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -1985,11 +1985,11 @@
             "metrics": [
                 {
                     "id": "scl1mt5",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "scl4mt5",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -2001,23 +2001,23 @@
             "metrics": [
                 {
                     "id": "scl1mt2",
-                    "points_percentage_increase": 15
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl2mt2",
-                    "points_percentage_increase": 15
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl3mt2",
-                    "points_percentage_increase": 15
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl4mt2",
-                    "points_percentage_increase": 15
+                    "points_increase": 0.25
                 },
                 {
                     "id": "scl5mt2",
-                    "points_percentage_increase": 15
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -2029,55 +2029,55 @@
             "metrics": [
                 {
                     "id": "m1mt1",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m2mt1",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m3mt1",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m4mt1",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m5mt1",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m2mt4",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m2mt5",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m3mt4",
-                    "points_percentage_increase": 25
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m3mt5",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m4mt4",
-                    "points_percentage_increase": 25
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m4mt5",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m5mt4",
-                    "points_percentage_increase": 25
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m5mt5",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 }
             ]
         },
@@ -2089,75 +2089,75 @@
             "metrics": [
                 {
                     "id": "m1mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m2mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m3mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m4mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m5mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m1mt2",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m2mt2",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m3mt2",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m4mt2",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m5mt2",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m2mt4",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m2mt5",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m3mt4",
-                    "points_percentage_increase": 25
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m3mt5",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m4mt4",
-                    "points_percentage_increase": 25
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m4mt5",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "m5mt4",
-                    "points_percentage_increase": 25
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m5mt5",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 }
             ]
         },
@@ -2169,39 +2169,39 @@
             "metrics": [
                 {
                     "id": "m1mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m2mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m3mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m4mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m5mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m2mt4",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m2mt5",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m3mt5",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m4mt5",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -2213,27 +2213,27 @@
             "metrics": [
                 {
                     "id": "m1mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m2mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m3mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m4mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m5mt1",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m1mt4",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -2245,7 +2245,7 @@
             "metrics": [
                 {
                     "id": "m1mt5",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -2257,15 +2257,15 @@
             "metrics": [
                 {
                     "id": "m3mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m4mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m5mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -2277,15 +2277,15 @@
             "metrics": [
                 {
                     "id": "m3mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m4mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "m5mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -2297,7 +2297,7 @@
             "metrics": [
                 {
                     "id": "m4mt5",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 }
             ]
         },
@@ -2309,31 +2309,31 @@
             "metrics": [
                 {
                     "id": "p1mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p1mt5",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p2mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p2mt5",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p3mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p4mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p5mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -2352,31 +2352,31 @@
             "metrics": [
                 {
                     "id": "p1mt4",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p1mt5",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p2mt5",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p3mt5",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p4mt5",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p5mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p5mt5",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -2388,35 +2388,35 @@
             "metrics": [
                 {
                     "id": "p1mt4",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p1mt5",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "p2mt5",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "p3mt5",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p4mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p4mt5",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p5mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p5mt5",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -2428,43 +2428,43 @@
             "metrics": [
                 {
                     "id": "p1mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p1mt5",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p2mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p2mt5",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p3mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p3mt5",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p4mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p4mt5",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p5mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p5mt5",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -2476,43 +2476,43 @@
             "metrics": [
                 {
                     "id": "p1mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p1mt5",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p2mt4",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "p2mt5",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p3mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p3mt5",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p4mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p4mt5",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p5mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "p5mt5",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -2524,7 +2524,7 @@
             "metrics": [
                 {
                     "id": "s5mt3",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -2536,7 +2536,7 @@
             "metrics": [
                 {
                     "id": "s1mt4",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -2548,27 +2548,27 @@
             "metrics": [
                 {
                     "id": "s1mt1",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s2mt1",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s3mt1",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s3mt4",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 },
                 {
                     "id": "s4mt1",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s5mt1",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -2580,27 +2580,27 @@
             "metrics": [
                 {
                     "id": "s1mt1",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s2mt1",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s2mt4",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 },
                 {
                     "id": "s3mt1",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s4mt1",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s5mt1",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -2612,27 +2612,27 @@
             "metrics": [
                 {
                     "id": "s1mt1",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s2mt1",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s2mt3",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 },
                 {
                     "id": "s3mt1",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s4mt1",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s5mt1",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -2644,7 +2644,7 @@
             "metrics": [
                 {
                     "id": "s1mt3",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -2656,23 +2656,23 @@
             "metrics": [
                 {
                     "id": "s1mt1",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s2mt1",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s3mt1",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s4mt1",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s5mt1",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -2712,7 +2712,7 @@
             "metrics": [
                 {
                     "id": "s3mt3",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -2724,27 +2724,27 @@
             "metrics": [
                 {
                     "id": "s1mt2",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s2mt2",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s2mt5",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 },
                 {
                     "id": "s3mt2",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s4mt2",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "s5mt2",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -2756,23 +2756,23 @@
             "metrics": [
                 {
                     "id": "s1mt2",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "s2mt2",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "s3mt2",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "s4mt2",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 },
                 {
                     "id": "s5mt2",
-                    "points_percentage_increase": 50
+                    "points_increase": 0.5
                 }
             ]
         },
@@ -2784,23 +2784,23 @@
             "metrics": [
                 {
                     "id": "s1mt2",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "s2mt2",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "s3mt2",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "s4mt2",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 },
                 {
                     "id": "s5mt2",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 }
             ]
         },
@@ -2812,11 +2812,11 @@
             "metrics": [
                 {
                     "id": "t2mt4",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "t5mt2",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 }
             ]
         },
@@ -2828,23 +2828,23 @@
             "metrics": [
                 {
                     "id": "t1mt2",
-                    "points_percentage_increase": 70
+                    "points_increase": 0.75
                 },
                 {
                     "id": "t2mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "t3mt2",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 },
                 {
                     "id": "t4mt2",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 },
                 {
                     "id": "t5mt2",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 }
             ]
         },
@@ -2856,11 +2856,11 @@
             "metrics": [
                 {
                     "id": "t2mt4",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 },
                 {
                     "id": "t2mt5",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -2872,15 +2872,15 @@
             "metrics": [
                 {
                     "id": "t2mt3",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 },
                 {
                     "id": "t2mt4",
-                    "points_percentage_increase": 5
+                    "points_increase": 0.25
                 },
                 {
                     "id": "t3mt3",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -2892,11 +2892,11 @@
             "metrics": [
                 {
                     "id": "t2mt4",
-                    "points_percentage_increase": 20
+                    "points_increase": 0.25
                 },
                 {
                     "id": "t5mt2",
-                    "points_percentage_increase": 40
+                    "points_increase": 0.5
                 }
             ]
         },
@@ -2908,11 +2908,11 @@
             "metrics": [
                 {
                     "id": "t2mt4",
-                    "points_percentage_increase": 2.5
+                    "points_increase": 0.25
                 },
                 {
                     "id": "t3mt4",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -2924,15 +2924,15 @@
             "metrics": [
                 {
                     "id": "t1mt2",
-                    "points_percentage_increase": 30
+                    "points_increase": 0.25
                 },
                 {
                     "id": "t2mt4",
-                    "points_percentage_increase": 2.5
+                    "points_increase": 0.25
                 },
                 {
                     "id": "t3mt5",
-                    "points_percentage_increase": 100
+                    "points_increase": 1
                 }
             ]
         },
@@ -2944,7 +2944,7 @@
             "metrics": [
                 {
                     "id": "t2mt4",
-                    "points_percentage_increase": 10
+                    "points_increase": 0.25
                 }
             ]
         }
