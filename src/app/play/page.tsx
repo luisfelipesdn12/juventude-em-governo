@@ -4,7 +4,7 @@ import { Minus, Plus } from "lucide-react"
 import { z } from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useSearchParams, useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
@@ -24,7 +24,6 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>
 
 export default function Home() {
-  const searchParams = useSearchParams()
   const router = useRouter()
   const { roomExists, joinRoom, error } = usePlayerStore()
   const { getRoom } = useRoomStore()
@@ -44,14 +43,6 @@ export default function Home() {
   // Get values and state from form
   const { watch, setValue } = form
   const players = watch("players")
-
-  // Check for room parameter when component mounts
-  React.useEffect(() => {
-    const roomCode = searchParams.get("room")
-    if (roomCode) {
-      setValue("code", roomCode, { shouldValidate: true })
-    }
-  }, [searchParams, setValue])
 
   // Handle player count changes
   const incrementPlayers = () => {

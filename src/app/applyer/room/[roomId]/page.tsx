@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { useRoomStore, Room } from "@/lib/store/room-store";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Share2, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 export default function RoomDetail() {
   const params = useParams();
@@ -13,7 +13,7 @@ export default function RoomDetail() {
   const roomId = params.roomId as string;
   const { loading, error, subscribeToRoom } = useRoomStore();
   const [room, setRoom] = useState<Room | undefined>(undefined);
-  const [, setCopied] = useState(false);
+  // const [, setCopied] = useState(false);
 
   // This useEffect sets up a real-time listener to Firestore for the specific room
   useEffect(() => {
@@ -77,11 +77,11 @@ export default function RoomDetail() {
     );
   }
 
-  const handleCopyRoomId = () => {
-    navigator.clipboard.writeText(room.id);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  // const handleCopyRoomId = () => {
+  //   navigator.clipboard.writeText(room.id);
+  //   setCopied(true);
+  //   setTimeout(() => setCopied(false), 2000);
+  // };
 
   return (
     <div className="container mx-auto py-8 px-6 gap-6 flex flex-col">
@@ -92,7 +92,7 @@ export default function RoomDetail() {
           <div className="flex justify-between items-center">
             <div className="flex gap-2 w-full justify-between">
               <CardTitle className="text-2xl">{room.name}</CardTitle>
-              <Button
+              {/* <Button
                 variant="outline"
                 onClick={() => navigator.share({
                   title: `Sala: ${room.name}`,
@@ -104,7 +104,7 @@ export default function RoomDetail() {
                 })}
               >
                 <Share2 className="h-4 w-4 mr-2" /> Compartilhar Sala
-              </Button>
+              </Button> */}
             </div>
           </div>
         </CardHeader>
