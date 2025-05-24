@@ -3119,7 +3119,121 @@
                 "quantity": 30000
             }
         }
-    ],  
+    ],
+    "advantages_and_unforeseen_cards": [
+        {
+            "id": "unfor1",
+            "type": "Imprevisto",
+            "text": "Sua cidade não possui nenhum espaço de integração para animais de estimação.",
+            "effect": "Isso afeta muito negativamente o bem-estar dos pets na cidade!",
+            "category_id": "scl74k3b",
+            "points": 0.25
+        },
+        {
+            "id": "unfor2",
+            "type": "Imprevisto",
+            "text": "Há um baixo número de professores e professoras na rede municipal.",
+            "effect": "O que causa um impacto negativo no processo educacional dos alunos.",
+            "category_id": "e7gh2kp9",
+            "points": 0.25
+        },
+        {
+            "id": "unfor3",
+            "type": "Imprevisto",
+            "text": "Sua cidade possui uma grande falta  de profissionais da saúde.",
+            "effect": "Isso afeta diretamente a velocidade de atendimento aos pacientes.",
+            "category_id": "s63b9t1m",
+            "points": 0.25
+        },
+        {
+            "id": "unfor4",
+            "type": "Imprevisto",
+            "text": "A mobilidade urbana da cidade está mal planejada.",
+            "effect": "Há muito trânsito e a população faz deslocamentos mais longos.",
+            "category_id": "tr45n7q2",
+            "points": 0.25
+        },
+        {
+            "id": "unfor5",
+            "type": "Imprevisto",
+            "text": "Uma enchente atingiu a cidade e muitas pessoas perderam suas casas.",
+            "effect": "Isso aumentou o número de pessoas que moram em áreas de risco.",
+            "category_id": "mr92a6lp",
+            "points": 0.25
+        },
+        {
+            "id": "unfor6",
+            "type": "Imprevisto",
+            "text": "Houve uma grande crise econômica no mundo e ela afetou sua cidade.",
+            "effect": "Isso aumentou o número de munícipes desempregados.",
+            "category_id": "pop78s3d",
+            "points": 0.25
+        },
+        {
+            "id": "unfor7",
+            "type": "Imprevisto",
+            "text": "Uma forte chuva causou queda de árvores.",
+            "effect": "Isso causou a queda de energia, aumento de buracos e obstrução de vias.",
+            "category_id": "4efo9wkv",
+            "points": 0.25
+        },
+        {
+            "id": "adv1",
+            "type": "Vantagem",
+            "text": "Sua cidade recebeu verba do Governo Estadual de 10 mil Dindins para cultura e lazer!",
+            "effect": "Solicite esse dinheiro ao caixa e aplique-o no setor de Esporte, Cultura e Lazer.",
+            "category_id": "scl74k3b",
+            "points": 0.25
+        },
+        {
+            "id": "adv2",
+            "type": "Vantagem",
+            "text": "Sua cidade recebeu verba do Governo Estadual de 30 mil Dindins para a educação!",
+            "effect": "Solicite esse dinheiro ao caixa e aplique-o no setor de Educação.",
+            "category_id": "e7gh2kp9",
+            "points": 0.25
+        },
+        {
+            "id": "adv3",
+            "type": "Vantagem",
+            "text": "Sua cidade recebeu um novo hospital federal!",
+            "effect": "Houve uma melhora significativa na saúde da cidade.",
+            "category_id": "s63b9t1m",
+            "points": 0.25
+        },
+        {
+            "id": "adv4",
+            "type": "Vantagem",
+            "text": "Sua cidade recebeu 50 ônibus elétricos!",
+            "effect": "Houve grande melhora nos transportes e mobilidade urbana.",
+            "category_id": "tr45n7q2",
+            "points": 0.25
+        },
+        {
+            "id": "adv5",
+            "type": "Vantagem",
+            "text": "Sua cidade recebeu do Governo Federal um novo conjunto habitacional!",
+            "effect": "Isso melhorou muito a questão da moradia da cidade.",
+            "category_id": "mr92a6lp",
+            "points": 0.25
+        },
+        {
+            "id": "adv6",
+            "type": "Vantagem",
+            "text": "O governo federal aprovou o aumento no número de vagas de servidores públicos.",
+            "effect": "Isso diminuiu muito a taxa de munícipes desempregados.",
+            "category_id": "pop78s3d",
+            "points": 0.25
+        },
+        {
+            "id": "adv7",
+            "type": "Vantagem",
+            "text": "O governo federal construiu em sua cidade 10 novos postos de coleta seletiva.",
+            "effect": "Isso aumentou muito a reciclagem de resíduos domésticos.",
+            "category_id": "4efo9wkv",
+            "points": 0.25
+        }
+    ],
     "rooms": [
         {
             "id": "ey15hn",
