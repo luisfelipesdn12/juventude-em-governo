@@ -28,6 +28,7 @@ export interface Room {
   cities: {
     id: number;
     name: string;
+    state: 'drawing' | 'ready';
     initial_budget: number;
     budget: number;
     initial_cards: {

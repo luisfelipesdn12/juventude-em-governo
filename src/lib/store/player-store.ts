@@ -104,6 +104,10 @@ export const usePlayerStore = create<PlayerState>((set) => ({
       const city = {
         id: cityId,
         name: cityName,
+        state: 'drawing' as const,
+        initial_budget: 1000,
+        budget: 1000,
+        initial_cards: []
       };
 
       // Add the city to the room

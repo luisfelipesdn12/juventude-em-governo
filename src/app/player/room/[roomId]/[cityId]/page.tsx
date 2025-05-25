@@ -11,6 +11,7 @@ import { NumberTicker } from "@/components/magicui/number-ticker";
 import CardsMarquee from "@/components/cards-marquee";
 import AdvantageDisadvantageMarquee from "@/components/advantage-disadvantage-marquee";
 import { getCategoriesWithCards, selectRandomCardsFromCategories, selectRandomAdvantageAndUnforeseen, type Category, type Card as GameCard, type AdvantageUnforeseenCard } from "@/lib/data";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 interface CardWithCategory {
   card: GameCard;
@@ -29,6 +30,7 @@ export default function PlayerRoom() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loadingCards, setLoadingCards] = useState(false);
   const [loadingAdvDisadvCards, setLoadingAdvDisadvCards] = useState(false);
+  const [startingGame, setStartingGame] = useState(false);
 
   const { loading: roomLoading, error: roomError, subscribeToRoom, updateCityInRoom } = useRoomStore();
   const { player, loading: playerLoading, error: playerError, subscribeToPlayer } = usePlayerStore();
@@ -63,7 +65,7 @@ export default function PlayerRoom() {
       if (updatedRoom) {
         const city = updatedRoom.cities.find(c => c.id === cityId);
         setCityData(city);
-        
+
         // Load existing data from Firebase
         if (city) {
           // Check if budget has been set (different from default 1000 or if initial_budget equals budget and both are not 1000)
@@ -99,7 +101,7 @@ export default function PlayerRoom() {
     if (categories.length > 0) {
       const selectedCards = selectRandomCardsFromCategories(categories);
       setSituationCards(selectedCards);
-      
+
       // Save to Firebase
       try {
         await updateCityInRoom(roomId, cityId, {
@@ -116,7 +118,7 @@ export default function PlayerRoom() {
     try {
       const selectedCards = await selectRandomAdvantageAndUnforeseen();
       setAdvantageDisadvantageCards(selectedCards);
-      
+
       // Save to Firebase
       await updateCityInRoom(roomId, cityId, {
         advantage_disadvantage_cards: selectedCards
@@ -136,7 +138,7 @@ export default function PlayerRoom() {
     const random = Math.floor(Math.random() * (max - min + 1)) + min;
     const multipleOf100 = Math.floor(random / 100) * 100;
     setDindins(multipleOf100);
-    
+
     // Save to Firebase
     try {
       await updateCityInRoom(roomId, cityId, {
@@ -147,6 +149,25 @@ export default function PlayerRoom() {
       console.error('Error saving budget to Firebase:', error);
     }
   };
+
+  const handleComecarJogo = async () => {
+    setStartingGame(true);
+
+    try {
+      // Update city state from "drawing" to "ready"
+      await updateCityInRoom(roomId, cityId, {
+        state: 'ready'
+      });
+    } catch (error) {
+      console.error('Error starting game:', error);
+      setStartingGame(false);
+    }
+  };
+
+  // Check if all elements are sorted (ready to start game)
+  const allElementsSorted = dindins !== undefined &&
+    situationCards !== undefined &&
+    advantageDisadvantageCards !== undefined;
 
   // // If there's no player in state, navigate back to play page
   // useEffect(() => {
@@ -226,6 +247,31 @@ export default function PlayerRoom() {
     );
   }
 
+  // Show fullscreen loading when starting game
+  if (startingGame) {
+    // Calculate ready cities count
+    const readyCitiesCount = room?.cities.filter(city => city.state === 'ready').length || 0;
+    const totalCitiesCount = room?.cities.length || 0;
+
+    return (
+      <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center">
+        <div className="text-center">
+          <DotLottieReact
+            src="/assets/loading-animation.json"
+            loop
+            autoplay
+          />
+          <p className="text-xl font-semibold">
+            Aguarde o jogo começar...
+          </p>
+          <p>
+            {readyCitiesCount} de {totalCitiesCount} salas estão prontas para começar
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto py-8 px-8 gap-6 flex flex-col">
       <h1 className="text-2xl font-semibold text-center">Sala #{room.id}</h1>
@@ -233,7 +279,7 @@ export default function PlayerRoom() {
       <div className="flex flex-col gap-4 w-full justify-start items-start">
         <div className="flex gap-4 w-full justify-between items-center">
           <h2 className="text-xl font-semibold">Cartas situação</h2>
-          <Button 
+          <Button
             onClick={handleSortearCards}
             disabled={situationCards !== undefined || loadingCards || categories.length === 0}
           >
@@ -254,7 +300,7 @@ export default function PlayerRoom() {
       <div className="flex flex-col gap-4 w-full justify-start items-start">
         <div className="flex gap-4 w-full justify-between items-center">
           <h2 className="text-xl font-semibold">Cartas vantagem desvantagem</h2>
-          <Button 
+          <Button
             onClick={handleSortearAdvDisadvCards}
             disabled={advantageDisadvantageCards !== undefined || loadingAdvDisadvCards}
           >
@@ -291,13 +337,29 @@ export default function PlayerRoom() {
           )}
         </h2>
 
-        <Button 
+        <Button
           onClick={handleSortearDindins}
           disabled={dindins !== undefined}
         >
           Sortear
         </Button>
       </div>
+      <footer className="fixed bottom-0 left-0 right-0">
+        <Button
+          className="w-full"
+          onClick={handleComecarJogo}
+          disabled={!allElementsSorted || startingGame}
+        >
+          {startingGame ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin mr-2" />
+              Carregando...
+            </>
+          ) : (
+            'Começar jogo'
+          )}
+        </Button>
+      </footer>
     </div>
   );
 }
