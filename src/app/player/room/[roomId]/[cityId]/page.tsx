@@ -30,7 +30,7 @@ export default function PlayerRoom() {
   const [loadingCards, setLoadingCards] = useState(false);
   const [loadingAdvDisadvCards, setLoadingAdvDisadvCards] = useState(false);
 
-  const { loading: roomLoading, error: roomError, subscribeToRoom } = useRoomStore();
+  const { loading: roomLoading, error: roomError, subscribeToRoom, updateCityInRoom } = useRoomStore();
   const { player, loading: playerLoading, error: playerError, subscribeToPlayer } = usePlayerStore();
 
   const [room, setRoom] = useState<Room | undefined>(undefined);
@@ -63,6 +63,20 @@ export default function PlayerRoom() {
       if (updatedRoom) {
         const city = updatedRoom.cities.find(c => c.id === cityId);
         setCityData(city);
+        
+        // Load existing data from Firebase
+        if (city) {
+          // Check if budget has been set (different from default 1000 or if initial_budget equals budget and both are not 1000)
+          if (city.budget !== 1000 && city.initial_budget === city.budget) {
+            setDindins(city.budget);
+          }
+          if (city.situation_cards) {
+            setSituationCards(city.situation_cards);
+          }
+          if (city.advantage_disadvantage_cards) {
+            setAdvantageDisadvantageCards(city.advantage_disadvantage_cards);
+          }
+        }
       }
     });
 
@@ -81,10 +95,19 @@ export default function PlayerRoom() {
     }
   }, [player?.id, subscribeToPlayer]);
 
-  const handleSortearCards = () => {
+  const handleSortearCards = async () => {
     if (categories.length > 0) {
       const selectedCards = selectRandomCardsFromCategories(categories);
       setSituationCards(selectedCards);
+      
+      // Save to Firebase
+      try {
+        await updateCityInRoom(roomId, cityId, {
+          situation_cards: selectedCards
+        });
+      } catch (error) {
+        console.error('Error saving situation cards to Firebase:', error);
+      }
     }
   };
 
@@ -93,14 +116,19 @@ export default function PlayerRoom() {
     try {
       const selectedCards = await selectRandomAdvantageAndUnforeseen();
       setAdvantageDisadvantageCards(selectedCards);
+      
+      // Save to Firebase
+      await updateCityInRoom(roomId, cityId, {
+        advantage_disadvantage_cards: selectedCards
+      });
     } catch (error) {
-      console.error('Error selecting advantage/disadvantage cards:', error);
+      console.error('Error selecting/saving advantage/disadvantage cards:', error);
     } finally {
       setLoadingAdvDisadvCards(false);
     }
   };
 
-  const handleSortearDindins = () => {
+  const handleSortearDindins = async () => {
     // 1. de 40 mil a 400 mil
     // 2. tem que ser múltiplo de 100
     const min = 40000;
@@ -108,6 +136,16 @@ export default function PlayerRoom() {
     const random = Math.floor(Math.random() * (max - min + 1)) + min;
     const multipleOf100 = Math.floor(random / 100) * 100;
     setDindins(multipleOf100);
+    
+    // Save to Firebase
+    try {
+      await updateCityInRoom(roomId, cityId, {
+        initial_budget: multipleOf100,
+        budget: multipleOf100
+      });
+    } catch (error) {
+      console.error('Error saving budget to Firebase:', error);
+    }
   };
 
   // // If there's no player in state, navigate back to play page

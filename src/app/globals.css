@@ -159,6 +159,15 @@
   h1 {
     text-align: center;
   }
+
+  ul {
+    list-style-type: none;
+    overflow-y: hidden;
+
+    li {
+      margin: 4% 0;
+    }
+  }
 }
 
 @container (max-width: 600px) {
@@ -237,6 +246,26 @@
 
     p {
       font-size: 50%;
+    }
+  }
+}
+
+@container (max-width: 100px) {
+  .card {
+    div {
+      padding-inline: 4%;
+    }
+  
+    h1 {
+      font-size: 50%;
+    }
+
+    li {
+      font-size: 20%;
+    }
+
+    p {
+      font-size: 20%;
     }
   }
 }

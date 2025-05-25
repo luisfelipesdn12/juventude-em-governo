@@ -95,8 +95,6 @@ export function AdvantageDisadvantageMarquee({ cards }: AdvantageDisadvantageMar
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
         </Carousel>
       </div>
 

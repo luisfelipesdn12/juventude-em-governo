@@ -104,11 +104,8 @@ export const usePlayerStore = create<PlayerState>((set) => ({
       const city = {
         id: cityId,
         name: cityName,
-        initial_budget: 1000, // Default initial budget
-        budget: 1000, // Starting budget
-        initial_cards: [] // No initial cards
       };
-      
+
       // Add the city to the room
       const updatedCities = [...(roomData.cities || []), city];
       await updateDoc(doc(db, 'rooms', querySnapshot.docs[0].id), {
@@ -148,7 +145,7 @@ export const usePlayerStore = create<PlayerState>((set) => ({
       return null;
     }
   },
-  
+
   getPlayer: async (id) => {
     set({ loading: true, error: null });
     
