@@ -1,6 +1,6 @@
 "use server";
 import { notFound } from 'next/navigation';
-import { getCategory } from '@/lib/data';
+import { getCategory, getAdvantagesAndUnforeseenByCategory } from '@/lib/data';
 import { CategoryClient } from './client';
 
 interface CategoryPageProps {
@@ -13,12 +13,21 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const { id } = await params;
   
   // Server-side fetch for initial data
-  const initialCategory = await getCategory(id);
+  const [initialCategory, advantagesAndUnforeseen] = await Promise.all([
+    getCategory(id),
+    getAdvantagesAndUnforeseenByCategory(id)
+  ]);
   
   // If category not found, show 404
   if (!initialCategory) {
     return notFound();
   }
 
-  return <CategoryClient initialCategory={initialCategory} id={id} />;
+  return (
+    <CategoryClient 
+      initialCategory={initialCategory} 
+      id={id} 
+      advantagesAndUnforeseen={advantagesAndUnforeseen}
+    />
+  );
 } 

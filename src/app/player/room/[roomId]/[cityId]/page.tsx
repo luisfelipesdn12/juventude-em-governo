@@ -9,7 +9,8 @@ import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import CardsMarquee from "@/components/cards-marquee";
-import { getCategoriesWithCards, selectRandomCardsFromCategories, type Category, type Card as GameCard } from "@/lib/data";
+import AdvantageDisadvantageMarquee from "@/components/advantage-disadvantage-marquee";
+import { getCategoriesWithCards, selectRandomCardsFromCategories, selectRandomAdvantageAndUnforeseen, type Category, type Card as GameCard, type AdvantageUnforeseenCard } from "@/lib/data";
 
 interface CardWithCategory {
   card: GameCard;
@@ -24,8 +25,10 @@ export default function PlayerRoom() {
 
   const [dindins, setDindins] = useState<number | undefined>(undefined);
   const [situationCards, setSituationCards] = useState<CardWithCategory[] | undefined>(undefined);
+  const [advantageDisadvantageCards, setAdvantageDisadvantageCards] = useState<AdvantageUnforeseenCard[] | undefined>(undefined);
   const [categories, setCategories] = useState<Category[]>([]);
   const [loadingCards, setLoadingCards] = useState(false);
+  const [loadingAdvDisadvCards, setLoadingAdvDisadvCards] = useState(false);
 
   const { loading: roomLoading, error: roomError, subscribeToRoom } = useRoomStore();
   const { player, loading: playerLoading, error: playerError, subscribeToPlayer } = usePlayerStore();
@@ -82,6 +85,18 @@ export default function PlayerRoom() {
     if (categories.length > 0) {
       const selectedCards = selectRandomCardsFromCategories(categories);
       setSituationCards(selectedCards);
+    }
+  };
+
+  const handleSortearAdvDisadvCards = async () => {
+    setLoadingAdvDisadvCards(true);
+    try {
+      const selectedCards = await selectRandomAdvantageAndUnforeseen();
+      setAdvantageDisadvantageCards(selectedCards);
+    } catch (error) {
+      console.error('Error selecting advantage/disadvantage cards:', error);
+    } finally {
+      setLoadingAdvDisadvCards(false);
     }
   };
 
@@ -196,6 +211,27 @@ export default function PlayerRoom() {
         </div>
 
         <CardsMarquee cards={situationCards} />
+      </div>
+
+      <div className="flex flex-col gap-4 w-full justify-start items-start">
+        <div className="flex gap-4 w-full justify-between items-center">
+          <h2 className="text-xl font-semibold">Cartas vantagem desvantagem</h2>
+          <Button 
+            onClick={handleSortearAdvDisadvCards}
+            disabled={advantageDisadvantageCards !== undefined || loadingAdvDisadvCards}
+          >
+            {loadingAdvDisadvCards ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                Carregando...
+              </>
+            ) : (
+              'Sortear'
+            )}
+          </Button>
+        </div>
+
+        <AdvantageDisadvantageMarquee cards={advantageDisadvantageCards} />
       </div>
 
       <div className="flex gap-4 w-full justify-between items-center">

@@ -31,6 +31,15 @@ export interface Item {
   metrics: ItemMetric[];
 }
 
+export interface AdvantageUnforeseenCard {
+  id: string;
+  type: 'Vantagem' | 'Imprevisto';
+  text: string;
+  effect: string;
+  category_id: string;
+  points: number;
+}
+
 export const getCategories = async (): Promise<Category[]> => {
   try {
     const categoriesRef = collection(db, 'categories');
@@ -175,4 +184,75 @@ export const selectRandomCardsFromCategories = (categories: Category[]): { card:
   }
   
   return selectedCards;
+};
+
+// Get advantages and unforeseen cards by category ID
+export const getAdvantagesAndUnforeseenByCategory = async (categoryId: string): Promise<AdvantageUnforeseenCard[]> => {
+  try {
+    const cardsRef = collection(db, 'advantages_and_unforeseen_cards');
+    const q = query(cardsRef, where('category_id', '==', categoryId));
+    const cardsSnapshot = await getDocs(q);
+    
+    return cardsSnapshot.docs.map(doc => ({
+      id: doc.id,
+      type: doc.data().type,
+      text: doc.data().text,
+      effect: doc.data().effect,
+      category_id: doc.data().category_id,
+      points: doc.data().points,
+    }));
+  } catch (error) {
+    console.error('Error getting advantages and unforeseen cards by category:', error);
+    return [];
+  }
+};
+
+// Get all advantages and unforeseen cards
+export const getAllAdvantagesAndUnforeseen = async (): Promise<AdvantageUnforeseenCard[]> => {
+  try {
+    const cardsRef = collection(db, 'advantages_and_unforeseen_cards');
+    const cardsSnapshot = await getDocs(cardsRef);
+    
+    return cardsSnapshot.docs.map(doc => ({
+      id: doc.id,
+      type: doc.data().type,
+      text: doc.data().text,
+      effect: doc.data().effect,
+      category_id: doc.data().category_id,
+      points: doc.data().points,
+    }));
+  } catch (error) {
+    console.error('Error getting all advantages and unforeseen cards:', error);
+    return [];
+  }
+};
+
+// Function to randomly select one advantage and one unforeseen card from any category
+export const selectRandomAdvantageAndUnforeseen = async (): Promise<AdvantageUnforeseenCard[]> => {
+  try {
+    const allCards = await getAllAdvantagesAndUnforeseen();
+    
+    // Separate cards by type
+    const advantageCards = allCards.filter(card => card.type === 'Vantagem');
+    const unforeseenCards = allCards.filter(card => card.type === 'Imprevisto');
+    
+    const selectedCards: AdvantageUnforeseenCard[] = [];
+    
+    // Select one random advantage card
+    if (advantageCards.length > 0) {
+      const randomAdvantageIndex = Math.floor(Math.random() * advantageCards.length);
+      selectedCards.push(advantageCards[randomAdvantageIndex]);
+    }
+    
+    // Select one random unforeseen card
+    if (unforeseenCards.length > 0) {
+      const randomUnforeseenIndex = Math.floor(Math.random() * unforeseenCards.length);
+      selectedCards.push(unforeseenCards[randomUnforeseenIndex]);
+    }
+    
+    return selectedCards;
+  } catch (error) {
+    console.error('Error selecting random advantage and unforeseen cards:', error);
+    return [];
+  }
 }; 

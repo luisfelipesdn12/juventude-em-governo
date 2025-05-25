@@ -170,6 +170,10 @@
     li {
       font-size: 95%;
     }
+
+    p {
+      font-size: 150%;
+    }
   }
 }
 
@@ -181,6 +185,10 @@
 
     li {
       font-size: 80%;
+    }
+
+    p {
+      font-size: 140%;
     }
   }
 }
@@ -194,6 +202,10 @@
     li {
       font-size: 75%;
     }
+
+    p {
+      font-size: 120%;
+    }
   }
 }
 
@@ -205,6 +217,10 @@
 
     li {
       font-size: 45%;
+      }
+
+    p {
+      font-size: 80%;
     }
   }
 }
@@ -217,6 +233,10 @@
 
     li {
       font-size: 40%;
+    }
+
+    p {
+      font-size: 50%;
     }
   }
 }

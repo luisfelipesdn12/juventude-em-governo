@@ -5,22 +5,16 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { GameCard } from "./GameCard";
-import { GameCardSkeleton } from "./GameCardSkeleton";
-import { FullscreenCardsOverlay } from "./FullscreenCardsOverlay";
-import { type Card } from "@/lib/data";
+import { GameCardAdvUnforeseen } from "./GameCardAdvUnforeseen";
+import { type AdvantageUnforeseenCard } from "@/lib/data";
 import { useState } from "react";
+import { FullscreenAdvDisadvOverlay } from "./FullscreenAdvDisadvOverlay";
 
-interface CardWithCategory {
-  card: Card;
-  categoryName: string;
+interface AdvantageDisadvantageMarqueeProps {
+  cards?: AdvantageUnforeseenCard[];
 }
 
-interface CardsMarqueeProps {
-  cards?: CardWithCategory[];
-}
-
-export function CardsMarquee({ cards }: CardsMarqueeProps) {
+export function AdvantageDisadvantageMarquee({ cards }: AdvantageDisadvantageMarqueeProps) {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const [selectedCardIndex, setSelectedCardIndex] = useState(0);
 
@@ -35,12 +29,27 @@ export function CardsMarquee({ cards }: CardsMarqueeProps) {
 
   // If no cards provided, show skeleton cards
   if (!cards || cards.length === 0) {
-    const skeletonCards = Array.from({ length: 6 }, (_, index) => (
+    const skeletonCards = Array.from({ length: 2 }, (_, index) => (
       <CarouselItem key={`skeleton-${index}`} className="basis-1/3">
         <div className="p-1">
-          <GameCardSkeleton
-            categoryName={["Infraestrutura", "Educação", "Moradia", "População", "Saúde", "Esporte, Cultura e Lazer"][index % 6]}
-          />
+          <div
+            className="w-full relative card animate-pulse"
+            style={{
+              aspectRatio: '264/405',
+              borderRadius: '16px',
+              backgroundColor: '#f3f4f6',
+            }}
+          >
+            <div className="px-8 absolute left-0 right-0 h-3/5 top-3/10">
+              <div className="w-full h-full flex flex-col items-center pt-2 gap-[10%]">
+                <div className="h-8 bg-gray-300 rounded w-3/4 mb-4"></div>
+                <div className="space-y-2 w-full">
+                  <div className="h-4 bg-gray-300 rounded w-full"></div>
+                  <div className="h-4 bg-gray-300 rounded w-3/4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </CarouselItem>
     ));
@@ -75,12 +84,11 @@ export function CardsMarquee({ cards }: CardsMarqueeProps) {
           className="w-full max-w-5xl"
         >
           <CarouselContent className="">
-            {cards.map(({ card, categoryName }, index) => (
-              <CarouselItem key={`${card.id}-${index}`} className="basis-2/5">
+            {cards.map((card, index) => (
+              <CarouselItem key={`${card.id}-${index}`} className="basis-1/3">
                 <div className="p-1">
-                  <GameCard
+                  <GameCardAdvUnforeseen
                     card={card}
-                    categoryName={categoryName}
                     onClick={() => handleCardClick(index)}
                   />
                 </div>
@@ -92,7 +100,7 @@ export function CardsMarquee({ cards }: CardsMarqueeProps) {
         </Carousel>
       </div>
 
-      <FullscreenCardsOverlay
+      <FullscreenAdvDisadvOverlay
         cards={cards}
         isOpen={isOverlayOpen}
         onClose={handleCloseOverlay}
@@ -102,4 +110,4 @@ export function CardsMarquee({ cards }: CardsMarqueeProps) {
   );
 }
 
-export default CardsMarquee;
+export default AdvantageDisadvantageMarquee; 

@@ -5,15 +5,17 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
 import { GameCard } from '@/components/GameCard';
-import { calculateCardAverage, type Category } from '@/lib/data';
+import { calculateCardAverage, type Category, type AdvantageUnforeseenCard } from '@/lib/data';
 import { useAppStore } from '@/lib/store';
+import { GameCardAdvUnforeseen } from '@/components/GameCardAdvUnforeseen';
 
 interface CategoryClientProps {
   initialCategory: Category;
   id: string;
+  advantagesAndUnforeseen: AdvantageUnforeseenCard[];
 }
 
-export function CategoryClient({ initialCategory, id }: CategoryClientProps) {
+export function CategoryClient({ initialCategory, id, advantagesAndUnforeseen }: CategoryClientProps) {
   const [category, setCategory] = useState<Category>(initialCategory);
   const { subscribeToCategory } = useAppStore();
   const [loading, setLoading] = useState(false);
@@ -66,6 +68,12 @@ export function CategoryClient({ initialCategory, id }: CategoryClientProps) {
             categoryName={category.name}
           />
         ))}
+        {advantagesAndUnforeseen.map((card) => (
+          <GameCardAdvUnforeseen
+            key={card.id}
+            card={card}
+          />
+        ))} 
       </div>
 
       <hr className="my-8" />
