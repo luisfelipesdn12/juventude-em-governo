@@ -69,6 +69,7 @@ interface RoomState {
   getRoom: (id: string) => Promise<Room | undefined>;
   updateRoom: (id: string, room: Partial<Room>) => Promise<void>;
   updateCityInRoom: (roomId: string, cityId: number, cityData: Partial<Room['cities'][0]>) => Promise<void>;
+  removeCityFromRoom: (roomId: string, cityId: number) => Promise<void>;
   deleteRoom: (id: string) => Promise<void>;
   subscribeToRooms: (callback: (rooms: Room[]) => void) => () => void;
   subscribeToRoom: (id: string, callback: (room: Room | undefined) => void) => () => void;
@@ -217,6 +218,47 @@ export const useRoomStore = create<RoomState>((set) => ({
     } catch (error) {
       set({ 
         error: error instanceof Error ? error.message : 'Failed to update city in room',
+        loading: false 
+      });
+      throw error;
+    }
+  },
+  
+  removeCityFromRoom: async (roomId, cityId) => {
+    set({ loading: true, error: null });
+    
+    try {
+      // Find the document in Firestore
+      const q = query(collection(db, 'rooms'), where('id', '==', roomId));
+      const querySnapshot = await getDocs(q);
+      
+      if (querySnapshot.empty) {
+        throw new Error(`Room with id ${roomId} not found`);
+      }
+      
+      // Get the document reference
+      const docRef = doc(db, 'rooms', querySnapshot.docs[0].id);
+      const currentRoom = querySnapshot.docs[0].data() as Room;
+      
+      // Update the document
+      const updatedRoom = {
+        ...currentRoom,
+        cities: currentRoom.cities.filter((city) => city.id !== cityId),
+        updatedAt: new Date(),
+      };
+      
+      await updateDoc(docRef, updatedRoom);
+      
+      // Update the local state
+      set((state) => ({
+        rooms: state.rooms.map((room) =>
+          room.id === roomId ? { ...room, cities: updatedRoom.cities } : room
+        ),
+        loading: false
+      }));
+    } catch (error) {
+      set({ 
+        error: error instanceof Error ? error.message : 'Failed to remove city from room',
         loading: false 
       });
       throw error;

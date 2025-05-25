@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useRoomStore, Room } from "@/lib/store/room-store";
 import { usePlayerStore } from "@/lib/store/player-store";
@@ -30,13 +30,16 @@ export default function PlayerRoom() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loadingCards, setLoadingCards] = useState(false);
   const [loadingAdvDisadvCards, setLoadingAdvDisadvCards] = useState(false);
-  const [startingGame, setStartingGame] = useState(false);
 
-  const { loading: roomLoading, error: roomError, subscribeToRoom, updateCityInRoom } = useRoomStore();
-  const { player, loading: playerLoading, error: playerError, subscribeToPlayer } = usePlayerStore();
+  const { loading: roomLoading, error: roomError, subscribeToRoom, updateCityInRoom, removeCityFromRoom } = useRoomStore();
+  const { player, loading: playerLoading, error: playerError, subscribeToPlayer, leaveRoom } = usePlayerStore();
 
   const [room, setRoom] = useState<Room | undefined>(undefined);
   const [cityData, setCityData] = useState<Room['cities'][0] | undefined>(undefined);
+
+  const startingGame = useMemo(() => {
+    return cityData?.state === 'ready';
+  }, [cityData]);
 
   // Load categories on component mount
   useEffect(() => {
@@ -151,8 +154,6 @@ export default function PlayerRoom() {
   };
 
   const handleComecarJogo = async () => {
-    setStartingGame(true);
-
     try {
       // Update city state from "drawing" to "ready"
       await updateCityInRoom(roomId, cityId, {
@@ -160,7 +161,23 @@ export default function PlayerRoom() {
       });
     } catch (error) {
       console.error('Error starting game:', error);
-      setStartingGame(false);
+    }
+  };
+
+  const handleSairDoJogo = async () => {
+    try {
+      // Remove city from room
+      await removeCityFromRoom(roomId, cityId);
+      
+      // Delete player if exists
+      if (player?.id) {
+        await leaveRoom(player.id);
+      }
+      
+      // Navigate back to home page
+      router.push('/');
+    } catch (error) {
+      console.error('Error leaving game:', error);
     }
   };
 
@@ -264,9 +281,16 @@ export default function PlayerRoom() {
           <p className="text-xl font-semibold">
             Aguarde o jogo começar...
           </p>
-          <p>
+          <p className="mb-6">
             {readyCitiesCount} de {totalCitiesCount} salas estão prontas para começar
           </p>
+          <Button 
+            variant="outline" 
+            onClick={handleSairDoJogo}
+            className="mt-4"
+          >
+            Sair do jogo
+          </Button>
         </div>
       </div>
     );
