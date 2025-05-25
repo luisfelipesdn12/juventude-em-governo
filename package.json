@@ -12,10 +12,11 @@
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
     "@lottiefiles/dotlottie-react": "^0.13.5",
-    "@radix-ui/react-slot": "^1.2.2",
+    "@radix-ui/react-slot": "^1.2.3",
     "@types/uuid": "^10.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.6.0",
     "firebase": "^10.14.1",
     "firebase-admin": "^12.0.0",
     "lottie-react": "^2.4.1",

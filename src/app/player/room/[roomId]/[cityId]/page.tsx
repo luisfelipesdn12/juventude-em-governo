@@ -8,6 +8,13 @@ import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/comp
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { NumberTicker } from "@/components/magicui/number-ticker";
+import CardsMarquee from "@/components/cards-marquee";
+import { getCategoriesWithCards, selectRandomCardsFromCategories, type Category, type Card as GameCard } from "@/lib/data";
+
+interface CardWithCategory {
+  card: GameCard;
+  categoryName: string;
+}
 
 export default function PlayerRoom() {
   const params = useParams();
@@ -16,12 +23,32 @@ export default function PlayerRoom() {
   const cityId = parseInt(params.cityId as string);
 
   const [dindins, setDindins] = useState<number | undefined>(undefined);
+  const [situationCards, setSituationCards] = useState<CardWithCategory[] | undefined>(undefined);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [loadingCards, setLoadingCards] = useState(false);
 
   const { loading: roomLoading, error: roomError, subscribeToRoom } = useRoomStore();
   const { player, loading: playerLoading, error: playerError, subscribeToPlayer } = usePlayerStore();
 
   const [room, setRoom] = useState<Room | undefined>(undefined);
   const [cityData, setCityData] = useState<Room['cities'][0] | undefined>(undefined);
+
+  // Load categories on component mount
+  useEffect(() => {
+    const loadCategories = async () => {
+      setLoadingCards(true);
+      try {
+        const categoriesData = await getCategoriesWithCards();
+        setCategories(categoriesData);
+      } catch (error) {
+        console.error('Error loading categories:', error);
+      } finally {
+        setLoadingCards(false);
+      }
+    };
+
+    loadCategories();
+  }, []);
 
   // This useEffect sets up a real-time listener to Firestore for the specific room
   useEffect(() => {
@@ -50,6 +77,23 @@ export default function PlayerRoom() {
       return () => unsubscribe();
     }
   }, [player?.id, subscribeToPlayer]);
+
+  const handleSortearCards = () => {
+    if (categories.length > 0) {
+      const selectedCards = selectRandomCardsFromCategories(categories);
+      setSituationCards(selectedCards);
+    }
+  };
+
+  const handleSortearDindins = () => {
+    // 1. de 40 mil a 400 mil
+    // 2. tem que ser múltiplo de 100
+    const min = 40000;
+    const max = 400000;
+    const random = Math.floor(Math.random() * (max - min + 1)) + min;
+    const multipleOf100 = Math.floor(random / 100) * 100;
+    setDindins(multipleOf100);
+  };
 
   // // If there's no player in state, navigate back to play page
   // useEffect(() => {
@@ -134,15 +178,24 @@ export default function PlayerRoom() {
       <h1 className="text-2xl font-semibold text-center">Sala #{room.id}</h1>
 
       <div className="flex flex-col gap-4 w-full justify-start items-start">
-        <h2 className="text-xl font-semibold text-center">Cartas situação</h2>
+        <div className="flex gap-4 w-full justify-between items-center">
+          <h2 className="text-xl font-semibold">Cartas situação</h2>
+          <Button 
+            onClick={handleSortearCards}
+            disabled={situationCards !== undefined || loadingCards || categories.length === 0}
+          >
+            {loadingCards ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                Carregando...
+              </>
+            ) : (
+              'Sortear'
+            )}
+          </Button>
+        </div>
 
-        <p>Cartas aqui...</p>
-      </div>
-
-      <div className="flex flex-col gap-4 w-full justify-start items-start">
-        <h2 className="text-xl font-semibold text-center">Cartas situação</h2>
-
-        <p>Cartas aqui...</p>
+        <CardsMarquee cards={situationCards} />
       </div>
 
       <div className="flex gap-4 w-full justify-between items-center">
@@ -164,16 +217,9 @@ export default function PlayerRoom() {
           )}
         </h2>
 
-        <Button onClick={() => {
-          // 1. de 40 mil a 400 mil
-          // 2. tem que ser múltiplo de 100
-          const min = 40000;
-          const max = 400000;
-          const random = Math.floor(Math.random() * (max - min + 1)) + min;
-          const multipleOf100 = Math.floor(random / 100) * 100;
-          setDindins(multipleOf100);
-        }}
-        disabled={dindins !== undefined}
+        <Button 
+          onClick={handleSortearDindins}
+          disabled={dindins !== undefined}
         >
           Sortear
         </Button>

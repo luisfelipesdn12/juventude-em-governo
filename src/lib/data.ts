@@ -125,4 +125,54 @@ export const calculateCardAverage = (metrics: Metric[]): number => {
   if (metrics.length === 0) return 0;
   const sum = metrics.reduce((acc, metric) => acc + metric.points, 0);
   return Math.round((sum / metrics.length) * 10) / 10; // Round to 1 decimal place
+};
+
+export const getCategoriesWithCards = async (): Promise<Category[]> => {
+  try {
+    const categoriesRef = collection(db, 'categories');
+    const categoriesSnapshot = await getDocs(categoriesRef);
+    
+    const categories: Category[] = [];
+    
+    for (const categoryDoc of categoriesSnapshot.docs) {
+      const category: Category = {
+        id: categoryDoc.id,
+        name: categoryDoc.data().name,
+      };
+      
+      // Get cards for this category
+      const cardsRef = collection(db, `categories/${categoryDoc.id}/cards`);
+      const cardsSnapshot = await getDocs(cardsRef);
+      
+      category.cards = cardsSnapshot.docs.map(doc => ({
+        id: doc.id,
+        metrics: doc.data().metrics,
+      }));
+      
+      categories.push(category);
+    }
+    
+    return categories;
+  } catch (error) {
+    console.error('Error getting categories with cards:', error);
+    return [];
+  }
+};
+
+// Function to randomly select one card from each category
+export const selectRandomCardsFromCategories = (categories: Category[]): { card: Card; categoryName: string }[] => {
+  const selectedCards: { card: Card; categoryName: string }[] = [];
+  
+  for (const category of categories) {
+    if (category.cards && category.cards.length > 0) {
+      const randomIndex = Math.floor(Math.random() * category.cards.length);
+      const selectedCard = category.cards[randomIndex];
+      selectedCards.push({
+        card: selectedCard,
+        categoryName: category.name,
+      });
+    }
+  }
+  
+  return selectedCards;
 }; 
