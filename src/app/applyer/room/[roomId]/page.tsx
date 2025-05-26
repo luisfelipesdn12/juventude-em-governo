@@ -7,6 +7,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircleIcon, Loader2, Play } from "lucide-react";
+import { Timestamp } from "firebase/firestore";
+import { differenceInSeconds } from "date-fns";
 
 export default function RoomDetail() {
   const params = useParams();
@@ -16,6 +18,16 @@ export default function RoomDetail() {
   const { error, subscribeToRoom, updateRoom } = useRoomStore();
   const [room, setRoom] = useState<Room | undefined>(undefined);
   const [isStartingGame, setIsStartingGame] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  // Update current time every second for the timer
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   // This useEffect sets up a real-time listener to Firestore for the specific room
   useEffect(() => {
@@ -31,14 +43,35 @@ export default function RoomDetail() {
 
   // Check if all cities are ready
   const allCitiesReady = room && room.cities.length > 0 && room.cities.every(city => city.state === 'ready');
-  
+
+  // Calculate remaining game time
+  const getRemainingTime = () => {
+    if (!room?.startedAt || room.state !== 'started') return null;
+    
+    const startTime = room.startedAt.toDate();
+    const elapsedSeconds = differenceInSeconds(currentTime, startTime);
+    const totalGameTimeSeconds = room.settings.time * 60; // Convert minutes to seconds
+    const remainingSeconds = Math.max(0, totalGameTimeSeconds - elapsedSeconds);
+    
+    // If time has ended and room is still in 'started' state, finish the game
+    if (remainingSeconds === 0 && room.state === 'started') {
+      updateRoom(roomId, { state: 'finished' })
+        .catch(error => console.error('Error finishing game:', error));
+    }
+    
+    const minutes = Math.floor(remainingSeconds / 60);
+    const seconds = remainingSeconds % 60;
+    
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
   // Handle starting the game
   const handleStartGame = async () => {
     if (!room || !allCitiesReady) return;
-    
+
     setIsStartingGame(true);
     try {
-      await updateRoom(roomId, { state: 'started' });
+      await updateRoom(roomId, { state: 'started', startedAt: Timestamp.fromDate(new Date()) });
     } catch (error) {
       console.error('Error starting game:', error);
     } finally {
@@ -137,6 +170,14 @@ export default function RoomDetail() {
           <div className="flex justify-between items-center">
             <div className="flex gap-2 w-full justify-between">
               <CardTitle className="text-2xl">{room.name}</CardTitle>
+              {room.startedAt && room.state === 'started' && (
+                <div className="flex flex-col items-end">
+                  <p className="text-sm text-muted-foreground">Tempo Restante</p>
+                  <p className="text-xl font-mono font-bold text-primary">
+                    {getRemainingTime()}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </CardHeader>
@@ -153,9 +194,9 @@ export default function RoomDetail() {
                     <strong>Criada em:</strong> {room.createdAt.toDate().toLocaleString()}
                   </p>
                 )}
-                {room.updatedAt && (
+                {room.startedAt && (
                   <p className="text-sm">
-                    <strong>Última atualização:</strong> {room.updatedAt.toDate().toLocaleString()}
+                    <strong>Jogo começou em:</strong> {room.startedAt?.toDate().toLocaleString()}
                   </p>
                 )}
               </div>
@@ -210,7 +251,7 @@ export default function RoomDetail() {
                 <p className="flex items-center gap-1">
                   {city.initial_budget ? (
                     <>
-                      D$ {city.initial_budget.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                      D$ {city.initial_budget.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
                     </>
                   ) : (
                     <>

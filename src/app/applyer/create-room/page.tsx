@@ -35,7 +35,7 @@ export default function CreateRoom() {
       name: "",
       institution: "",
       class: "",
-      time: 10,
+      time: 30,
     },
   });
 

@@ -26,6 +26,7 @@ export interface Room {
     time: number;
   };
   state: 'drawing' | 'started' | 'finished';
+  startedAt?: Timestamp;
   cities: {
     id: number;
     name: string;

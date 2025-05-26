@@ -69,7 +69,7 @@ export function InGame({ room, cityData }: InGameProps) {
       {/* Cards Carousel */}
       <div className="flex items-center justify-center">
         {allCards.length > 0 ? (
-          <div className="max-w-4xl w-[90%]">
+          <div className="max-w-4xl w-[100%]">
             <Carousel
               opts={{
                 align: "center",
@@ -97,8 +97,8 @@ export function InGame({ room, cityData }: InGameProps) {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              <CarouselPrevious className="-left-6" />
+              <CarouselNext className="-right-6" />
             </Carousel>
           </div>
         ) : (
@@ -118,7 +118,7 @@ export function InGame({ room, cityData }: InGameProps) {
           </Button>
         </ValueTableDrawer>
         <Button className="col-span-1 text-2xl">
-          D$ {cityData.budget}
+          D$ {cityData.budget?.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
         </Button>
         <Button className="col-span-2 text-2xl">
           Governo Aberto
