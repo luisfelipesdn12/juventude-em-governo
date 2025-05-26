@@ -1,5 +1,6 @@
 import { type Card } from '@/lib/data';
 import { categoriesProperties } from '@/lib/categories-properties';
+
 interface GameCardProps {
   card: Card;
   categoryName: string;
@@ -37,8 +38,9 @@ export function GameCard({ card, categoryName, className = "", onClick }: GameCa
             {card.metrics.map((metric) => (
               <li
                 key={metric.id}
-                className="text-gray-900 text-[150%] sm:text-[150%] lg:text-[115%] xl:text-[95%] 2xl:text-[85%]"
+                className="flex items-start gap-1 text-gray-900 text-[150%] sm:text-[150%] lg:text-[115%] xl:text-[95%] 2xl:text-[85%]"
               >
+                <svg className="min-w-max mt-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill={bgImage.color} d="M8 19V5l11 7z"></path></svg>
                 {metric.text}
               </li>
             ))}
