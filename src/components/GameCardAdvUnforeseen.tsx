@@ -25,7 +25,7 @@ export function GameCardAdvUnforeseen({ card, className = "", onClick }: GameCar
 
   return (
     <div
-      className={`w-full relative card ${className} ${onClick ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
+      className={`w-full relative card cursor-grab select-none ${className} ${onClick ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
       style={{
         backgroundImage: `url(${bgImage.src})`,
         aspectRatio: '264/405',

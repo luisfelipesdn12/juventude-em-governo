@@ -107,7 +107,7 @@
   --primary-foreground: #FFFFFF;
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: #FFFFFF;
-  --muted: oklch(0.269 0 0);
+  --muted: #bebebe;
   --muted-foreground: oklch(0.708 0 0);
   --accent: #F2A81D;
   --accent-foreground: #FFFFFF;
@@ -268,4 +268,33 @@
       font-size: 20%;
     }
   }
+}
+
+/* Scrollbar Styles */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent hsl(var(--muted));
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: var(--radius);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: var(--radius);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.3);
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
 }

@@ -1,39 +1,5 @@
 import { type Card } from '@/lib/data';
-
-const bgImages: Record<string, {
-  src: string;
-  color: string;
-}> = {
-  'Infraestrutura': {
-    src: '/assets/fundo_cartas/frente-carta-infraestrutura.svg',
-    color: '#ea5446',
-  },
-  'Educação': {
-    src: '/assets/fundo_cartas/frente-carta-educacao.svg',
-    color: '#51BAA9',
-  },
-  'Moradia': {
-    src: '/assets/fundo_cartas/frente-carta-moradia.svg',
-    color: '#701954',
-  },
-  'População': {
-    src: '/assets/fundo_cartas/frente-carta-populacao.svg',
-    color: '#fab510',
-  },
-  'Saúde': {
-    src: '/assets/fundo_cartas/frente-carta-saude.svg',
-    color: '#3567b0',
-  },
-  'Esporte, Cultura e Lazer': {
-    src: '/assets/fundo_cartas/frente-carta-esporte-cultura-lazer.svg',
-    color: '#826bad',
-  },
-  'Transporte': {
-    src: '/assets/fundo_cartas/frente-carta-transporte.svg',
-    color: '#e7236b',
-  },
-};
-
+import { categoriesProperties } from '@/lib/categories-properties';
 interface GameCardProps {
   card: Card;
   categoryName: string;
@@ -42,13 +8,13 @@ interface GameCardProps {
 }
 
 export function GameCard({ card, categoryName, className = "", onClick }: GameCardProps) {
-  const bgImage = bgImages[categoryName] || bgImages['Infraestrutura'];
+  const bgImage = categoriesProperties[categoryName] || categoriesProperties['Infraestrutura'];
 
   return (
     <div
-      className={`w-full relative card ${className} ${onClick ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
+      className={`w-full relative card cursor-grab select-none ${className} ${onClick ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
       style={{
-        backgroundImage: `url(${bgImage.src})`,
+        backgroundImage: `url(${bgImage.cardBg})`,
         aspectRatio: '264/405',
         backgroundSize: 'cover',
         backgroundPosition: 'center',

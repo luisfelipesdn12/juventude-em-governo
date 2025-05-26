@@ -13,6 +13,7 @@ import {
 import { GameCard } from "@/components/GameCard";
 import { GameCardAdvUnforeseen } from "./GameCardAdvUnforeseen";
 import { Button } from "./ui/button";
+import { ValueTableDrawer } from "./value-table-drawer";
 
 interface InGameProps {
   room: Room;
@@ -111,9 +112,11 @@ export function InGame({ room, cityData }: InGameProps) {
 
       {/* Game Info Footer */}
       <div className="mt-8 text-center grid grid-cols-3 gap-2 grid-rows-2">
-        <Button className="col-span-2 text-2xl">
-          Tabela de Valores
-        </Button>
+        <ValueTableDrawer>
+          <Button className="col-span-2 text-2xl">
+            Tabela de Valores
+          </Button>
+        </ValueTableDrawer>
         <Button className="col-span-1 text-2xl">
           D$ {cityData.budget}
         </Button>
