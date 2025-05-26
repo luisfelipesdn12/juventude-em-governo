@@ -8,13 +8,8 @@ import {
 import { GameCard } from "./GameCard";
 import { GameCardSkeleton } from "./GameCardSkeleton";
 import { FullscreenCardsOverlay } from "./FullscreenCardsOverlay";
-import { type Card } from "@/lib/data";
 import { useState } from "react";
-
-interface CardWithCategory {
-  card: Card;
-  categoryName: string;
-}
+import { type CardWithCategory } from "@/lib/store/game-store";
 
 interface CardsMarqueeProps {
   cards?: CardWithCategory[];

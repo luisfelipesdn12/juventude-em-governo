@@ -4,19 +4,14 @@ import { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useRoomStore, Room } from "@/lib/store/room-store";
 import { usePlayerStore } from "@/lib/store/player-store";
+import { useGameStore } from "@/lib/store/game-store";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import CardsMarquee from "@/components/cards-marquee";
 import AdvantageDisadvantageMarquee from "@/components/advantage-disadvantage-marquee";
-import { getCategoriesWithCards, selectRandomCardsFromCategories, selectRandomAdvantageAndUnforeseen, type Category, type Card as GameCard, type AdvantageUnforeseenCard } from "@/lib/data";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-
-interface CardWithCategory {
-  card: GameCard;
-  categoryName: string;
-}
 
 export default function PlayerRoom() {
   const params = useParams();
@@ -24,15 +19,26 @@ export default function PlayerRoom() {
   const roomId = params.roomId as string;
   const cityId = parseInt(params.cityId as string);
 
-  const [dindins, setDindins] = useState<number | undefined>(undefined);
-  const [situationCards, setSituationCards] = useState<CardWithCategory[] | undefined>(undefined);
-  const [advantageDisadvantageCards, setAdvantageDisadvantageCards] = useState<AdvantageUnforeseenCard[] | undefined>(undefined);
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [loadingCards, setLoadingCards] = useState(false);
-  const [loadingAdvDisadvCards, setLoadingAdvDisadvCards] = useState(false);
-
-  const { loading: roomLoading, error: roomError, subscribeToRoom, updateCityInRoom, removeCityFromRoom } = useRoomStore();
+  const [roomLoading, setRoomLoading] = useState(true);
+  const { error: roomError, subscribeToRoom, updateCityInRoom, removeCityFromRoom } = useRoomStore();
   const { player, loading: playerLoading, error: playerError, subscribeToPlayer, leaveRoom } = usePlayerStore();
+  
+  // Game store state and actions
+  const {
+    dindins,
+    situationCards,
+    advantageDisadvantageCards,
+    categories,
+    loadingCards,
+    loadingAdvDisadvCards,
+    setDindins,
+    setSituationCards,
+    setAdvantageDisadvantageCards,
+    loadCategories,
+    generateRandomDindins,
+    generateSituationCards,
+    generateAdvantageDisadvantageCards,
+  } = useGameStore();
 
   const [room, setRoom] = useState<Room | undefined>(undefined);
   const [cityData, setCityData] = useState<Room['cities'][0] | undefined>(undefined);
@@ -43,27 +49,15 @@ export default function PlayerRoom() {
 
   // Load categories on component mount
   useEffect(() => {
-    const loadCategories = async () => {
-      setLoadingCards(true);
-      try {
-        const categoriesData = await getCategoriesWithCards();
-        setCategories(categoriesData);
-      } catch (error) {
-        console.error('Error loading categories:', error);
-      } finally {
-        setLoadingCards(false);
-      }
-    };
-
     loadCategories();
-  }, []);
+  }, [loadCategories]);
 
   // This useEffect sets up a real-time listener to Firestore for the specific room
   useEffect(() => {
     // Subscribe to room updates
     const unsubscribe = subscribeToRoom(roomId, (updatedRoom) => {
       setRoom(updatedRoom);
-
+      setRoomLoading(false);
       // Find the player's city in the room
       if (updatedRoom) {
         const city = updatedRoom.cities.find(c => c.id === cityId);
@@ -87,7 +81,7 @@ export default function PlayerRoom() {
 
     // Cleanup the subscription when the component unmounts
     return () => unsubscribe();
-  }, [roomId, cityId, subscribeToRoom]);
+  }, [roomId, cityId, subscribeToRoom, setDindins, setSituationCards, setAdvantageDisadvantageCards]);
 
   // Subscribe to player updates if we have a player in state
   useEffect(() => {
@@ -101,10 +95,8 @@ export default function PlayerRoom() {
   }, [player?.id, subscribeToPlayer]);
 
   const handleSortearCards = async () => {
-    if (categories.length > 0) {
-      const selectedCards = selectRandomCardsFromCategories(categories);
-      setSituationCards(selectedCards);
-
+    const selectedCards = generateSituationCards();
+    if (selectedCards) {
       // Save to Firebase
       try {
         await updateCityInRoom(roomId, cityId, {
@@ -117,36 +109,27 @@ export default function PlayerRoom() {
   };
 
   const handleSortearAdvDisadvCards = async () => {
-    setLoadingAdvDisadvCards(true);
-    try {
-      const selectedCards = await selectRandomAdvantageAndUnforeseen();
-      setAdvantageDisadvantageCards(selectedCards);
-
+    const selectedCards = await generateAdvantageDisadvantageCards();
+    if (selectedCards) {
       // Save to Firebase
-      await updateCityInRoom(roomId, cityId, {
-        advantage_disadvantage_cards: selectedCards
-      });
-    } catch (error) {
-      console.error('Error selecting/saving advantage/disadvantage cards:', error);
-    } finally {
-      setLoadingAdvDisadvCards(false);
+      try {
+        await updateCityInRoom(roomId, cityId, {
+          advantage_disadvantage_cards: selectedCards
+        });
+      } catch (error) {
+        console.error('Error selecting/saving advantage/disadvantage cards:', error);
+      }
     }
   };
 
   const handleSortearDindins = async () => {
-    // 1. de 40 mil a 400 mil
-    // 2. tem que ser múltiplo de 100
-    const min = 40000;
-    const max = 400000;
-    const random = Math.floor(Math.random() * (max - min + 1)) + min;
-    const multipleOf100 = Math.floor(random / 100) * 100;
-    setDindins(multipleOf100);
+    const newDindins = generateRandomDindins();
 
     // Save to Firebase
     try {
       await updateCityInRoom(roomId, cityId, {
-        initial_budget: multipleOf100,
-        budget: multipleOf100
+        initial_budget: newDindins,
+        budget: newDindins
       });
     } catch (error) {
       console.error('Error saving budget to Firebase:', error);
@@ -185,13 +168,6 @@ export default function PlayerRoom() {
   const allElementsSorted = dindins !== undefined &&
     situationCards !== undefined &&
     advantageDisadvantageCards !== undefined;
-
-  // // If there's no player in state, navigate back to play page
-  // useEffect(() => {
-  //   if (!playerLoading && !player) {
-  //     router.push('/play');
-  //   }
-  // }, [player, playerLoading, router]);
 
   if ((roomLoading && !room) || (playerLoading && !player)) {
     return (

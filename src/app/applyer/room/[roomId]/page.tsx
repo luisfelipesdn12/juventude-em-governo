@@ -12,7 +12,8 @@ export default function RoomDetail() {
   const params = useParams();
   const router = useRouter();
   const roomId = params.roomId as string;
-  const { loading, error, subscribeToRoom, updateRoom } = useRoomStore();
+  const [loading, setLoading] = useState(true);
+  const { error, subscribeToRoom, updateRoom } = useRoomStore();
   const [room, setRoom] = useState<Room | undefined>(undefined);
   const [isStartingGame, setIsStartingGame] = useState(false);
 
@@ -21,6 +22,7 @@ export default function RoomDetail() {
     // Subscribe to room updates
     const unsubscribe = subscribeToRoom(roomId, (updatedRoom) => {
       setRoom(updatedRoom);
+      setLoading(false);
     });
 
     // Cleanup the subscription when the component unmounts

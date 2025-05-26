@@ -9,13 +9,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { GameCard } from "./GameCard";
-import { type Card as GameCardType } from "@/lib/data";
 import type { CarouselApi } from "@/components/ui/carousel";
-
-interface CardWithCategory {
-  card: GameCardType;
-  categoryName: string;
-}
+import { type CardWithCategory } from "@/lib/store/game-store";
 
 interface FullscreenCardsOverlayProps {
   cards: CardWithCategory[];
