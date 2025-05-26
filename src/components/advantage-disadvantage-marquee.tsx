@@ -2,8 +2,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { GameCardAdvUnforeseen } from "./GameCardAdvUnforeseen";
 import { type AdvantageUnforeseenCard } from "@/lib/data";
@@ -66,8 +64,6 @@ export function AdvantageDisadvantageMarquee({ cards }: AdvantageDisadvantageMar
           <CarouselContent className="h-80">
             {skeletonCards}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
         </Carousel>
       </div>
     );

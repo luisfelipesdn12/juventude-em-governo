@@ -51,7 +51,8 @@ export default function CreateRoom() {
         settings: {
           time: data.time,
         },
-        cities: []
+        cities: [],
+        state: "drawing"
       }; 
 
       // Add the room to the store

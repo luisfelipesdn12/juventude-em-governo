@@ -297,7 +297,7 @@ export default function PlayerRoom() {
   }
 
   return (
-    <div className="container mx-auto py-8 px-8 gap-6 flex flex-col">
+    <div className="container mx-auto py-8 px-8 flex flex-col">
       <h1 className="text-2xl font-semibold text-center">Sala #{room.id}</h1>
 
       <div className="flex flex-col gap-4 w-full justify-start items-start">

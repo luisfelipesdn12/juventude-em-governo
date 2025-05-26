@@ -25,16 +25,13 @@ export interface Room {
   settings: {
     time: number;
   };
+  state: 'drawing' | 'started' | 'finished';
   cities: {
     id: number;
     name: string;
     state: 'drawing' | 'ready';
     initial_budget: number;
     budget: number;
-    initial_cards: {
-      id: number;
-      category_id: number;
-    }[];
     // Random results for the game
     situation_cards?: {
       card: {

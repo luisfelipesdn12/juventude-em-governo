@@ -5,15 +5,16 @@ import { useParams, useRouter } from "next/navigation";
 import { useRoomStore, Room } from "@/lib/store/room-store";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { CheckCircleIcon, Loader2, Play } from "lucide-react";
 
 export default function RoomDetail() {
   const params = useParams();
   const router = useRouter();
   const roomId = params.roomId as string;
-  const { loading, error, subscribeToRoom } = useRoomStore();
+  const { loading, error, subscribeToRoom, updateRoom } = useRoomStore();
   const [room, setRoom] = useState<Room | undefined>(undefined);
-  // const [, setCopied] = useState(false);
+  const [isStartingGame, setIsStartingGame] = useState(false);
 
   // This useEffect sets up a real-time listener to Firestore for the specific room
   useEffect(() => {
@@ -25,6 +26,49 @@ export default function RoomDetail() {
     // Cleanup the subscription when the component unmounts
     return () => unsubscribe();
   }, [roomId, subscribeToRoom]);
+
+  // Check if all cities are ready
+  const allCitiesReady = room && room.cities.length > 0 && room.cities.every(city => city.state === 'ready');
+  
+  // Handle starting the game
+  const handleStartGame = async () => {
+    if (!room || !allCitiesReady) return;
+    
+    setIsStartingGame(true);
+    try {
+      await updateRoom(roomId, { state: 'started' });
+    } catch (error) {
+      console.error('Error starting game:', error);
+    } finally {
+      setIsStartingGame(false);
+    }
+  };
+
+  // Get status badge variant and text
+  const getStatusBadge = (state: Room['state']) => {
+    switch (state) {
+      case 'drawing':
+        return { variant: 'secondary' as const, text: 'Preparando' };
+      case 'started':
+        return { variant: 'default' as const, text: 'Em Andamento' };
+      case 'finished':
+        return { variant: 'outline' as const, text: 'Finalizado' };
+      default:
+        return { variant: 'secondary' as const, text: 'Desconhecido' };
+    }
+  };
+
+  // Get city status badge variant and text
+  const getCityStatusBadge = (state: Room['cities'][0]['state']) => {
+    switch (state) {
+      case 'drawing':
+        return { variant: 'secondary' as const, text: 'Preparando' };
+      case 'ready':
+        return { variant: 'default' as const, text: 'Pronto' };
+      default:
+        return { variant: 'secondary' as const, text: 'Desconhecido' };
+    }
+  };
 
   if (loading && !room) {
     return (
@@ -77,34 +121,20 @@ export default function RoomDetail() {
     );
   }
 
-  // const handleCopyRoomId = () => {
-  //   navigator.clipboard.writeText(room.id);
-  //   setCopied(true);
-  //   setTimeout(() => setCopied(false), 2000);
-  // };
+  const statusBadge = getStatusBadge(room.state);
 
   return (
     <div className="container mx-auto py-8 px-6 gap-6 flex flex-col">
-      <h1 className="text-2xl font-semibold text-center">Sala #{room.id}</h1>
+      <div className="flex items-center justify-center gap-4">
+        <h1 className="text-2xl font-semibold">Sala #{room.id}</h1>
+        <Badge variant={statusBadge.variant}>{statusBadge.text}</Badge>
+      </div>
 
       <Card className="max-w-3xl mx-auto">
         <CardHeader>
           <div className="flex justify-between items-center">
             <div className="flex gap-2 w-full justify-between">
               <CardTitle className="text-2xl">{room.name}</CardTitle>
-              {/* <Button
-                variant="outline"
-                onClick={() => navigator.share({
-                  title: `Sala: ${room.name}`,
-                  text: `Junte-se à sala "${room.name}" com o código: ${room.id}`,
-                  url: window.location.origin + `/play?room=${room.id}`
-                }).catch(() => {
-                  // Fallback para navegadores que não suportam a API Web Share
-                  handleCopyRoomId();
-                })}
-              >
-                <Share2 className="h-4 w-4 mr-2" /> Compartilhar Sala
-              </Button> */}
             </div>
           </div>
         </CardHeader>
@@ -140,19 +170,83 @@ export default function RoomDetail() {
         </CardContent>
       </Card>
 
-      <h2 className="text-2xl font-semibold text-center">Cidades</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="text-2xl font-semibold">Cidades</h2>
+        {room.state === 'drawing' && (
+          <Button 
+            onClick={handleStartGame}
+            disabled={!allCitiesReady || isStartingGame}
+            className="flex items-center gap-2"
+          >
+            {isStartingGame ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Iniciando...
+              </>
+            ) : (
+              <>
+                <Play className="h-4 w-4" />
+                Iniciar Jogo
+              </>
+            )}
+          </Button>
+        )}
+      </div>
 
       <div className="grid grid-cols-2 gap-6">
-        {room.cities.map((city) => (
-          <Card key={city.id} className="p-2 border rounded-md">
-            <CardHeader>
-              <CardTitle>{city.name}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p><strong>Orçamento Atual:</strong> {city.budget} Dindins</p>
-            </CardContent>
-          </Card>
-        ))}
+        {room.cities.map((city) => {
+          const cityStatusBadge = getCityStatusBadge(city.state);
+          return (
+            <Card key={city.id} className="p-2 border rounded-md">
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <CardTitle>{city.name}</CardTitle>
+                  <Badge variant={cityStatusBadge.variant}>{cityStatusBadge.text}</Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="flex items-center gap-1">
+                  {city.initial_budget ? (
+                    <>
+                      D$ {city.initial_budget.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    </>
+                  ) : (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Sorteando dindins...
+                    </>
+                  )}
+                </p>
+                <p className="flex items-center gap-1">
+                  {city.situation_cards ? (
+                    <>
+                      <CheckCircleIcon className="w-4 h-4" />
+                      Cartas situação sorteadas
+                    </>
+                  ) : (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Sorteando situação...
+                    </>
+                  )}
+                </p>
+                <p className="flex items-center gap-1">
+                  {city.advantage_disadvantage_cards ? (
+                    <>
+                      <CheckCircleIcon className="w-4 h-4" />
+                      Vantagem/imprevistos sorteadas
+                    </>
+                  ) : (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Sorteando vantagem/imprevistos...
+                    </>
+                  )}
+                </p>
+              </CardContent>
+            </Card>
+          );
+        })}
         {room.cities.length % 2 === 1 && (
           <Card className="p-2 border rounded-md bg-transparent border-dashed">
             <CardHeader>
@@ -160,7 +254,7 @@ export default function RoomDetail() {
           </Card>
         )}
         {room.cities.length === 0 && (
-          <p className="text-center">Nenhuma cidade disponível...</p>
+          <p className="text-center col-span-2">Nenhuma cidade disponível...</p>
         )}
       </div>
     </div>
