@@ -163,9 +163,10 @@ export const useRoomStore = create<RoomState>((set) => ({
       const docRef = doc(db, 'rooms', querySnapshot.docs[0].id);
       
       // Update the document
+      const timestamp = Timestamp.fromDate(new Date());
       const updatedRoom = {
         ...updatedData,
-        updatedAt: new Date(),
+        updatedAt: timestamp,
       };
       
       await updateDoc(docRef, updatedRoom);
@@ -173,7 +174,7 @@ export const useRoomStore = create<RoomState>((set) => ({
       // Update the local state
       set((state) => ({
         rooms: state.rooms.map((room) =>
-          room.id === id ? { ...room, ...updatedData, updatedAt: Timestamp.fromDate(new Date()) } : room
+          room.id === id ? { ...room, ...updatedData, updatedAt: timestamp } : room
         ),
         loading: false
       }));
@@ -203,12 +204,13 @@ export const useRoomStore = create<RoomState>((set) => ({
       const currentRoom = querySnapshot.docs[0].data() as Room;
       
       // Update the document
+      const timestamp = Timestamp.fromDate(new Date());
       const updatedRoom = {
         ...currentRoom,
         cities: currentRoom.cities.map((city) =>
           city.id === cityId ? { ...city, ...cityData } : city
         ),
-        updatedAt: new Date(),
+        updatedAt: timestamp,
       };
       
       await updateDoc(docRef, updatedRoom);
@@ -216,7 +218,7 @@ export const useRoomStore = create<RoomState>((set) => ({
       // Update the local state
       set((state) => ({
         rooms: state.rooms.map((room) =>
-          room.id === roomId ? { ...room, cities: updatedRoom.cities } : room
+          room.id === roomId ? { ...room, cities: updatedRoom.cities, updatedAt: timestamp } : room
         ),
         loading: false
       }));
@@ -246,10 +248,11 @@ export const useRoomStore = create<RoomState>((set) => ({
       const currentRoom = querySnapshot.docs[0].data() as Room;
       
       // Update the document
+      const timestamp = Timestamp.fromDate(new Date());
       const updatedRoom = {
         ...currentRoom,
         cities: currentRoom.cities.filter((city) => city.id !== cityId),
-        updatedAt: new Date(),
+        updatedAt: timestamp,
       };
       
       await updateDoc(docRef, updatedRoom);
@@ -257,7 +260,7 @@ export const useRoomStore = create<RoomState>((set) => ({
       // Update the local state
       set((state) => ({
         rooms: state.rooms.map((room) =>
-          room.id === roomId ? { ...room, cities: updatedRoom.cities } : room
+          room.id === roomId ? { ...room, cities: updatedRoom.cities, updatedAt: timestamp } : room
         ),
         loading: false
       }));

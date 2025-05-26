@@ -119,6 +119,28 @@ export const getItemsByCategory = async (categoryId: string): Promise<Item[]> =>
   }
 };
 
+export const getItemById = async (itemId: string): Promise<Item | undefined> => {
+  try {
+    const itemRef = doc(db, 'items', itemId);
+    const itemDoc = await getDoc(itemRef);
+    
+    if (!itemDoc.exists()) {
+      return undefined;
+    }
+    
+    return {
+      id: itemDoc.id,
+      name: itemDoc.data().name,
+      price: itemDoc.data().price,
+      category_id: itemDoc.data().category_id,
+      metrics: itemDoc.data().metrics,
+    };
+  } catch (error) {
+    console.error('Error getting item by ID:', error);
+    return undefined;
+  }
+};
+
 export const getCategoryNameById = async (categoryId: string): Promise<string> => {
   try {
     const category = await getCategory(categoryId);

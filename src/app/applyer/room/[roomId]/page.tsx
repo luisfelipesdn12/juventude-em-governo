@@ -29,6 +29,32 @@ export default function RoomDetail() {
     return () => clearInterval(timer);
   }, []);
 
+  // Separate effect to handle game finishing when time runs out
+  useEffect(() => {
+    if (!room?.startedAt || room.state !== 'started') return;
+    
+    const startTime = room.startedAt.toDate();
+    const elapsedSeconds = differenceInSeconds(currentTime, startTime);
+    const totalGameTimeSeconds = room.settings.time * 60;
+    const remainingSeconds = Math.max(0, totalGameTimeSeconds - elapsedSeconds);
+    
+    if (remainingSeconds === 0) {
+      console.log('Game time ended, finishing game...', { roomId, elapsedSeconds, totalGameTimeSeconds });
+      updateRoom(roomId, { state: 'finished' })
+        .then(() => {
+          console.log('Game finished successfully');
+        })
+        .catch(error => {
+          console.error('Error finishing game:', error);
+          // Try again in case of network issues
+          setTimeout(() => {
+            updateRoom(roomId, { state: 'finished' })
+              .catch(retryError => console.error('Retry error finishing game:', retryError));
+          }, 2000);
+        });
+    }
+  }, [room?.startedAt, room?.state, room?.settings.time, currentTime, roomId, updateRoom]);
+
   // This useEffect sets up a real-time listener to Firestore for the specific room
   useEffect(() => {
     // Subscribe to room updates
@@ -52,12 +78,6 @@ export default function RoomDetail() {
     const elapsedSeconds = differenceInSeconds(currentTime, startTime);
     const totalGameTimeSeconds = room.settings.time * 60; // Convert minutes to seconds
     const remainingSeconds = Math.max(0, totalGameTimeSeconds - elapsedSeconds);
-    
-    // If time has ended and room is still in 'started' state, finish the game
-    if (remainingSeconds === 0 && room.state === 'started') {
-      updateRoom(roomId, { state: 'finished' })
-        .catch(error => console.error('Error finishing game:', error));
-    }
     
     const minutes = Math.floor(remainingSeconds / 60);
     const seconds = remainingSeconds % 60;

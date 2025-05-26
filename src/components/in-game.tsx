@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { differenceInSeconds } from "date-fns";
 import { Room } from "@/lib/store/room-store";
 import { useGameStore } from "@/lib/store/game-store";
 import {
@@ -36,6 +37,30 @@ export function InGame({ room, cityData }: InGameProps) {
   const [isSituationOverlayOpen, setIsSituationOverlayOpen] = useState(false);
   const [isAdvDisadvOverlayOpen, setIsAdvDisadvOverlayOpen] = useState(false);
   const [selectedCardIndex, setSelectedCardIndex] = useState(0);
+  
+  // State for current time to calculate remaining time
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  // Update current time every second for the timer
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  // Calculate remaining time percentage
+  const getRemainingTimePercentage = () => {
+    if (!room?.startedAt || room.state !== 'started') return 100;
+    
+    const startTime = room.startedAt.toDate();
+    const elapsedSeconds = differenceInSeconds(currentTime, startTime);
+    const totalGameTimeSeconds = room.settings.time * 60; // Convert minutes to seconds
+    const remainingSeconds = Math.max(0, totalGameTimeSeconds - elapsedSeconds);
+    
+    return Math.max(0, (remainingSeconds / totalGameTimeSeconds) * 100);
+  };
 
   // Load existing data from Firebase when cityData changes
   useEffect(() => {
@@ -155,7 +180,10 @@ export function InGame({ room, cityData }: InGameProps) {
           <Button className="col-span-2 text-2xl">
             Governo Aberto
           </Button>
-          <Button className="col-span-1 text-2xl">
+          <Button className="col-span-1 text-2xl relative">
+            <div className="absolute left-0 top-0 h-full bg-white/20" style={{
+              width: `${getRemainingTimePercentage()}%`
+             }}></div>
             Terminar
           </Button>
         </div>

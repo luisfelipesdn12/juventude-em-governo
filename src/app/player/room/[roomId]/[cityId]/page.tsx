@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { BeforeGame } from "@/components/before-game";
 import { InGame } from "@/components/in-game";
+import { GameResults } from "@/components/game-results";
 
 export default function PlayerRoom() {
   const params = useParams();
@@ -148,6 +149,15 @@ export default function PlayerRoom() {
   if (room.state === "started") {
     return (
       <InGame 
+        room={room}
+        cityData={cityData}
+      />
+    );
+  }
+
+  if (room.state === "finished") {
+    return (
+      <GameResults 
         room={room}
         cityData={cityData}
       />
