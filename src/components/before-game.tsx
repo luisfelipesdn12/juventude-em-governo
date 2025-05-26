@@ -67,14 +67,17 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
   const handleSortearCards = async () => {
     const selectedCards = generateSituationCards();
     if (selectedCards) {
+      const points = selectedCards.reduce((acc, card) => {
+        acc[card.categoryId] = card.points;
+        return acc;
+      }, {} as Record<string, number>);
+
       // Save to Firebase
       try {
         await updateCityInRoom(roomId, cityId, {
           situation_cards: selectedCards,
-          points: selectedCards.reduce((acc, card) => {
-            acc[card.categoryId] = card.points;
-            return acc;
-          }, {} as Record<string, number>)
+          points,
+          initial_points: points
         });
       } catch (error) {
         console.error('Error saving situation cards to Firebase:', error);
@@ -86,16 +89,19 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
     const selectedCards = await generateAdvantageDisadvantageCards();
     if (selectedCards) {
       const currentPoints = cityData?.points || {};
+      const points = selectedCards.reduce((acc, card) => {
+        acc[card.category_id] = currentPoints[card.category_id] + (card.points * (
+          card.type === 'Vantagem' ? 1 : -1
+        ));
+        return acc;
+      }, currentPoints);
+
       // Save to Firebase
       try {
         await updateCityInRoom(roomId, cityId, {
           advantage_disadvantage_cards: selectedCards,
-          points: selectedCards.reduce((acc, card) => {
-            acc[card.category_id] = currentPoints[card.category_id] + (card.points * (
-              card.type === 'Vantagem' ? 1 : -1
-            ));
-            return acc;
-          }, currentPoints)
+          points,
+          initial_points: points
         });
       } catch (error) {
         console.error('Error selecting/saving advantage/disadvantage cards:', error);

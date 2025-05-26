@@ -22,7 +22,7 @@ import { useGameStore } from "@/lib/store/game-store";
 import { useRoomStore, Room } from "@/lib/store/room-store";
 import { usePlayerStore } from "@/lib/store/player-store";
 import { CheckCircle, Loader2 } from "lucide-react";
-import type { Item } from "@/lib/data";
+import { calculateCardAverage, type Item } from "@/lib/data";
 import { categoriesProperties } from "@/lib/categories-properties";
 
 interface ValueTableDrawerProps {
@@ -31,6 +31,7 @@ interface ValueTableDrawerProps {
 
 interface ItemWithCategory extends Item {
     categoryName: string;
+    categoryId: string;
 }
 
 export function ValueTableDrawer({ children }: ValueTableDrawerProps) {
@@ -119,7 +120,8 @@ export function ValueTableDrawer({ children }: ValueTableDrawerProps) {
                 const category = categories.find(cat => cat.id === item.category_id);
                 return {
                     ...item,
-                    categoryName: category ? category.name : 'Categoria Desconhecida'
+                    categoryName: category ? category.name : 'Categoria Desconhecida',
+                    categoryId: category ? category.id : 'Categoria Desconhecida'
                 };
             });
 
@@ -159,35 +161,45 @@ export function ValueTableDrawer({ children }: ValueTableDrawerProps) {
             // Add item to purchased items
             const newItems = [...(currentCityData.items || []), item.id];
             
-            // Calculate points increase based on item metrics
-            const newPoints = { ...currentCityData.points };
-            
-            // Find the category for this item to update points
-            const category = categories.find(cat => cat.id === item.category_id);
-            if (category && item.metrics) {
-                const categoryName = category.name;
+            // Get current situation cards
+            const currentSituationCards = [...(currentCityData.situation_cards || [])];
 
-                // Get current points for this category (default to 0 if not exists)
-                const currentCategoryPoints = newPoints[categoryName] ?? 0;
-
-                // Calculate total points increase from all metrics in this item
-                const totalPointsIncrease = item.metrics.reduce((total, metric) => {
-                    // Apply percentage increase to current situation card points
-                    const basePoints = currentCategoryPoints ?? 0;
-                    const pointsPercentage = metric.points_percentage_increase ?? 0;
-                    const pointsIncrease = (basePoints * pointsPercentage) / 100;
-                    return (total ?? 0) + (pointsIncrease ?? 0);
-                }, 0);
-                
-                // Update category points
-                newPoints[categoryName] = (currentCategoryPoints ?? 0) + (totalPointsIncrease ?? 0);
+            // For each metric associated to item purchased, increase the metric point
+            if (item.metrics) {
+                item.metrics.forEach(itemMetric => {
+                    if (itemMetric.points_increase !== undefined) {
+                        // Find the situation card that has a metric with matching id
+                        currentSituationCards.forEach(situationCard => {
+                            const metricIndex = situationCard.card.metrics.findIndex(metric => metric.id === itemMetric.id);
+                            if (metricIndex !== -1) {
+                                // Update the points for this metric
+                                situationCard.card.metrics[metricIndex] = {
+                                    ...situationCard.card.metrics[metricIndex],
+                                    points: situationCard.card.metrics[metricIndex].points + itemMetric.points_increase
+                                };
+                            }
+                        });
+                    }
+                });
             }
 
-            // Update city in room
+            // Calculate card average of new situation cards
+            const newSituationCardsWithAverage = currentSituationCards.map(situationCard => ({
+                ...situationCard,
+                points: calculateCardAverage(situationCard.card.metrics)
+            }));
+
+            // Make new points with reduce
+            const newPoints = newSituationCardsWithAverage.reduce((acc, card) => {
+                acc[card.categoryId] = card.points;
+                return acc;
+            }, {} as Record<string, number>);
+
+            // Update city in room (budget, points, items, but not including new situation cards)
             await updateCityInRoom(roomId, cityId, {
                 budget: newBudget,
                 items: newItems,
-                points: newPoints
+                points: newPoints,
             });
 
         } catch (error) {

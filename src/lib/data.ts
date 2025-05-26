@@ -20,7 +20,7 @@ export interface Category {
 
 export interface ItemMetric {
   id: string;
-  points_percentage_increase: number;
+  points_increase: number;
 }
 
 export interface Item {
