@@ -35,6 +35,8 @@ export interface Room {
     budget: number;
     /** Categoria Nome -> Pontos */
     points: Record<string, number>;
+    /** Items purchased by this city */
+    items: string[]; // Array of item IDs
     // Random results for the game
     situation_cards?: {
       card: {

@@ -75,7 +75,6 @@ export function InGame({ room, cityData }: InGameProps) {
                 align: "center",
                 loop: true,
               }}
-              className=""
             >
               <CarouselContent>
                 {allCards.map((item, index) => (
