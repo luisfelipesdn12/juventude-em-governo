@@ -18,6 +18,7 @@ export default function RoomDetail() {
   const { error, subscribeToRoom, updateRoom } = useRoomStore();
   const [room, setRoom] = useState<Room | undefined>(undefined);
   const [isStartingGame, setIsStartingGame] = useState(false);
+  const [isFinishingGame, setIsFinishingGame] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
 
   // Update current time every second for the timer
@@ -96,6 +97,20 @@ export default function RoomDetail() {
       console.error('Error starting game:', error);
     } finally {
       setIsStartingGame(false);
+    }
+  };
+
+  // Handle finishing the game
+  const handleFinishGame = async () => {
+    if (!room) return;
+
+    setIsFinishingGame(true);
+    try {
+      await updateRoom(roomId, { state: 'finished' });
+    } catch (error) {
+      console.error('Error finishing game:', error);
+    } finally {
+      setIsFinishingGame(false);
     }
   };
 
@@ -250,6 +265,25 @@ export default function RoomDetail() {
               <>
                 <Play className="h-4 w-4" />
                 Iniciar Jogo
+              </>
+            )}
+          </Button>
+        )}
+        {room.state === 'started' && (
+          <Button 
+            onClick={handleFinishGame}
+            disabled={isFinishingGame}
+            className="flex items-center gap-2"
+          >
+            {isFinishingGame ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Finalizando...
+              </>
+            ) : (
+              <>
+                <Play className="h-4 w-4" />
+                Finalizar Jogo
               </>
             )}
           </Button>
