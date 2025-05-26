@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/carousel";
 import { GameCard } from "@/components/GameCard";
 import { GameCardAdvUnforeseen } from "./GameCardAdvUnforeseen";
+import { Button } from "./ui/button";
 
 interface InGameProps {
   room: Room;
@@ -57,7 +58,7 @@ export function InGame({ room, cityData }: InGameProps) {
   ];
 
   return (
-    <div className="container mx-auto py-8 px-8 flex flex-col min-h-screen">
+    <div className="container mx-auto py-8 px-8 flex flex-col min-h-[90vh] justify-between">
       {/* City Name Header */}
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold text-primary mb-2">{cityData.name}</h1>
@@ -109,10 +110,19 @@ export function InGame({ room, cityData }: InGameProps) {
       </div>
 
       {/* Game Info Footer */}
-      <div className="mt-8 text-center">
-        <p className="text-sm text-muted-foreground">
-          Jogo em andamento • Use as setas para navegar pelas cartas
-        </p>
+      <div className="mt-8 text-center grid grid-cols-3 gap-2 grid-rows-2">
+        <Button className="col-span-2 text-2xl">
+          Tabela de Valores
+        </Button>
+        <Button className="col-span-1 text-2xl">
+          D$ {cityData.budget}
+        </Button>
+        <Button className="col-span-2 text-2xl">
+          Governo Aberto
+        </Button>
+        <Button className="col-span-1 text-2xl">
+          Terminar
+        </Button>
       </div>
     </div>
   );
