@@ -249,18 +249,6 @@ export default function RoomDetail() {
               </CardHeader>
               <CardContent>
                 <p className="flex items-center gap-1">
-                  {city.initial_budget ? (
-                    <>
-                      D$ {city.initial_budget.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
-                    </>
-                  ) : (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      Sorteando dindins...
-                    </>
-                  )}
-                </p>
-                <p className="flex items-center gap-1">
                   {city.situation_cards ? (
                     <>
                       <CheckCircleIcon className="w-4 h-4" />
@@ -283,6 +271,18 @@ export default function RoomDetail() {
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
                       Sorteando vantagem/imprevistos...
+                    </>
+                  )}
+                </p>
+                <p className="flex items-center gap-1">
+                  {city.initial_budget ? (
+                    <>
+                      D$ {city.initial_budget.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
+                    </>
+                  ) : (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Sorteando dindins...
                     </>
                   )}
                 </p>

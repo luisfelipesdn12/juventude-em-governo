@@ -4,6 +4,8 @@ import { getCategoriesWithCards, selectRandomCardsFromCategories, selectRandomAd
 export interface CardWithCategory {
   card: GameCard;
   categoryName: string;
+  categoryId: string;
+  points: number;
 }
 
 interface GameState {

@@ -169,8 +169,8 @@ export const getCategoriesWithCards = async (): Promise<Category[]> => {
 };
 
 // Function to randomly select one card from each category
-export const selectRandomCardsFromCategories = (categories: Category[]): { card: Card; categoryName: string }[] => {
-  const selectedCards: { card: Card; categoryName: string }[] = [];
+export const selectRandomCardsFromCategories = (categories: Category[]): { card: Card; categoryName: string, categoryId: string, points: number }[] => {
+  const selectedCards: { card: Card; categoryName: string, categoryId: string, points: number }[] = [];
   
   for (const category of categories) {
     if (category.cards && category.cards.length > 0) {
@@ -179,6 +179,8 @@ export const selectRandomCardsFromCategories = (categories: Category[]): { card:
       selectedCards.push({
         card: selectedCard,
         categoryName: category.name,
+        categoryId: category.id,
+        points: calculateCardAverage(selectedCard.metrics),
       });
     }
   }

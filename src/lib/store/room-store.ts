@@ -33,6 +33,8 @@ export interface Room {
     state: 'drawing' | 'ready';
     initial_budget: number;
     budget: number;
+    /** Categoria Nome -> Pontos */
+    points: Record<string, number>;
     // Random results for the game
     situation_cards?: {
       card: {
@@ -44,6 +46,8 @@ export interface Room {
         }[];
       };
       categoryName: string;
+      categoryId: string;
+      points: number;
     }[];
     advantage_disadvantage_cards?: {
       id: string;

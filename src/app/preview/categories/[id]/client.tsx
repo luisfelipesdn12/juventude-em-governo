@@ -91,14 +91,14 @@ export function CategoryClient({ initialCategory, id, advantagesAndUnforeseen }:
                 <ul className="space-y-2 list-disc">
                   {card.metrics.map((metric) => (
                     <li key={metric.id} className="text-sm">
-                      {metric.text} ({metric.points}%)
+                      {metric.text} ({metric.points})
                     </li>
                   ))}
                 </ul>
               </CardContent>
               <CardFooter className="border-t pt-4">
                 <div className="text-lg font-semibold">
-                  Média: {avgPoints}%
+                  Média: {avgPoints}
                 </div>
               </CardFooter>
             </Card>
