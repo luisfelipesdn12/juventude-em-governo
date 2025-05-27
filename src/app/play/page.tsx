@@ -1,6 +1,6 @@
 "use client"
 import * as React from "react"
-import { Minus, Plus } from "lucide-react"
+import { Minus, Plus, History, ArrowRight } from "lucide-react"
 import { z } from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { usePlayerStore } from "@/lib/store/player-store"
@@ -28,9 +29,13 @@ export default function Home() {
   const router = useRouter()
   const { roomExists, joinRoom, error } = usePlayerStore()
   const { getRoom } = useRoomStore()
-  const { addPastGame } = usePastGames()
+  const { pastGames, addPastGame } = usePastGames()
   const [formError, setFormError] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isJoiningLastRoom, setIsJoiningLastRoom] = useState(false)
+  
+  // Get the most recent game
+  const lastGame = pastGames.length > 0 ? pastGames[0] : null
   
   // Initialize form with default values and validation
   const form = useForm<FormValues>({
@@ -106,8 +111,75 @@ export default function Home() {
     }
   }
 
+  // Handle joining the last room
+  const handleJoinLastRoom = async () => {
+    if (!lastGame) return
+    
+    setIsJoiningLastRoom(true)
+    setFormError(null)
+    
+    try {
+      // Check if the room still exists
+      const exists = await roomExists(lastGame.roomId)
+      
+      if (!exists) {
+        setFormError(`Sala ${lastGame.roomId} não está mais disponível`)
+        setIsJoiningLastRoom(false)
+        return
+      }
+      
+      // Redirect directly to the player room page
+      router.push(`/player/room/${lastGame.roomId}/${lastGame.cityId}`)
+    } catch (err) {
+      console.error("Error joining last room:", err)
+      setFormError("Erro ao entrar na última sala")
+    } finally {
+      setIsJoiningLastRoom(false)
+    }
+  }
+
   return (
     <div className="flex flex-col items-center justify-center h-screen gap-4">
+      {/* Last Room Card */}
+      {lastGame && (
+        <Card className="w-full max-w-sm mb-4">
+          <CardHeader className="pb-1">
+            <div className="flex items-center gap-2">
+              <History className="h-5 w-5" />
+              <CardTitle className="text-lg">Continue de onde parou</CardTitle>
+            </div>
+          </CardHeader>
+          <CardContent className="pt-0">
+            <div className="flex gap-2 pb-2">
+              <div className="flex justify-between text-sm gap-2">
+                <span className="">Sala:</span>
+                <span className="font-medium">#{lastGame.roomId}</span>
+              </div>
+              <div className="flex justify-between text-sm gap-2">
+                <span className="">Cidade:</span>
+                <span className="font-medium">{lastGame.cityName || `Cidade ${lastGame.cityId}`}</span>
+              </div>
+            </div>
+            <div className="flex gap-2">
+              <Button 
+                onClick={handleJoinLastRoom}
+                disabled={isJoiningLastRoom}
+                className="flex-1" variant="outline" size="sm"
+              >
+                {isJoiningLastRoom ? (
+                  "Entrando..."
+                ) : (
+                  <>
+                    Entrar
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </>
+                )}
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="w-full max-w-sm">
           <div className="flex flex-col items-center justify-center gap-4 w-full">
