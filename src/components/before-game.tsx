@@ -309,7 +309,7 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
 
         <Button
           onClick={handleSortearDindins}
-          disabled={dindins !== undefined || situationCards === undefined || advantageDisadvantageCards === undefined}
+          disabled={dindins !== undefined}
         >
           Sortear
         </Button>
