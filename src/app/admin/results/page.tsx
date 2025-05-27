@@ -121,9 +121,10 @@ export default function AdminResults() {
           if (room.cities) {
             for (const city of room.cities) {
               if (city.points) {
-                const points = Object.values(city.points)
-                  .filter((value): value is number => typeof value === 'number')
-                  .reduce((acc, curr) => acc + curr, 0);
+                const categoriesWithPoints = Object.values(city.points)
+                  .filter((value): value is number => typeof value === 'number');
+                const sum = categoriesWithPoints.reduce((acc, curr) => acc + curr, 0) || 0;
+                const points = Math.round(sum / categoriesWithPoints.length) || 0;
                 totalPoints += points;
                 citiesWithPoints++;
               }
