@@ -53,7 +53,7 @@ export default function Home() {
 
   // Handle player count changes
   const incrementPlayers = () => {
-    const newValue = Math.min(players + 1, 4)
+    const newValue = Math.min(players + 1, 10)
     setValue("players", newValue, { shouldValidate: true })
   }
 
