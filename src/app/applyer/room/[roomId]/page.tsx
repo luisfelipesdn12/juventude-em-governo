@@ -6,10 +6,18 @@ import { useRoomStore, Room } from "@/lib/store/room-store";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircleIcon, Loader2, Play } from "lucide-react";
+import { CheckCircleIcon, Loader2, Play, AlertTriangle } from "lucide-react";
 import { Timestamp } from "firebase/firestore";
 import { differenceInSeconds } from "date-fns";
 import { GameResults } from "@/components/game-results";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 export default function RoomDetail() {
   const params = useParams();
@@ -20,6 +28,7 @@ export default function RoomDetail() {
   const [room, setRoom] = useState<Room | undefined>(undefined);
   const [isStartingGame, setIsStartingGame] = useState(false);
   const [isFinishingGame, setIsFinishingGame] = useState(false);
+  const [showFinishConfirmation, setShowFinishConfirmation] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
 
   // Update current time every second for the timer
@@ -108,6 +117,7 @@ export default function RoomDetail() {
     setIsFinishingGame(true);
     try {
       await updateRoom(roomId, { state: 'finished' });
+      setShowFinishConfirmation(false);
     } catch (error) {
       console.error('Error finishing game:', error);
     } finally {
@@ -299,7 +309,7 @@ export default function RoomDetail() {
         )}
         {room.state === 'started' && (
           <Button 
-            onClick={handleFinishGame}
+            onClick={() => setShowFinishConfirmation(true)}
             disabled={isFinishingGame}
             className="flex items-center gap-2"
           >
@@ -387,6 +397,47 @@ export default function RoomDetail() {
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-semibold">Resultados</h2>
       </div>
+
+      {/* Finish Game Confirmation Modal */}
+      <Dialog open={showFinishConfirmation} onOpenChange={setShowFinishConfirmation}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <AlertTriangle className="h-5 w-5 text-orange-500" />
+              Confirmar Finalização do Jogo
+            </DialogTitle>
+            <DialogDescription>
+              Tem certeza que deseja finalizar o jogo? Esta ação não pode ser desfeita e todos os jogadores serão redirecionados para a tela de resultados.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button 
+              variant="outline" 
+              onClick={() => setShowFinishConfirmation(false)}
+              disabled={isFinishingGame}
+            >
+              Cancelar
+            </Button>
+            <Button 
+              onClick={handleFinishGame}
+              disabled={isFinishingGame}
+              className="flex items-center gap-2"
+            >
+              {isFinishingGame ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  Finalizando...
+                </>
+              ) : (
+                <>
+                  <Play className="h-4 w-4" />
+                  Finalizar Jogo
+                </>
+              )}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

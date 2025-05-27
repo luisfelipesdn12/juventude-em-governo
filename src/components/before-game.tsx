@@ -288,7 +288,7 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
         <AdvantageDisadvantageMarquee cards={advantageDisadvantageCards} />
       </div>
 
-      <div className="flex gap-4 w-full justify-between items-center">
+      <div className="flex gap-4 w-full justify-between items-center pb-12">
         <h2 className="text-xl font-semibold">
           Dindins
           <br />
@@ -309,7 +309,7 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
 
         <Button
           onClick={handleSortearDindins}
-          disabled={dindins !== undefined}
+          disabled={![undefined, null, 0].includes(dindins)}
         >
           Sortear
         </Button>

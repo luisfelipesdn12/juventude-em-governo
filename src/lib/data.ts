@@ -279,9 +279,24 @@ export const selectRandomAdvantageAndUnforeseen = async (): Promise<AdvantageUnf
       dindins: doc.data().dindins,
     }))
 
-    // Randomly select 3 cards
-    const shuffled = allCards.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 3);
+    // Separate cards by type
+    const vantagemCards = allCards.filter(card => card.type === 'Vantagem');
+    const imprevistoCards = allCards.filter(card => card.type === 'Imprevisto');
+    
+    // Select one random card from each type
+    const selectedCards: AdvantageUnforeseenCard[] = [];
+    
+    if (vantagemCards.length > 0) {
+      const randomVantagem = vantagemCards[Math.floor(Math.random() * vantagemCards.length)];
+      selectedCards.push(randomVantagem);
+    }
+    
+    if (imprevistoCards.length > 0) {
+      const randomImprevisto = imprevistoCards[Math.floor(Math.random() * imprevistoCards.length)];
+      selectedCards.push(randomImprevisto);
+    }
+    
+    return selectedCards;
   } catch (error) {
     console.error('Error selecting random advantages and unforeseen:', error);
     return [];

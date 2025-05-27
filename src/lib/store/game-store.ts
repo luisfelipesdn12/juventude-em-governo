@@ -395,7 +395,7 @@ export const useGameStore = create<GameState>((set, get) => ({
   generateRandomDindins: () => {
     // 1. de 40 mil a 400 mil
     // 2. tem que ser múltiplo de 100
-    const min = 40000;
+    const min = 130000;
     const max = 400000;
     const random = Math.floor(Math.random() * (max - min + 1)) + min;
     const multipleOf100 = Math.floor(random / 100) * 100;

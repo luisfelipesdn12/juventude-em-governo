@@ -57,8 +57,6 @@ export function GameResults({ room, cityData, showBackButton = false }: GameResu
   // Calculate real budget spending by category
   useEffect(() => {
     const calculateCategorySpending = async () => {
-      setLoading(true);
-
       try {
         // Initialize spending tracker for each category
         const spendingByCategory: Record<string, number> = {};
@@ -137,7 +135,7 @@ export function GameResults({ room, cityData, showBackButton = false }: GameResu
   };
 
   return (
-    <Card className="p-6 bg-transparent">
+    <Card className="p-6 bg-transparent mb-24">
       {/* City Name Header */}
       <div className="text-center mb-4">
         <div className="flex items-center justify-center gap-2">
