@@ -58,7 +58,8 @@ export interface Room {
       text: string;
       effect: string;
       category_id: string;
-      points: number;
+      points?: number;
+      dindins?: number;
     }[];
   }[];
   createdAt?: Timestamp;

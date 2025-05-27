@@ -94,9 +94,14 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
     if (selectedCards) {
       const currentPoints = cityData?.points || {};
       const points = selectedCards.reduce((acc, card) => {
-        acc[card.category_id] = currentPoints[card.category_id] + (card.points * (
-          card.type === 'Vantagem' ? 1 : -1
-        ));
+        if (card.points) {
+          acc[card.category_id] = currentPoints[card.category_id] + (card.points * (
+            card.type === 'Vantagem' ? 1 : -1
+          ));
+        } else if (card.dindins) {
+          // Dindins will be added to the city's budget when player
+          // sorts the dindins
+        }
         return acc;
       }, currentPoints);
 
@@ -114,7 +119,15 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
   };
 
   const handleSortearDindins = async () => {
-    const newDindins = generateRandomDindins();
+    let newDindins = generateRandomDindins();
+
+    // Verify if the city has any advantage/disadvantage cards
+    const hasAdvDisadvCards = (advantageDisadvantageCards || [])?.length > 0;
+
+    if (hasAdvDisadvCards) {
+      // Add dindins to the city's budget
+      newDindins += advantageDisadvantageCards?.reduce((acc, card) => acc + (card.dindins || 0), 0) || 0;
+    }
 
     // Save to Firebase
     try {
@@ -251,7 +264,7 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
           <h2 className="text-xl font-semibold">Cartas vantagem desvantagem</h2>
           <Button
             onClick={handleSortearAdvDisadvCards}
-            disabled={advantageDisadvantageCards !== undefined || loadingAdvDisadvCards}
+            disabled={advantageDisadvantageCards !== undefined || loadingAdvDisadvCards || situationCards === undefined}
           >
             {loadingAdvDisadvCards ? (
               <>
@@ -288,7 +301,7 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
 
         <Button
           onClick={handleSortearDindins}
-          disabled={dindins !== undefined}
+          disabled={dindins !== undefined || situationCards === undefined || advantageDisadvantageCards === undefined}
         >
           Sortear
         </Button>

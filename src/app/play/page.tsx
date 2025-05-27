@@ -29,13 +29,13 @@ export default function Home() {
   const router = useRouter()
   const { roomExists, joinRoom, error } = usePlayerStore()
   const { getRoom } = useRoomStore()
-  const { pastGames, addPastGame } = usePastGames()
+  const { pastGames, addPastGame, isClient } = usePastGames()
   const [formError, setFormError] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isJoiningLastRoom, setIsJoiningLastRoom] = useState(false)
   
-  // Get the most recent game
-  const lastGame = pastGames.length > 0 ? pastGames[0] : null
+  // Get the most recent game (only show when client is ready to prevent hydration mismatch)
+  const lastGame = isClient && pastGames.length > 0 ? pastGames[0] : null
   
   // Initialize form with default values and validation
   const form = useForm<FormValues>({

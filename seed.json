@@ -3183,7 +3183,7 @@
             "text": "Sua cidade recebeu verba do Governo Estadual de 10 mil Dindins para cultura e lazer!",
             "effect": "Solicite esse dinheiro ao caixa e aplique-o no setor de Esporte, Cultura e Lazer.",
             "category_id": "scl74k3b",
-            "points": 0.25
+            "dindins": 10000
         },
         {
             "id": "adv2",
@@ -3191,7 +3191,7 @@
             "text": "Sua cidade recebeu verba do Governo Estadual de 30 mil Dindins para a educação!",
             "effect": "Solicite esse dinheiro ao caixa e aplique-o no setor de Educação.",
             "category_id": "e7gh2kp9",
-            "points": 0.25
+            "dindins": 30000
         },
         {
             "id": "adv3",
