@@ -162,6 +162,7 @@ export default function PlayerRoom() {
       <GameResults 
         room={room}
         cityData={cityData}
+        showBackButton={true}
       />
     );
   }

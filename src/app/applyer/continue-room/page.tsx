@@ -106,7 +106,9 @@ export default function ContinueRoom() {
             <CardContent>
               <p className="text-sm mb-1"><strong>Instituição:</strong> {room.institution}</p>
               <p className="text-sm mb-1"><strong>Classe:</strong> {room.class}</p>
-              <p className="text-sm"><strong>Tempo:</strong> {room.settings.time} minutos</p>
+              <p className="text-sm mb-1"><strong>Tempo:</strong> {room.settings.time} minutos</p>
+              <p className="text-sm mb-1"><strong>Estado:</strong> {room.state === 'drawing' ? 'Preparando' : room.state === 'started' ? 'Em andamento' : 'Finalizado'}</p>
+              <p className="text-sm mb-1"><strong>Cidades:</strong> {room.cities.length}</p>
               {room.createdAt && (
                 <p className="text-xs mt-2">
                   Criada em: {room.createdAt.toDate().toLocaleString()}

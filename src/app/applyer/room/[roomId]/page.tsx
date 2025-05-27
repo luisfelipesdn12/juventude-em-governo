@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircleIcon, Loader2, Play } from "lucide-react";
 import { Timestamp } from "firebase/firestore";
 import { differenceInSeconds } from "date-fns";
+import { GameResults } from "@/components/game-results";
 
 export default function RoomDetail() {
   const params = useParams();
@@ -195,6 +196,31 @@ export default function RoomDetail() {
 
   const statusBadge = getStatusBadge(room.state);
 
+  // Show game results if the room is finished
+  if (room.state === 'finished') {
+    // Sort cities by average points
+    const sortedCities = [...room.cities].sort((a, b) => {
+      const aPoints = a.points ? Object.values(a.points).reduce((acc, curr) => acc + (curr || 0), 0) / Object.keys(a.points).length : 0;
+      const bPoints = b.points ? Object.values(b.points).reduce((acc, curr) => acc + (curr || 0), 0) / Object.keys(b.points).length : 0;
+      return bPoints - aPoints; // Sort descending (highest to lowest)
+    });
+
+    return (
+      <div className="container mx-auto py-8 px-6 gap-6 flex flex-col">
+        <div className="flex items-center justify-center gap-4">
+          <h1 className="text-2xl font-semibold">Sala #{room.id}</h1>
+          <Badge variant={statusBadge.variant}>{statusBadge.text}</Badge>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {sortedCities.map((city) => (
+            <GameResults key={city.id} room={room} cityData={city} />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto py-8 px-6 gap-6 flex flex-col">
       <div className="flex items-center justify-center gap-4">
@@ -355,6 +381,11 @@ export default function RoomDetail() {
         {room.cities.length === 0 && (
           <p className="text-center col-span-2">Nenhuma cidade disponível...</p>
         )}
+      </div>
+
+
+      <div className="flex items-center justify-between">
+        <h2 className="text-2xl font-semibold">Resultados</h2>
       </div>
     </div>
   );
