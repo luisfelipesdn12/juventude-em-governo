@@ -4,7 +4,7 @@ import Image from "next/image";
 import InstallButton from "@/components/InstallButton";
 import manifest from "../manifest";
 import { Button } from "@/components/ui/button";
-import { EyeIcon, History } from "lucide-react";
+import { ChartSplineIcon, EyeIcon, History } from "lucide-react";
 import Link from "next/link";
 import PlayIcon from "@/lib/icons/play";
 import MenuIcon from '@/lib/icons/menu';
@@ -69,7 +69,17 @@ function HomeMenu({ role = "player" }: { role?: "admin" | "player" | "applyer" }
         label: "Preview",
         href: "/preview",
         icon: <EyeIcon />
-      }
+      },
+      {
+        label: "Todas as salas",
+        href: "/admin/continue-room",
+        icon: <PlayIcon />
+      },
+      {
+        label: "Resultados gerais",
+        href: "/admin/results",
+        icon: <ChartSplineIcon />
+      },
     ],
     applyer: [
       {
