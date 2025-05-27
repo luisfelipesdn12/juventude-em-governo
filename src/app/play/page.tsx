@@ -224,7 +224,7 @@ export default function Home() {
                         size="icon"
                         className="h-8 w-8 shrink-0 rounded-full"
                         onClick={incrementPlayers}
-                        disabled={players >= 4}
+                        disabled={players >= 10}
                       >
                         <Plus className="h-4 w-4" />
                         <span className="sr-only">Increase</span>
