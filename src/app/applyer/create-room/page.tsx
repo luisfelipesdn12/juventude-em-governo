@@ -17,7 +17,7 @@ const formSchema = z.object({
   name: z.string().min(2, { message: "Nome deve ter pelo menos 2 caracteres" }),
   institution: z.string().min(2, { message: "Nome da instituição deve ter pelo menos 2 caracteres" }),
   class: z.string().min(1, { message: "Classe/série é obrigatória" }),
-  time: z.coerce.number().min(1, { message: "Tempo deve ser pelo menos 1 minuto" }).max(120, { message: "Tempo não deve ultrapassar 120 minutos" }),
+  time: z.coerce.number().min(30, { message: "Tempo deve ser pelo menos 30 minuto" }).max(120, { message: "Tempo não deve ultrapassar 120 minutos" }),
 });
 
 type FormValues = z.infer<typeof formSchema>;

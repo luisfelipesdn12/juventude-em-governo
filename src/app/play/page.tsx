@@ -66,23 +66,25 @@ export default function Home() {
   async function onSubmit(data: FormValues) {
     setIsSubmitting(true)
     setFormError(null)
-    
+
+    const code = data.code.toUpperCase()
+
     try {
       // First check if the room exists
-      const exists = await roomExists(data.code)
+      const exists = await roomExists(code)
       
       if (!exists) {
-        setFormError(`Sala com código ${data.code} não encontrada`)
+        setFormError(`Sala com código ${code} não encontrada`)
         setIsSubmitting(false)
         return
       }
       
       // Join the room by creating a city
-      const city = await joinRoom(data.code, data.cityName, data.players)
+      const city = await joinRoom(code, data.cityName, data.players)
       
       if (city) {
         // Get the room to get the city ID
-        const room = await getRoom(data.code)
+        const room = await getRoom(code)
         
         if (room) {
           // Find the city in the room
@@ -90,10 +92,10 @@ export default function Home() {
           
           if (roomCity) {
             // Store the game in past games
-            addPastGame(data.code, roomCity.id, data.cityName)
+            addPastGame(code, roomCity.id, data.cityName)
             
             // Redirect to the player room page
-            router.push(`/player/room/${data.code}/${roomCity.id}`)
+            router.push(`/player/room/${code}/${roomCity.id}`)
           } else {
             setFormError("Erro ao adicionar cidade à sala")
           }
