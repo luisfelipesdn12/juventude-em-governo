@@ -4,7 +4,7 @@ import Image from "next/image";
 import InstallButton from "@/components/InstallButton";
 import manifest from "../manifest";
 import { Button } from "@/components/ui/button";
-import { EyeIcon } from "lucide-react";
+import { EyeIcon, History } from "lucide-react";
 import Link from "next/link";
 import PlayIcon from "@/lib/icons/play";
 import MenuIcon from '@/lib/icons/menu';
@@ -47,6 +47,11 @@ function HomeMenu({ role = "player" }: { role?: "admin" | "player" | "applyer" }
         label: "Jogar",
         href: "/play",
         icon: <PlayIcon />
+      },
+      {
+        label: "Últimos jogos",
+        href: "/player/past",
+        icon: <History />
       },
       {
         label: "Vídeos de formação",

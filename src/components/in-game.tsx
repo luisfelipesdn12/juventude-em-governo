@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { differenceInSeconds } from "date-fns";
-import { Room } from "@/lib/store/room-store";
+import { Room, useRoomStore } from "@/lib/store/room-store";
+import { usePlayerStore } from "@/lib/store/player-store";
 import { useGameStore } from "@/lib/store/game-store";
 import {
   Carousel,
@@ -14,16 +15,26 @@ import {
 import { GameCard } from "@/components/GameCard";
 import { GameCardAdvUnforeseen } from "./GameCardAdvUnforeseen";
 import { Button } from "./ui/button";
+import { PencilIcon } from "lucide-react";
 import { ValueTableDrawer } from "./value-table-drawer";
 import { FullscreenCardsOverlay } from "./FullscreenCardsOverlay";
 import { FullscreenAdvDisadvOverlay } from "./FullscreenAdvDisadvOverlay";
+import { EditCityModal } from "@/components/edit-city-modal";
 
 interface InGameProps {
+  roomId: string;
+  cityId: number;
   room: Room;
   cityData: Room['cities'][0];
 }
 
-export function InGame({ room, cityData }: InGameProps) {
+export function InGame({ roomId, cityId, room, cityData }: InGameProps) {
+  const { updateCityInRoom } = useRoomStore();
+  const { player, updatePlayer } = usePlayerStore();
+  
+  // Modal state
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  
   // Game store state and actions
   const {
     situationCards,
@@ -113,12 +124,41 @@ export function InGame({ room, cityData }: InGameProps) {
     setIsAdvDisadvOverlayOpen(false);
   };
 
+  const handleEditCity = async (newCityName: string, newNumberOfPlayers: number) => {
+    try {
+      // Update city name in the room
+      await updateCityInRoom(roomId, cityId, {
+        name: newCityName
+      });
+      
+      // Update player data if exists
+      if (player?.id) {
+        await updatePlayer(player.id, {
+          cityName: newCityName,
+          playerCount: newNumberOfPlayers
+        });
+      }
+    } catch (error) {
+      console.error('Error updating city:', error);
+      throw error;
+    }
+  };
+
+  const handleOpenEditModal = () => {
+    setIsEditModalOpen(true);
+  };
+
   return (
     <>
       <div className="container mx-auto py-8 px-8 flex flex-col min-h-[90vh] justify-between">
         {/* City Name Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-primary mb-2">{cityData.name}</h1>
+          <div className="flex gap-4 mx-auto items-center justify-center">
+            <h1 className="text-4xl font-bold text-primary">{cityData.name}</h1>
+            <Button size="icon" variant="outline" onClick={handleOpenEditModal}>
+              <PencilIcon className="h-4 w-4" />
+            </Button>
+          </div>
           <p className="text-lg text-muted-foreground">Sala #{room.id}</p>
         </div>
 
@@ -207,6 +247,14 @@ export function InGame({ room, cityData }: InGameProps) {
           initialIndex={selectedCardIndex}
         />
       )}
+      
+      <EditCityModal
+        isOpen={isEditModalOpen}
+        onClose={() => setIsEditModalOpen(false)}
+        cityName={cityData.name}
+        numberOfPlayers={player?.playerCount || 1}
+        onSave={handleEditCity}
+      />
     </>
   );
 } 

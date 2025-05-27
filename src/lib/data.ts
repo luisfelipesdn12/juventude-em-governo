@@ -37,7 +37,8 @@ export interface AdvantageUnforeseenCard {
   text: string;
   effect: string;
   category_id: string;
-  points: number;
+  points?: number;
+  dindins?: number;
 }
 
 export const getCategories = async (): Promise<Category[]> => {

@@ -1369,6 +1369,98 @@
     "@typescript-eslint/types" "8.32.0"
     eslint-visitor-keys "^4.2.0"
 
+"@uidotdev/usehooks@^2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@uidotdev/usehooks/-/usehooks-2.4.1.tgz#4b733eaeae09a7be143c6c9ca158b56cc1ea75bf"
+  integrity sha512-1I+RwWyS+kdv3Mv0Vmc+p0dPYH0DTRAo04HLyXReYBL9AeseDWUJyi4THuksBJcu9F0Pih69Ak150VDnqbVnXg==
+
+"@unrs/resolver-binding-darwin-arm64@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-darwin-arm64/-/resolver-binding-darwin-arm64-1.7.2.tgz#12eed2bd9865d1f55bb79d76072330b6032441d7"
+  integrity sha512-vxtBno4xvowwNmO/ASL0Y45TpHqmNkAaDtz4Jqb+clmcVSSl8XCG/PNFFkGsXXXS6AMjP+ja/TtNCFFa1QwLRg==
+
+"@unrs/resolver-binding-darwin-x64@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-darwin-x64/-/resolver-binding-darwin-x64-1.7.2.tgz#97e0212a85c56e156a272628ec55da7aff992161"
+  integrity sha512-qhVa8ozu92C23Hsmv0BF4+5Dyyd5STT1FolV4whNgbY6mj3kA0qsrGPe35zNR3wAN7eFict3s4Rc2dDTPBTuFQ==
+
+"@unrs/resolver-binding-freebsd-x64@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-freebsd-x64/-/resolver-binding-freebsd-x64-1.7.2.tgz#07594a9d1d83e84b52908800459273ea00caf595"
+  integrity sha512-zKKdm2uMXqLFX6Ac7K5ElnnG5VIXbDlFWzg4WJ8CGUedJryM5A3cTgHuGMw1+P5ziV8CRhnSEgOnurTI4vpHpg==
+
+"@unrs/resolver-binding-linux-arm-gnueabihf@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-arm-gnueabihf/-/resolver-binding-linux-arm-gnueabihf-1.7.2.tgz#9ef6031bb1136ee7862a6f94a2a53c395d2b6fae"
+  integrity sha512-8N1z1TbPnHH+iDS/42GJ0bMPLiGK+cUqOhNbMKtWJ4oFGzqSJk/zoXFzcQkgtI63qMcUI7wW1tq2usZQSb2jxw==
+
+"@unrs/resolver-binding-linux-arm-musleabihf@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-arm-musleabihf/-/resolver-binding-linux-arm-musleabihf-1.7.2.tgz#24910379ab39da1b15d65b1a06b4bfb4c293ca0c"
+  integrity sha512-tjYzI9LcAXR9MYd9rO45m1s0B/6bJNuZ6jeOxo1pq1K6OBuRMMmfyvJYval3s9FPPGmrldYA3mi4gWDlWuTFGA==
+
+"@unrs/resolver-binding-linux-arm64-gnu@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-arm64-gnu/-/resolver-binding-linux-arm64-gnu-1.7.2.tgz#49b6a8fb8f42f7530f51bc2e60fc582daed31ffb"
+  integrity sha512-jon9M7DKRLGZ9VYSkFMflvNqu9hDtOCEnO2QAryFWgT6o6AXU8du56V7YqnaLKr6rAbZBWYsYpikF226v423QA==
+
+"@unrs/resolver-binding-linux-arm64-musl@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-arm64-musl/-/resolver-binding-linux-arm64-musl-1.7.2.tgz#3a9707a6afda534f30c8de8a5de6c193b1b6d164"
+  integrity sha512-c8Cg4/h+kQ63pL43wBNaVMmOjXI/X62wQmru51qjfTvI7kmCy5uHTJvK/9LrF0G8Jdx8r34d019P1DVJmhXQpA==
+
+"@unrs/resolver-binding-linux-ppc64-gnu@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-ppc64-gnu/-/resolver-binding-linux-ppc64-gnu-1.7.2.tgz#659831ff2bfe8157d806b69b6efe142265bf9f0f"
+  integrity sha512-A+lcwRFyrjeJmv3JJvhz5NbcCkLQL6Mk16kHTNm6/aGNc4FwPHPE4DR9DwuCvCnVHvF5IAd9U4VIs/VvVir5lg==
+
+"@unrs/resolver-binding-linux-riscv64-gnu@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-riscv64-gnu/-/resolver-binding-linux-riscv64-gnu-1.7.2.tgz#e75abebd53cdddb3d635f6efb7a5ef6e96695717"
+  integrity sha512-hQQ4TJQrSQW8JlPm7tRpXN8OCNP9ez7PajJNjRD1ZTHQAy685OYqPrKjfaMw/8LiHCt8AZ74rfUVHP9vn0N69Q==
+
+"@unrs/resolver-binding-linux-riscv64-musl@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-riscv64-musl/-/resolver-binding-linux-riscv64-musl-1.7.2.tgz#e99b5316ee612b180aff5a7211717f3fc8c3e54e"
+  integrity sha512-NoAGbiqrxtY8kVooZ24i70CjLDlUFI7nDj3I9y54U94p+3kPxwd2L692YsdLa+cqQ0VoqMWoehDFp21PKRUoIQ==
+
+"@unrs/resolver-binding-linux-s390x-gnu@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-s390x-gnu/-/resolver-binding-linux-s390x-gnu-1.7.2.tgz#36646d5f60246f0eae650fc7bcd79b3cbf7dcff1"
+  integrity sha512-KaZByo8xuQZbUhhreBTW+yUnOIHUsv04P8lKjQ5otiGoSJ17ISGYArc+4vKdLEpGaLbemGzr4ZeUbYQQsLWFjA==
+
+"@unrs/resolver-binding-linux-x64-gnu@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.npmjs.org/@unrs/resolver-binding-linux-x64-gnu/-/resolver-binding-linux-x64-gnu-1.7.2.tgz"
+  integrity sha512-dEidzJDubxxhUCBJ/SHSMJD/9q7JkyfBMT77Px1npl4xpg9t0POLvnWywSk66BgZS/b2Hy9Y1yFaoMTFJUe9yg==
+
+"@unrs/resolver-binding-linux-x64-musl@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.npmjs.org/@unrs/resolver-binding-linux-x64-musl/-/resolver-binding-linux-x64-musl-1.7.2.tgz"
+  integrity sha512-RvP+Ux3wDjmnZDT4XWFfNBRVG0fMsc+yVzNFUqOflnDfZ9OYujv6nkh+GOr+watwrW4wdp6ASfG/e7bkDradsw==
+
+"@unrs/resolver-binding-wasm32-wasi@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-wasm32-wasi/-/resolver-binding-wasm32-wasi-1.7.2.tgz#5b138ce8d471f5d0c8d6bfab525c53b80ca734e0"
+  integrity sha512-y797JBmO9IsvXVRCKDXOxjyAE4+CcZpla2GSoBQ33TVb3ILXuFnMrbR/QQZoauBYeOFuu4w3ifWLw52sdHGz6g==
+  dependencies:
+    "@napi-rs/wasm-runtime" "^0.2.9"
+
+"@unrs/resolver-binding-win32-arm64-msvc@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-arm64-msvc/-/resolver-binding-win32-arm64-msvc-1.7.2.tgz#bd772db4e8a02c31161cf1dfa33852eb7ef22df6"
+  integrity sha512-gtYTh4/VREVSLA+gHrfbWxaMO/00y+34htY7XpioBTy56YN2eBjkPrY1ML1Zys89X3RJDKVaogzwxlM1qU7egg==
+
+"@unrs/resolver-binding-win32-ia32-msvc@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-ia32-msvc/-/resolver-binding-win32-ia32-msvc-1.7.2.tgz#a6955ccdc43e809a158c4fe2d54931d34c3f7b51"
+  integrity sha512-Ywv20XHvHTDRQs12jd3MY8X5C8KLjDbg/jyaal/QLKx3fAShhJyD4blEANInsjxW3P7isHx1Blt56iUDDJO3jg==
+
+"@unrs/resolver-binding-win32-x64-msvc@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-x64-msvc/-/resolver-binding-win32-x64-msvc-1.7.2.tgz#7fd81d89e34a711d398ca87f6d5842735d49721e"
+  integrity sha512-friS8NEQfHaDbkThxopGk+LuE5v3iY0StruifjQEt7SLbA46OnfgMO15sOTkbpJkol6RB+1l1TYPXh0sCddpvA==
+
 abort-controller@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/abort-controller/-/abort-controller-3.0.0.tgz"
