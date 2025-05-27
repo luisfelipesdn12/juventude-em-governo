@@ -1,3 +1,5 @@
+"use client";
+
 import { useLocalStorage } from '@uidotdev/usehooks';
 import { PastGame, PastGamesArray } from '@/lib/types/past-games';
 

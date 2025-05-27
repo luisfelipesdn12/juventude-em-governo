@@ -149,6 +149,8 @@ export default function PlayerRoom() {
   if (room.state === "started") {
     return (
       <InGame 
+        roomId={roomId}
+        cityId={cityId}
         room={room}
         cityData={cityData}
       />

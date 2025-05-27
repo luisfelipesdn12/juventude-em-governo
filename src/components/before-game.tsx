@@ -1,16 +1,17 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useRoomStore, Room } from "@/lib/store/room-store";
 import { usePlayerStore } from "@/lib/store/player-store";
 import { useGameStore } from "@/lib/store/game-store";
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+import { Loader2, PencilIcon } from "lucide-react";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import CardsMarquee from "@/components/cards-marquee";
 import AdvantageDisadvantageMarquee from "@/components/advantage-disadvantage-marquee";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { EditCityModal } from "@/components/edit-city-modal";
 
 interface BeforeGameProps {
   roomId: string;
@@ -22,7 +23,10 @@ interface BeforeGameProps {
 export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) {
   const router = useRouter();
   const { updateCityInRoom, removeCityFromRoom } = useRoomStore();
-  const { player, leaveRoom } = usePlayerStore();
+  const { player, leaveRoom, updatePlayer } = usePlayerStore();
+  
+  // Modal state
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   
   // Game store state and actions
   const {
@@ -151,6 +155,30 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
     }
   };
 
+  const handleEditCity = async (newCityName: string, newNumberOfPlayers: number) => {
+    try {
+      // Update city name in the room
+      await updateCityInRoom(roomId, cityId, {
+        name: newCityName
+      });
+      
+      // Update player data if exists
+      if (player?.id) {
+        await updatePlayer(player.id, {
+          cityName: newCityName,
+          playerCount: newNumberOfPlayers
+        });
+      }
+    } catch (error) {
+      console.error('Error updating city:', error);
+      throw error;
+    }
+  };
+
+  const handleOpenEditModal = () => {
+    setIsEditModalOpen(true);
+  };
+
   // Check if all elements are sorted (ready to start game)
   const allElementsSorted = dindins !== undefined &&
     situationCards !== undefined &&
@@ -190,7 +218,12 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
 
   return (
     <div className="container mx-auto py-8 px-8 flex flex-col">
-      <h1 className="text-2xl font-semibold text-center">Sala #{room.id}</h1>
+      <div className="flex gap-4 mx-auto items-center">
+        <h1 className="text-2xl font-semibold text-center">Sala #{room.id} - {cityData.name}</h1>
+        <Button size="icon" variant="outline" onClick={handleOpenEditModal}>
+          <PencilIcon className="h-4 w-4" />
+        </Button>
+      </div>
 
       <div className="flex flex-col gap-4 w-full justify-start items-start">
         <div className="flex gap-4 w-full justify-between items-center">
@@ -276,6 +309,14 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
           )}
         </Button>
       </footer>
+
+      <EditCityModal
+        isOpen={isEditModalOpen}
+        onClose={() => setIsEditModalOpen(false)}
+        cityName={cityData.name}
+        numberOfPlayers={player?.playerCount || 1}
+        onSave={handleEditCity}
+      />
     </div>
   );
 } 
