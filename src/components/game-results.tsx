@@ -158,7 +158,7 @@ export function GameResults({ room, cityData }: GameResultsProps) {
                 </ResponsiveContainer>
               </div>
 
-              <div className="flex flex-row gap-4 w-full justify-between">
+              <div className="flex flex-row gap-4 w-full justify-between flex-wrap">
                 <div>
                   <p className="text-sm text-muted-foreground">Orçamento Inicial</p>
                   <p className="text-xl font-semibold">R$ {(cityData.initial_budget || 0).toLocaleString('pt-BR')}</p>

@@ -12,6 +12,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input"
 import { usePlayerStore } from "@/lib/store/player-store"
 import { useRoomStore } from "@/lib/store/room-store"
+import { usePastGames } from "@/lib/hooks/usePastGames"
 
 // Define validation schema
 const formSchema = z.object({
@@ -27,6 +28,7 @@ export default function Home() {
   const router = useRouter()
   const { roomExists, joinRoom, error } = usePlayerStore()
   const { getRoom } = useRoomStore()
+  const { addPastGame } = usePastGames()
   const [formError, setFormError] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
   
@@ -82,6 +84,9 @@ export default function Home() {
           const city = room.cities.find(c => c.name === data.cityName)
           
           if (city) {
+            // Store the game in past games
+            addPastGame(data.code, city.id, data.cityName)
+            
             // Redirect to the player room page
             router.push(`/player/room/${data.code}/${city.id}`)
           } else {
