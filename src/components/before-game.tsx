@@ -12,6 +12,7 @@ import CardsMarquee from "@/components/cards-marquee";
 import AdvantageDisadvantageMarquee from "@/components/advantage-disadvantage-marquee";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { EditCityModal } from "@/components/edit-city-modal";
+import { AdvantageUnforeseenCard } from "@/lib/data";
 
 interface BeforeGameProps {
   roomId: string;
@@ -104,6 +105,14 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
         }
         return acc;
       }, currentPoints);
+
+      for (const card of selectedCards) {
+        for (const key in card) {
+          if (card[key as keyof AdvantageUnforeseenCard] === undefined) {
+            delete card[key as keyof AdvantageUnforeseenCard];
+          }
+        }
+      }
 
       // Save to Firebase
       try {

@@ -277,7 +277,7 @@ export const selectRandomAdvantageAndUnforeseen = async (): Promise<AdvantageUnf
       category_id: doc.data().category_id,
       points: doc.data().points,
       dindins: doc.data().dindins,
-    }));
+    }))
 
     // Randomly select 3 cards
     const shuffled = allCards.sort(() => 0.5 - Math.random());
