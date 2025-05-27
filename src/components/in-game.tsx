@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { differenceInSeconds } from "date-fns";
 import { Room, useRoomStore } from "@/lib/store/room-store";
-import { usePlayerStore } from "@/lib/store/player-store";
 import { useGameStore } from "@/lib/store/game-store";
 import {
   Carousel,
@@ -32,7 +31,7 @@ interface InGameProps {
 
 export function InGame({ roomId, cityId, room, cityData }: InGameProps) {
   const { updateCityInRoom } = useRoomStore();
-  const { player, updatePlayer } = usePlayerStore();
+  const { currentCity, updateCity } = useGameStore();
   
   // Modal state
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -123,10 +122,10 @@ export function InGame({ roomId, cityId, room, cityData }: InGameProps) {
         name: newCityName
       });
       
-      // Update player data if exists
-      if (player?.id) {
-        await updatePlayer(player.id, {
-          cityName: newCityName,
+      // Update city session data if exists
+      if (currentCity?.id) {
+        await updateCity(currentCity.id, {
+          name: newCityName,
           playerCount: newNumberOfPlayers
         });
       }
@@ -255,7 +254,7 @@ export function InGame({ roomId, cityId, room, cityData }: InGameProps) {
         isOpen={isEditModalOpen}
         onClose={() => setIsEditModalOpen(false)}
         cityName={cityData.name}
-        numberOfPlayers={player?.playerCount || 1}
+        numberOfPlayers={currentCity?.playerCount || 1}
         onSave={handleEditCity}
       />
     </>

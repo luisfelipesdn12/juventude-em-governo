@@ -237,7 +237,7 @@ export default function AdminResults() {
                           ))}
                         </Pie>
                         <Tooltip
-                          formatter={(value: number) => [`R$ ${value.toLocaleString('pt-BR')}`, 'Gasto']}
+                          formatter={(value: number, label: string) => [`D$ ${value.toLocaleString('pt-BR')}`, `${label}`]}
                           labelFormatter={(label: string) => `Categoria: ${label}`}
                         />
                       </PieChart>

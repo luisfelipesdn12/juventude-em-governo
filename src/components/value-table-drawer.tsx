@@ -20,7 +20,6 @@ import { Card } from "@/components/ui/card";
 import { useAppStore } from "@/lib/store";
 import { useGameStore } from "@/lib/store/game-store";
 import { useRoomStore, Room } from "@/lib/store/room-store";
-import { usePlayerStore } from "@/lib/store/player-store";
 import { CheckCircle, Loader2 } from "lucide-react";
 import { calculateCardAverage, type Item } from "@/lib/data";
 import { categoriesProperties } from "@/lib/categories-properties";
@@ -63,7 +62,6 @@ export function ValueTableDrawer({ children }: ValueTableDrawerProps) {
 
     // Room and player stores for real-time budget updates
     const { subscribeToRoom, updateCityInRoom } = useRoomStore();
-    const { player } = usePlayerStore();
 
     // Load data when drawer opens
     useEffect(() => {
@@ -86,8 +84,8 @@ export function ValueTableDrawer({ children }: ValueTableDrawerProps) {
     useEffect(() => {
         if (open) {
             // Try to get room and city info from URL params first, then fallback to player store
-            const roomId = urlRoomId || player?.roomId;
-            const cityId = urlCityId || player?.cityId;
+            const roomId = urlRoomId || currentRoom?.id;
+            const cityId = urlCityId || currentCityData?.id;
 
             if (roomId && cityId !== undefined) {
                 const unsubscribeRoom = subscribeToRoom(roomId, (room: Room | undefined) => {
@@ -108,7 +106,7 @@ export function ValueTableDrawer({ children }: ValueTableDrawerProps) {
                 };
             }
         }
-    }, [open, urlRoomId, urlCityId, player?.roomId, player?.cityId, subscribeToRoom, setDindins]);
+    }, [open, urlRoomId, urlCityId, currentRoom?.id, currentCityData?.id, subscribeToRoom, setDindins]);
 
     // Use current dindins (either from real-time updates or fallback to game store)
     const displayDindins = currentDindins || dindins || 0;
@@ -143,8 +141,8 @@ export function ValueTableDrawer({ children }: ValueTableDrawerProps) {
     const handleItemPurchase = async (item: ItemWithCategory) => {
         if (!currentRoom || !currentCityData) return;
         
-        const roomId = urlRoomId || player?.roomId;
-        const cityId = urlCityId || player?.cityId;
+        const roomId = urlRoomId || currentRoom.id;
+        const cityId = urlCityId || currentCityData.id;
         
         if (!roomId || cityId === undefined) return;
 

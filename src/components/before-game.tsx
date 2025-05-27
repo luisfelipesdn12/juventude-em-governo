@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useRoomStore, Room } from "@/lib/store/room-store";
-import { usePlayerStore } from "@/lib/store/player-store";
 import { useGameStore } from "@/lib/store/game-store";
 import { Button } from "@/components/ui/button";
 import { Loader2, PencilIcon } from "lucide-react";
@@ -24,7 +23,7 @@ interface BeforeGameProps {
 export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) {
   const router = useRouter();
   const { updateCityInRoom, removeCityFromRoom } = useRoomStore();
-  const { player, leaveRoom, updatePlayer } = usePlayerStore();
+  const { currentCity, leaveRoom, updateCity } = useGameStore();
   
   // Modal state
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -165,9 +164,9 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
       // Remove city from room
       await removeCityFromRoom(roomId, cityId);
       
-      // Delete player if exists
-      if (player?.id) {
-        await leaveRoom(player.id);
+      // Delete city session if exists
+      if (currentCity?.id) {
+        await leaveRoom(currentCity.id);
       }
       
       // Navigate back to home page
@@ -184,10 +183,10 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
         name: newCityName
       });
       
-      // Update player data if exists
-      if (player?.id) {
-        await updatePlayer(player.id, {
-          cityName: newCityName,
+      // Update city session data if exists
+      if (currentCity?.id) {
+        await updateCity(currentCity.id, {
+          name: newCityName,
           playerCount: newNumberOfPlayers
         });
       }
@@ -336,7 +335,7 @@ export function BeforeGame({ roomId, cityId, room, cityData }: BeforeGameProps) 
         isOpen={isEditModalOpen}
         onClose={() => setIsEditModalOpen(false)}
         cityName={cityData.name}
-        numberOfPlayers={player?.playerCount || 1}
+        numberOfPlayers={currentCity?.playerCount || 1}
         onSave={handleEditCity}
       />
     </div>

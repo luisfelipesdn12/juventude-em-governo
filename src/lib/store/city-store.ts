@@ -14,50 +14,92 @@ import {
 } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
-// Create a custom nanoid function that generates a shorter ID for players
+// Create a custom nanoid function that generates a shorter ID for cities
 const nanoid = customAlphabet('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', 8);
 
-export interface Player {
+export interface City {
   id: string;
   roomId: string;
   cityId: number; // ID of the city within the room
-  cityName: string;
+  name: string;
   playerCount: number;
+  state: 'drawing' | 'ready' | 'finished';
+  initial_budget: number;
+  budget: number;
+  /** Categoria Nome -> Pontos */
+  points: Record<string, number>;
+  initial_points: Record<string, number>;
+  /** Items purchased by this city */
+  items: string[]; // Array of item IDs
+  // Random results for the game
+  situation_cards?: {
+    card: {
+      id: string;
+      metrics: {
+        id: string;
+        text: string;
+        points: number;
+      }[];
+    };
+    categoryName: string;
+    categoryId: string;
+    points: number;
+  }[];
+  advantage_disadvantage_cards?: {
+    id: string;
+    type: 'Vantagem' | 'Imprevisto';
+    text: string;
+    effect: string;
+    category_id: string;
+    points?: number;
+    dindins?: number;
+  }[];
+  open_government_cards?: {
+    id: string;
+    category: string;
+    text: string;
+    price: number;
+    reward: {
+      type: "dindins" | "points";
+      quantity: number;
+      category_id?: string;
+    };
+  }[];
   createdAt?: Timestamp;
   updatedAt?: Timestamp;
 }
 
-interface PlayerState {
-  player: Player | null;
+interface CityState {
+  currentCity: City | null;
   loading: boolean;
   error: string | null;
-  setPlayer: (player: Player | null) => void;
+  setCurrentCity: (city: City | null) => void;
   
   // Check if a room exists
   roomExists: (roomId: string) => Promise<boolean>;
   
-  // Add a player to a room
-  joinRoom: (roomId: string, cityName: string, playerCount: number) => Promise<Player | null>;
+  // Join a room by creating a city
+  joinRoom: (roomId: string, cityName: string, playerCount: number) => Promise<City | null>;
   
-  // Get a player by ID
-  getPlayer: (id: string) => Promise<Player | null>;
+  // Get a city by ID
+  getCity: (id: string) => Promise<City | null>;
   
-  // Update a player
-  updatePlayer: (id: string, playerData: Partial<Player>) => Promise<void>;
+  // Update a city
+  updateCity: (id: string, cityData: Partial<City>) => Promise<void>;
   
-  // Delete a player
+  // Leave a room by removing the city
   leaveRoom: (id: string) => Promise<void>;
   
-  // Subscribe to player updates
-  subscribeToPlayer: (id: string, callback: (player: Player | null) => void) => () => void;
+  // Subscribe to city updates
+  subscribeToCity: (id: string, callback: (city: City | null) => void) => () => void;
 }
 
-export const usePlayerStore = create<PlayerState>((set) => ({
-  player: null,
+export const useCityStore = create<CityState>((set) => ({
+  currentCity: null,
   loading: false,
   error: null,
   
-  setPlayer: (player) => set({ player }),
+  setCurrentCity: (city) => set({ currentCity: city }),
   
   roomExists: async (roomId) => {
     set({ loading: true, error: null });
@@ -100,44 +142,55 @@ export const usePlayerStore = create<PlayerState>((set) => ({
       // Generate a unique city ID (simple incrementing based on existing cities)
       const cityId = roomData.cities ? roomData.cities.length + 1 : 1;
       
-      // Create a city for this player in the room
-      const city = {
+      // Create a city object for the room
+      const roomCity = {
         id: cityId,
         name: cityName,
         state: 'drawing' as const,
+        initial_budget: 0,
+        budget: 0,
+        points: {},
+        initial_points: {},
+        items: [],
       };
 
       // Add the city to the room
-      const updatedCities = [...(roomData.cities || []), city];
+      const updatedCities = [...(roomData.cities || []), roomCity];
       await updateDoc(doc(db, 'rooms', querySnapshot.docs[0].id), {
         cities: updatedCities,
         updatedAt: Timestamp.fromDate(new Date())
       });
       
-      // Create a new player
+      // Create a new city record for tracking the player's session
       const id = nanoid();
       const timestamp = new Date();
       
-      const newPlayer: Player = {
+      const newCity: City = {
         id,
         roomId,
         cityId,
-        cityName,
+        name: cityName,
         playerCount,
+        state: 'drawing',
+        initial_budget: 0,
+        budget: 0,
+        points: {},
+        initial_points: {},
+        items: [],
         createdAt: Timestamp.fromDate(timestamp),
         updatedAt: Timestamp.fromDate(timestamp),
       };
       
-      // Add the player to Firestore
-      await addDoc(collection(db, 'players'), newPlayer);
+      // Add the city to Firestore cities collection for session tracking
+      await addDoc(collection(db, 'cities'), newCity);
       
       // Update local state
       set({ 
-        player: newPlayer,
+        currentCity: newCity,
         loading: false 
       });
       
-      return newPlayer;
+      return newCity;
     } catch (error) {
       set({ 
         error: error instanceof Error ? error.message : 'Failed to join room',
@@ -147,12 +200,12 @@ export const usePlayerStore = create<PlayerState>((set) => ({
     }
   },
 
-  getPlayer: async (id) => {
+  getCity: async (id) => {
     set({ loading: true, error: null });
     
     try {
-      // Query Firestore for the player with matching id
-      const q = query(collection(db, 'players'), where('id', '==', id));
+      // Query Firestore for the city with matching id
+      const q = query(collection(db, 'cities'), where('id', '==', id));
       const querySnapshot = await getDocs(q);
       
       if (querySnapshot.empty) {
@@ -160,56 +213,56 @@ export const usePlayerStore = create<PlayerState>((set) => ({
         return null;
       }
       
-      // Get the player data
-      const playerData = querySnapshot.docs[0].data() as Player;
+      // Get the city data
+      const cityData = querySnapshot.docs[0].data() as City;
       set({ 
-        player: playerData,
+        currentCity: cityData,
         loading: false 
       });
       
-      return playerData;
+      return cityData;
     } catch (error) {
       set({ 
-        error: error instanceof Error ? error.message : 'Failed to get player',
+        error: error instanceof Error ? error.message : 'Failed to get city',
         loading: false 
       });
       return null;
     }
   },
   
-  updatePlayer: async (id, playerData) => {
+  updateCity: async (id, cityData) => {
     set({ loading: true, error: null });
     
     try {
       // Find the document in Firestore
-      const q = query(collection(db, 'players'), where('id', '==', id));
+      const q = query(collection(db, 'cities'), where('id', '==', id));
       const querySnapshot = await getDocs(q);
       
       if (querySnapshot.empty) {
-        throw new Error(`Player with id ${id} not found`);
+        throw new Error(`City with id ${id} not found`);
       }
       
       // Get the document reference
-      const docRef = doc(db, 'players', querySnapshot.docs[0].id);
+      const docRef = doc(db, 'cities', querySnapshot.docs[0].id);
       
       // Update the document
-      const updatedPlayer = {
-        ...playerData,
+      const updatedCity = {
+        ...cityData,
         updatedAt: Timestamp.fromDate(new Date())
       };
       
-      await updateDoc(docRef, updatedPlayer);
+      await updateDoc(docRef, updatedCity);
       
       // Update the local state
       set((state) => ({
-        player: state.player && state.player.id === id 
-          ? { ...state.player, ...playerData, updatedAt: Timestamp.fromDate(new Date()) } 
-          : state.player,
+        currentCity: state.currentCity && state.currentCity.id === id 
+          ? { ...state.currentCity, ...cityData, updatedAt: Timestamp.fromDate(new Date()) } 
+          : state.currentCity,
         loading: false
       }));
     } catch (error) {
       set({ 
-        error: error instanceof Error ? error.message : 'Failed to update player',
+        error: error instanceof Error ? error.message : 'Failed to update city',
         loading: false 
       });
       throw error;
@@ -221,22 +274,22 @@ export const usePlayerStore = create<PlayerState>((set) => ({
     
     try {
       // Find the document in Firestore
-      const q = query(collection(db, 'players'), where('id', '==', id));
+      const q = query(collection(db, 'cities'), where('id', '==', id));
       const querySnapshot = await getDocs(q);
       
       if (querySnapshot.empty) {
-        throw new Error(`Player with id ${id} not found`);
+        throw new Error(`City with id ${id} not found`);
       }
       
       // Get the document reference
-      const docRef = doc(db, 'players', querySnapshot.docs[0].id);
+      const docRef = doc(db, 'cities', querySnapshot.docs[0].id);
       
       // Delete the document
       await deleteDoc(docRef);
       
       // Update the local state
       set({ 
-        player: null,
+        currentCity: null,
         loading: false 
       });
     } catch (error) {
@@ -248,9 +301,9 @@ export const usePlayerStore = create<PlayerState>((set) => ({
     }
   },
   
-  subscribeToPlayer: (id, callback) => {
-    // Set up a real-time listener for a specific player
-    const q = query(collection(db, 'players'), where('id', '==', id));
+  subscribeToCity: (id, callback) => {
+    // Set up a real-time listener for a specific city
+    const q = query(collection(db, 'cities'), where('id', '==', id));
     
     const unsubscribe = onSnapshot(
       q,
@@ -260,9 +313,9 @@ export const usePlayerStore = create<PlayerState>((set) => ({
           return;
         }
         
-        const playerData = snapshot.docs[0].data() as Player;
-        set({ player: playerData });
-        callback(playerData);
+        const cityData = snapshot.docs[0].data() as City;
+        set({ currentCity: cityData });
+        callback(cityData);
       },
       (error) => {
         set({ 

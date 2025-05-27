@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useRoomStore, Room } from "@/lib/store/room-store";
-import { usePlayerStore } from "@/lib/store/player-store";
 import { useGameStore } from "@/lib/store/game-store";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -20,13 +19,14 @@ export default function PlayerRoom() {
 
   const [roomLoading, setRoomLoading] = useState(true);
   const { error: roomError, subscribeToRoom } = useRoomStore();
-  const { player, loading: playerLoading, error: playerError, subscribeToPlayer } = usePlayerStore();
   
   // Game store state and actions
   const {
     setDindins,
     setSituationCards,
     setAdvantageDisadvantageCards,
+    loading: cityLoading,
+    error: cityError,
   } = useGameStore();
 
   const [room, setRoom] = useState<Room | undefined>(undefined);
@@ -38,7 +38,7 @@ export default function PlayerRoom() {
     const unsubscribe = subscribeToRoom(roomId, (updatedRoom) => {
       setRoom(updatedRoom);
       setRoomLoading(false);
-      // Find the player's city in the room
+      // Find the city in the room
       if (updatedRoom) {
         const city = updatedRoom.cities.find(c => c.id === cityId);
         setCityData(city);
@@ -63,18 +63,7 @@ export default function PlayerRoom() {
     return () => unsubscribe();
   }, [roomId, cityId, subscribeToRoom, setDindins, setSituationCards, setAdvantageDisadvantageCards]);
 
-  // Subscribe to player updates if we have a player in state
-  useEffect(() => {
-    if (player?.id) {
-      const unsubscribe = subscribeToPlayer(player.id, () => {
-        // We're already updating the player state in the store
-      });
-
-      return () => unsubscribe();
-    }
-  }, [player?.id, subscribeToPlayer]);
-
-  if ((roomLoading && !room) || (playerLoading && !player)) {
+  if ((roomLoading && !room) || cityLoading) {
     return (
       <div className="container mx-auto py-8 flex justify-center items-center">
         <div className="text-center">
@@ -85,14 +74,14 @@ export default function PlayerRoom() {
     );
   }
 
-  if (roomError || playerError) {
+  if (roomError || cityError) {
     return (
       <div className="container mx-auto py-8">
         <Card className="max-w-md mx-auto">
           <CardHeader>
             <CardTitle className="text-red-500">Erro ao carregar sala</CardTitle>
             <CardDescription>
-              {roomError || playerError}
+              {roomError || cityError}
             </CardDescription>
           </CardHeader>
           <CardFooter>

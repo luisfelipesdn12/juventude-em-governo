@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { usePlayerStore } from "@/lib/store/player-store"
+import { useGameStore } from "@/lib/store/game-store"
 import { useRoomStore } from "@/lib/store/room-store"
 import { usePastGames } from "@/lib/hooks/usePastGames"
 
@@ -27,7 +27,7 @@ type FormValues = z.infer<typeof formSchema>
 
 export default function Home() {
   const router = useRouter()
-  const { roomExists, joinRoom, error } = usePlayerStore()
+  const { roomExists, joinRoom, error } = useGameStore()
   const { getRoom } = useRoomStore()
   const { pastGames, addPastGame, isClient } = usePastGames()
   const [formError, setFormError] = useState<string | null>(null)
@@ -77,23 +77,23 @@ export default function Home() {
         return
       }
       
-      // Join the room
-      const player = await joinRoom(data.code, data.cityName, data.players)
+      // Join the room by creating a city
+      const city = await joinRoom(data.code, data.cityName, data.players)
       
-      if (player) {
+      if (city) {
         // Get the room to get the city ID
         const room = await getRoom(data.code)
         
         if (room) {
-          // Find the player's city in the room
-          const city = room.cities.find(c => c.name === data.cityName)
+          // Find the city in the room
+          const roomCity = room.cities.find(c => c.name === data.cityName)
           
-          if (city) {
+          if (roomCity) {
             // Store the game in past games
-            addPastGame(data.code, city.id, data.cityName)
+            addPastGame(data.code, roomCity.id, data.cityName)
             
             // Redirect to the player room page
-            router.push(`/player/room/${data.code}/${city.id}`)
+            router.push(`/player/room/${data.code}/${roomCity.id}`)
           } else {
             setFormError("Erro ao adicionar cidade à sala")
           }

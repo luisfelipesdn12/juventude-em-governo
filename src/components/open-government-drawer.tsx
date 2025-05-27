@@ -26,7 +26,6 @@ import {
 import { Card } from "@/components/ui/card";
 import { useGameStore } from "@/lib/store/game-store";
 import { useRoomStore, Room } from "@/lib/store/room-store";
-import { usePlayerStore } from "@/lib/store/player-store";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Loader2 } from "lucide-react";
 import { calculateCardAverage, OpenGovernmentCard } from "@/lib/data";
@@ -61,7 +60,6 @@ export function OpenGovernmentDrawer({ children }: OpenGovernmentDrawerProps) {
 
     // Room and player stores for real-time budget updates
     const { subscribeToRoom, updateCityInRoom } = useRoomStore();
-    const { player } = usePlayerStore();
 
     // Load open government cards
     const fetchOpenGovernmentCards = async () => {
@@ -95,8 +93,8 @@ export function OpenGovernmentDrawer({ children }: OpenGovernmentDrawerProps) {
     useEffect(() => {
         if (open) {
             // Try to get room and city info from URL params first, then fallback to player store
-            const roomId = urlRoomId || player?.roomId;
-            const cityId = urlCityId || player?.cityId;
+            const roomId = urlRoomId || currentRoom?.id;
+            const cityId = urlCityId || currentCityData?.id;
 
             if (roomId && cityId !== undefined) {
                 const unsubscribeRoom = subscribeToRoom(roomId, (room: Room | undefined) => {
@@ -117,7 +115,7 @@ export function OpenGovernmentDrawer({ children }: OpenGovernmentDrawerProps) {
                 };
             }
         }
-    }, [open, urlRoomId, urlCityId, player?.roomId, player?.cityId, subscribeToRoom, setDindins]);
+    }, [open, urlRoomId, urlCityId, currentRoom?.id, currentCityData?.id, subscribeToRoom, setDindins]);
 
     // Use current dindins (either from real-time updates or fallback to game store)
     const displayDindins = currentDindins || dindins || 0;
@@ -142,8 +140,8 @@ export function OpenGovernmentDrawer({ children }: OpenGovernmentDrawerProps) {
     const handleCardPurchase = async (card: OpenGovernmentCard) => {
         if (!currentRoom || !currentCityData) return;
 
-        const roomId = urlRoomId || player?.roomId;
-        const cityId = urlCityId || player?.cityId;
+        const roomId = urlRoomId || currentRoom.id;
+        const cityId = urlCityId || currentCityData.id;
 
         if (!roomId || cityId === undefined) return;
 

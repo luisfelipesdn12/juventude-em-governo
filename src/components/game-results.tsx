@@ -137,7 +137,7 @@ export function GameResults({ room, cityData, showBackButton = false }: GameResu
   };
 
   return (
-    <Card className="p-6">
+    <Card className="p-6 bg-transparent">
       {/* City Name Header */}
       <div className="text-center mb-4">
         <div className="flex items-center justify-center gap-2">
@@ -179,7 +179,7 @@ export function GameResults({ room, cityData, showBackButton = false }: GameResu
                       ))}
                     </Pie>
                     <Tooltip
-                      formatter={(value: number) => [`R$ ${value.toLocaleString('pt-BR')}`, 'Gasto']}
+                      formatter={(value: number, label: string) => [`D$ ${value.toLocaleString('pt-BR')}`, `${label}`]}
                       labelFormatter={(label: string) => `Categoria: ${label}`}
                     />
                   </PieChart>
