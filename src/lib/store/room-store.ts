@@ -30,7 +30,7 @@ export interface Room {
   cities: {
     id: number;
     name: string;
-    state: 'drawing' | 'ready';
+    state: 'drawing' | 'ready' | 'finished';
     initial_budget: number;
     budget: number;
     /** Categoria Nome -> Pontos */

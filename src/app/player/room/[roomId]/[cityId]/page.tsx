@@ -146,7 +146,7 @@ export default function PlayerRoom() {
   }
 
   // Render based on room state
-  if (room.state === "started") {
+  if (room.state === "started" && cityData?.state !== "finished") {
     return (
       <InGame 
         roomId={roomId}
@@ -157,7 +157,7 @@ export default function PlayerRoom() {
     );
   }
 
-  if (room.state === "finished") {
+  if (room.state === "finished" || cityData?.state === "finished") {
     return (
       <GameResults 
         room={room}

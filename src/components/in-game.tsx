@@ -140,6 +140,16 @@ export function InGame({ roomId, cityId, room, cityData }: InGameProps) {
     setIsEditModalOpen(true);
   };
 
+  const handleFinishGame = async () => {
+    try {
+      await updateCityInRoom(roomId, cityId, {
+        state: 'finished'
+      });
+    } catch (error) {
+      console.error('Error finishing game:', error);
+    }
+  };
+
   return (
     <>
       <div className="container mx-auto py-8 px-8 flex flex-col min-h-[90vh] justify-between">
@@ -222,7 +232,7 @@ export function InGame({ roomId, cityId, room, cityData }: InGameProps) {
               Governo Aberto
             </Button>
           </OpenGovernmentDrawer>
-          <Button className="col-span-1 text-2xl relative">
+          <Button className="col-span-1 text-2xl relative" onClick={handleFinishGame}>
             <div className="absolute left-0 top-0 h-full bg-white/20" style={{
               width: `${getRemainingTimePercentage() <= 100 ? getRemainingTimePercentage() : 100}%`
              }}></div>

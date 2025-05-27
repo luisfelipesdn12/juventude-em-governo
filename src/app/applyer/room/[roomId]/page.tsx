@@ -135,6 +135,8 @@ export default function RoomDetail() {
         return { variant: 'secondary' as const, text: 'Preparando' };
       case 'ready':
         return { variant: 'default' as const, text: 'Pronto' };
+      case 'finished':
+        return { variant: 'default' as const, text: 'Finalizado' };
       default:
         return { variant: 'secondary' as const, text: 'Desconhecido' };
     }

@@ -47,7 +47,7 @@ export function GameResults({ room, cityData }: GameResultsProps) {
         });
 
         // Calculate spending for each purchased item
-        for (const itemId of cityData.items) {
+        for (const itemId of (cityData || []).items) {
           const item = await getItemById(itemId);
           if (item) {
             const categoryName = await getCategoryNameById(item.category_id);
