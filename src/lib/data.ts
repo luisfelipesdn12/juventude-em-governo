@@ -41,6 +41,18 @@ export interface AdvantageUnforeseenCard {
   dindins?: number;
 }
 
+export interface OpenGovernmentCard {
+  id: string;
+  category: string;
+  text: string;
+  price: number;
+  reward: {
+    type: "dindins" | "points";
+    quantity: number;
+    category_id?: string;
+  };
+}
+
 export const getCategories = async (): Promise<Category[]> => {
   try {
     const categoriesRef = collection(db, 'categories');
@@ -255,29 +267,58 @@ export const getAllAdvantagesAndUnforeseen = async (): Promise<AdvantageUnforese
 // Function to randomly select one advantage and one unforeseen card from any category
 export const selectRandomAdvantageAndUnforeseen = async (): Promise<AdvantageUnforeseenCard[]> => {
   try {
-    const allCards = await getAllAdvantagesAndUnforeseen();
-    
-    // Separate cards by type
-    const advantageCards = allCards.filter(card => card.type === 'Vantagem');
-    const unforeseenCards = allCards.filter(card => card.type === 'Imprevisto');
-    
-    const selectedCards: AdvantageUnforeseenCard[] = [];
-    
-    // Select one random advantage card
-    if (advantageCards.length > 0) {
-      const randomAdvantageIndex = Math.floor(Math.random() * advantageCards.length);
-      selectedCards.push(advantageCards[randomAdvantageIndex]);
-    }
-    
-    // Select one random unforeseen card
-    if (unforeseenCards.length > 0) {
-      const randomUnforeseenIndex = Math.floor(Math.random() * unforeseenCards.length);
-      selectedCards.push(unforeseenCards[randomUnforeseenIndex]);
-    }
-    
-    return selectedCards;
+    const advantagesAndUnforeseenRef = collection(db, 'advantages_and_unforeseen_cards');
+    const advantagesAndUnforeseenSnapshot = await getDocs(advantagesAndUnforeseenRef);
+    const allCards = advantagesAndUnforeseenSnapshot.docs.map(doc => ({
+      id: doc.id,
+      type: doc.data().type as 'Vantagem' | 'Imprevisto',
+      text: doc.data().text,
+      effect: doc.data().effect,
+      category_id: doc.data().category_id,
+      points: doc.data().points,
+      dindins: doc.data().dindins,
+    }));
+
+    // Randomly select 3 cards
+    const shuffled = allCards.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 3);
   } catch (error) {
-    console.error('Error selecting random advantage and unforeseen cards:', error);
+    console.error('Error selecting random advantages and unforeseen:', error);
+    return [];
+  }
+};
+
+export const getOpenGovernmentCards = async (): Promise<OpenGovernmentCard[]> => {
+  try {
+    const openGovCardsRef = collection(db, 'open_government_cards');
+    const openGovCardsSnapshot = await getDocs(openGovCardsRef);
+    return openGovCardsSnapshot.docs.map(doc => ({
+      id: doc.id,
+      category: doc.data().category,
+      text: doc.data().text,
+      price: doc.data().price,
+      reward: doc.data().reward,
+    }));
+  } catch (error) {
+    console.error('Error getting open government cards:', error);
+    return [];
+  }
+};
+
+export const getOpenGovernmentCardsByCategory = async (category: string): Promise<OpenGovernmentCard[]> => {
+  try {
+    const openGovCardsRef = collection(db, 'open_government_cards');
+    const q = query(openGovCardsRef, where('category', '==', category));
+    const openGovCardsSnapshot = await getDocs(q);
+    return openGovCardsSnapshot.docs.map(doc => ({
+      id: doc.id,
+      category: doc.data().category,
+      text: doc.data().text,
+      price: doc.data().price,
+      reward: doc.data().reward,
+    }));
+  } catch (error) {
+    console.error('Error getting open government cards by category:', error);
     return [];
   }
 }; 

@@ -14,12 +14,14 @@ import {
 } from "@/components/ui/carousel";
 import { GameCard } from "@/components/GameCard";
 import { GameCardAdvUnforeseen } from "./GameCardAdvUnforeseen";
+import { GameCardOpenGov } from "./GameCardOpenGov";
 import { Button } from "./ui/button";
 import { PencilIcon } from "lucide-react";
 import { ValueTableDrawer } from "./value-table-drawer";
-import { FullscreenCardsOverlay } from "./FullscreenCardsOverlay";
-import { FullscreenAdvDisadvOverlay } from "./FullscreenAdvDisadvOverlay";
+import { FullscreenUnifiedCardsOverlay } from "./FullscreenUnifiedCardsOverlay";
 import { EditCityModal } from "@/components/edit-city-modal";
+import { OpenGovernmentDrawer } from "@/components/open-government-drawer";
+import { openGovCategoriesProperties } from "@/lib/categories-properties";
 
 interface InGameProps {
   roomId: string;
@@ -45,8 +47,7 @@ export function InGame({ roomId, cityId, room, cityData }: InGameProps) {
   } = useGameStore();
 
   // State for fullscreen overlays
-  const [isSituationOverlayOpen, setIsSituationOverlayOpen] = useState(false);
-  const [isAdvDisadvOverlayOpen, setIsAdvDisadvOverlayOpen] = useState(false);
+  const [isUnifiedOverlayOpen, setIsUnifiedOverlayOpen] = useState(false);
   const [selectedCardIndex, setSelectedCardIndex] = useState(0);
   
   // State for current time to calculate remaining time
@@ -98,30 +99,21 @@ export function InGame({ roomId, cityId, room, cityData }: InGameProps) {
     ...(advantageDisadvantageCards || []).map(item => ({
       type: 'advantage-disadvantage' as const,
       data: item
+    })),
+    ...(cityData.open_government_cards || []).map(item => ({
+      type: 'open-government' as const,
+      data: item
     }))
   ];
 
   // Handle card click for fullscreen view
-  const handleCardClick = (index: number, cardType: 'situation' | 'advantage-disadvantage') => {
-    if (cardType === 'situation') {
-      // Find the index within situation cards only
-      const situationCardIndex = allCards.slice(0, index + 1).filter(card => card.type === 'situation').length - 1;
-      setSelectedCardIndex(situationCardIndex);
-      setIsSituationOverlayOpen(true);
-    } else {
-      // Find the index within advantage/disadvantage cards only
-      const advDisadvCardIndex = allCards.slice(0, index + 1).filter(card => card.type === 'advantage-disadvantage').length - 1;
-      setSelectedCardIndex(advDisadvCardIndex);
-      setIsAdvDisadvOverlayOpen(true);
-    }
+  const handleCardClick = (index: number) => {
+    setSelectedCardIndex(index);
+    setIsUnifiedOverlayOpen(true);
   };
 
-  const handleCloseSituationOverlay = () => {
-    setIsSituationOverlayOpen(false);
-  };
-
-  const handleCloseAdvDisadvOverlay = () => {
-    setIsAdvDisadvOverlayOpen(false);
+  const handleCloseUnifiedOverlay = () => {
+    setIsUnifiedOverlayOpen(false);
   };
 
   const handleEditCity = async (newCityName: string, newNumberOfPlayers: number) => {
@@ -181,13 +173,21 @@ export function InGame({ roomId, cityId, room, cityData }: InGameProps) {
                             card={item.data.card}
                             categoryName={item.data.categoryName}
                             className="h-full"
-                            onClick={() => handleCardClick(index, 'situation')}
+                            onClick={() => handleCardClick(index)}
                           />
-                        ) : (
+                        ) : item.type === 'advantage-disadvantage' ? (
                           <GameCardAdvUnforeseen
                             card={item.data}
                             className="h-full"
-                            onClick={() => handleCardClick(index, 'advantage-disadvantage')}
+                            onClick={() => handleCardClick(index)}
+                          />
+                        ) : (
+                          <GameCardOpenGov
+                            card={item.data}
+                            categoryName={item.data.category}
+                            cardBg={openGovCategoriesProperties[item.data.category].cardBg}
+                            className="h-full"
+                            onClick={() => handleCardClick(index)}
                           />
                         )}
                       </div>
@@ -217,12 +217,14 @@ export function InGame({ roomId, cityId, room, cityData }: InGameProps) {
           <Button className="col-span-1 text-2xl">
             D$ {cityData.budget?.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
           </Button>
-          <Button className="col-span-2 text-2xl">
-            Governo Aberto
-          </Button>
+          <OpenGovernmentDrawer>
+            <Button className="col-span-2 text-2xl">
+              Governo Aberto
+            </Button>
+          </OpenGovernmentDrawer>
           <Button className="col-span-1 text-2xl relative">
             <div className="absolute left-0 top-0 h-full bg-white/20" style={{
-              width: `${getRemainingTimePercentage()}%`
+              width: `${getRemainingTimePercentage() <= 100 ? getRemainingTimePercentage() : 100}%`
              }}></div>
             Terminar
           </Button>
@@ -230,23 +232,14 @@ export function InGame({ roomId, cityId, room, cityData }: InGameProps) {
       </div>
 
       {/* Fullscreen Overlays */}
-      {situationCards && (
-        <FullscreenCardsOverlay
-          cards={situationCards}
-          isOpen={isSituationOverlayOpen}
-          onClose={handleCloseSituationOverlay}
-          initialIndex={selectedCardIndex}
-        />
-      )}
-
-      {advantageDisadvantageCards && (
-        <FullscreenAdvDisadvOverlay
-          cards={advantageDisadvantageCards}
-          isOpen={isAdvDisadvOverlayOpen}
-          onClose={handleCloseAdvDisadvOverlay}
-          initialIndex={selectedCardIndex}
-        />
-      )}
+      <FullscreenUnifiedCardsOverlay
+        situationCards={situationCards}
+        advantageDisadvantageCards={advantageDisadvantageCards}
+        openGovernmentCards={cityData.open_government_cards}
+        isOpen={isUnifiedOverlayOpen}
+        onClose={handleCloseUnifiedOverlay}
+        initialIndex={selectedCardIndex}
+      />
       
       <EditCityModal
         isOpen={isEditModalOpen}
@@ -257,4 +250,5 @@ export function InGame({ roomId, cityId, room, cityData }: InGameProps) {
       />
     </>
   );
-} 
+}
+

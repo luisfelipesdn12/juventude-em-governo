@@ -1,7 +1,8 @@
 import { create } from 'zustand';
 import { db } from './firebase';
 import { collection, doc, onSnapshot, query, getDocs, getDoc, where } from 'firebase/firestore';
-import type { Category, Item } from './data';
+import type { Category, Item, OpenGovernmentCard } from './data';
+import { openGovCategoriesProperties } from './categories-properties';
 
 // Define the store state
 interface AppState {
@@ -11,11 +12,21 @@ interface AppState {
   fetchCategories: () => Promise<void>;
   subscribeToCategories: () => () => void;
   
+  // Open Government Categories
+  openGovCategories: Array<{ id: string; name: string }>;
+  loadingOpenGovCategories: boolean;
+  fetchOpenGovCategories: () => void;
+  
   // Active Category
   activeCategory: Category | null;
   loadingCategory: boolean;
   fetchCategory: (id: string) => Promise<void>;
   subscribeToCategory: (id: string) => () => void;
+  
+  // Active Open Government Category
+  activeOpenGovCategory: { id: string; name: string; cards: OpenGovernmentCard[] } | null;
+  loadingOpenGovCategory: boolean;
+  fetchOpenGovCategory: (categoryName: string) => Promise<void>;
   
   // Items
   items: Item[];
@@ -58,6 +69,18 @@ export const useAppStore = create<AppState>((set) => ({
     });
     
     return unsubscribe;
+  },
+  
+  // Open Government Categories
+  openGovCategories: [],
+  loadingOpenGovCategories: false,
+  fetchOpenGovCategories: () => {
+    // Open government categories are static, defined in the properties file
+    const openGovCategoriesData = Object.keys(openGovCategoriesProperties).map((name) => ({
+      id: name,
+      name: name,
+    }));
+    set({ openGovCategories: openGovCategoriesData });
   },
   
   // Active Category
@@ -123,6 +146,39 @@ export const useAppStore = create<AppState>((set) => ({
     });
     
     return categoryUnsubscribe;
+  },
+  
+  // Active Open Government Category
+  activeOpenGovCategory: null,
+  loadingOpenGovCategory: false,
+  fetchOpenGovCategory: async (categoryName: string) => {
+    try {
+      set({ loadingOpenGovCategory: true });
+      
+      const category: { id: string; name: string; cards: OpenGovernmentCard[] } = {
+        id: categoryName.toLowerCase().replace(/\s+/g, '-').replace(/,/g, ''),
+        name: categoryName,
+        cards: [],
+      };
+      
+      // Get cards for this category from open_government_cards collection
+      const cardsRef = collection(db, 'open_government_cards');
+      const q = query(cardsRef, where('category', '==', categoryName));
+      const cardsSnapshot = await getDocs(q);
+      
+      category.cards = cardsSnapshot.docs.map(doc => ({
+        id: doc.id,
+        category: doc.data().category,
+        text: doc.data().text,
+        price: doc.data().price,
+        reward: doc.data().reward,
+      }));
+      
+      set({ activeOpenGovCategory: category, loadingOpenGovCategory: false });
+    } catch (error) {
+      console.error('Error fetching open government category:', error);
+      set({ loadingOpenGovCategory: false });
+    }
   },
   
   // Items

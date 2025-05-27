@@ -39,3 +39,30 @@ export const categoriesProperties: Record<string, {
       color: '#e7236b',
     },
   };
+
+export const openGovCategoriesProperties: Record<string, {
+    icon: string;
+    cardBg: string;
+    color: string;
+  }> = {
+    'Integridade': {
+      icon: '/assets/ga-integridade.svg',
+      cardBg: '/assets/fundo_cartas/frente-carta-ga-integridade.svg',
+      color: '#b8105e',
+    },
+    'Inovação e Tecnologia': {
+      icon: '/assets/ga-inovação-e-tecnologia.svg',
+      cardBg: '/assets/fundo_cartas/frente-carta-ga-inovacao-e-tecnologia.svg',
+      color: '#51baa9',
+    },
+    'Participação Social': {
+      icon: '/assets/ga-participação-social.svg',
+      cardBg: '/assets/fundo_cartas/frente-carta-ga-participacao-social.svg',
+      color: '#fab50e',
+    },
+    'Transparência': {
+      icon: '/assets/ga-transparência.svg',
+      cardBg: '/assets/fundo_cartas/frente-carta-ga-transparencia.svg',
+      color: '#701954',
+    },
+  };

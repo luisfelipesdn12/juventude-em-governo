@@ -61,6 +61,17 @@ export interface Room {
       points?: number;
       dindins?: number;
     }[];
+    open_government_cards?: {
+      id: string;
+      category: string;
+      text: string;
+      price: number;
+      reward: {
+        type: "dindins" | "points";
+        quantity: number;
+        category_id?: string;
+      };
+    }[];
   }[];
   createdAt?: Timestamp;
   updatedAt?: Timestamp;
