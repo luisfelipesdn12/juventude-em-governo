@@ -2,6 +2,11 @@
 
 Aplicação web para o jogo "Juventude em Governo" com integração Firebase e atualizações em tempo real.
 
+## Sobre o projeto
+
+O projeto Juventude em Governo, é um projeto de gameficação da formação da Coordenadoria de Governo Aberto da Prefeitura de São Paulo sobre ações governamentais como moradia, saúde e educação. A faixa etária de jogadores é entre 12 e 25 anos, sendo grande parte estudantes do ensino médio.
+O jogo já existe físicamente, e foi o nosso projeto do segundo ciclo, a digitalização do jogo. Nosso objeto é disponibilizar um site onde os alunos (ou jogadores no geral) teriam acesso à formação (em formas de vídeos, com acesso à uma playlist da equipe de governo aberto), ao jogo físico e ao jogo digital.
+
 ## Configuração
 
 ### Pré-requisitos
